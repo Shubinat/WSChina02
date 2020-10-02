@@ -17,7 +17,7 @@
         <Grid Background="Gray"></Grid>
         <StackPanel Orientation="Horizontal">
             <Image Source="/Assets/logo.png" HorizontalAlignment="Left" Stretch="Uniform" StretchDirection="Both"/>
-            <Button x:Name="BtnBack" Style="{StaticResource NavigationButton}" Content="Back" ></Button>
+            <Button x:Name="BtnBack" Style="{StaticResource NavigationButton}" Content="Back" Click="BtnBack_Click"></Button>
         </StackPanel>
         <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20px" Style="{StaticResource TitleText}">WorldSkills China Competetion 2016</TextBlock>
 
