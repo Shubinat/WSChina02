@@ -23,6 +23,7 @@ namespace WSChina2020AppComp02
         public MainWindow()
         {
             InitializeComponent();
+            MainFrame.Navigate(new Pages.MainScreen());
         }
     }
 }

@@ -22,7 +22,7 @@
         </StackPanel>
 
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1">
-            <Button x:Name="BtnAboutWS"  Content="About Worldskills" Click="BtnAboutWS_Click"></Button>
+            <Button x:Name="BtnAboutWS"  Content="About Worldskills"></Button>
             <Button x:Name="BtnAboutWSChina" Content="About Worldskills China"></Button>
             <Button x:Name="BtnAboutShangHai" Content="About Shang Hai"></Button>
         </StackPanel>
