@@ -16,14 +16,14 @@
 
         <Grid Background="Gray"></Grid>
         <StackPanel Orientation="Horizontal">
-            <Image Source="/Assets/logo.png" HorizontalAlignment="Left" Stretch="Uniform" StretchDirection="Both"/>
+            <Image Source="/WSChina2020AppComp02;component/Assets/logo.png" HorizontalAlignment="Left"/>
             <Button x:Name="BtnBack" Style="{StaticResource NavigationButton}" Content="Back" Click="BtnBack_Click"></Button>
         </StackPanel>
         <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20px" Style="{StaticResource TitleText}">WorldSkills China Competetion 2016</TextBlock>
 
-        <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top">
             <TextBlock Style="{StaticResource BodyText}" Text="About Worldskils" Margin="20" FontSize="20px"></TextBlock>
-            <Button x:Name="BtnHistory" Content="History of Worldskills"></Button>
+            <Button x:Name="BtnHistory" Click="BtnHistory_Click"  Content="History of Worldskills"></Button>
             <Button x:Name="BtnCompetention" Content="Competention Skills"></Button>
             <Button x:Name="BtnPrevios" Content="Previous Competention"></Button>
         </StackPanel>
