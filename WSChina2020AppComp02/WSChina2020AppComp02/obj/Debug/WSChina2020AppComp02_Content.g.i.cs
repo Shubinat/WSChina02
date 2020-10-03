@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/no_picture.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("entities/basemodel.context.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("entities/basemodel.tt")]
 
 
