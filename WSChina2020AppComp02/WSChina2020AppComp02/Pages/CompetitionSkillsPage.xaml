@@ -24,7 +24,7 @@
         <Grid Background="Gray" Grid.ColumnSpan="2"></Grid>
         <StackPanel Orientation="Horizontal">
             <Image Source="/WSChina2020AppComp02;component/Assets/logo.png" HorizontalAlignment="Left"/>
-            <Button x:Name="BtnBack" Click="BtnBack_Click" Style="{StaticResource NavigationButton}" Content="Back" ></Button>
+            <Button x:Name="BtnBack" Click="BtnBack_Click"  Template="{StaticResource NavigationBtn}"  Content="Back" ></Button>
         </StackPanel>
         <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20px" Style="{StaticResource TitleText}" Grid.ColumnSpan="2">WorldSkills China Competetion 2016</TextBlock>
 

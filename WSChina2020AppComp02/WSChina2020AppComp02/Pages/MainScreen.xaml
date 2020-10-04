@@ -22,11 +22,11 @@
         </StackPanel>
 
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Margin="20"  Grid.Row="1">
-            <Button x:Name="BtnAboutWS" Click="BtnAboutWS_Click"  Content="About Worldskills"></Button>
-            <Button x:Name="BtnAboutWSChina" Content="About Worldskills China"></Button>
-            <Button x:Name="BtnAboutShangHai" Content="About Shang Hai"></Button>
+            <Button x:Name="BtnAboutWS" Click="BtnAboutWS_Click"  Content="About Worldskills" Template="{StaticResource Btn}"></Button>
+            <Button x:Name="BtnAboutWSChina" Content="About Worldskills China" Template="{StaticResource Btn}"></Button>
+            <Button x:Name="BtnAboutShangHai" Content="About Shang Hai" Template="{StaticResource Btn}"></Button>
         </StackPanel>
-        <Button x:Name="BtnLogin" Style="{StaticResource NavigationButton}"  Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Content="Login"></Button>
+        <Button x:Name="BtnLogin" Template="{StaticResource NavigationBtn}" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Content="Login"></Button>
         <Image Source="/WSChina2020AppComp02;component/Assets/logo.png" HorizontalAlignment="Left"></Image>
     </Grid>
 </Page>

@@ -17,22 +17,27 @@
             <Setter Property="Foreground" Value="Gray"></Setter>
             <Setter Property="TextAlignment" Value="Center"></Setter>
         </Style>
+  
+        <ControlTemplate TargetType="Button" x:Key="Btn">
+            <Border BorderBrush="Gray" BorderThickness="1" CornerRadius="3"
+                    TextBlock.Foreground="Black" TextBlock.FontSize="20" TextBlock.TextAlignment="Center" Padding="15" Margin="10">
+                <Border.Background>
+                    <SolidColorBrush Color="LightGray"></SolidColorBrush>
+                </Border.Background>
+                <ContentPresenter RecognizesAccessKey="True"></ContentPresenter>
+            </Border>
+        </ControlTemplate>
 
-        <Style TargetType="Button">
-            <Setter Property="Background" Value="LightGray"></Setter>
-            <Setter Property="Foreground" Value="Black"></Setter>
-            <Setter Property="FontSize" Value="20"></Setter>
-            <Setter Property="Padding" Value="15"></Setter>
-            <Setter Property="Margin" Value="10"></Setter>
-        </Style>
-        <Style TargetType="Button" x:Key="NavigationButton">
-            <Setter Property="Background" Value="LightGray"></Setter>
-            <Setter Property="Foreground" Value="Black"></Setter>
-            <Setter Property="FontSize" Value="14"></Setter>
-            <Setter Property="Padding" Value="5"></Setter>
-            <Setter Property="Margin" Value="10"></Setter>
-        </Style>
-
+        <ControlTemplate TargetType="Button" x:Key="NavigationBtn">
+            <Border BorderBrush="Gray" BorderThickness="1" CornerRadius="3"
+                    TextBlock.Foreground="Black" TextBlock.FontSize="14" TextBlock.TextAlignment="Center" Padding="4" Margin="10">
+                <Border.Background>
+                    <SolidColorBrush Color="LightGray"></SolidColorBrush>
+                </Border.Background>
+                <ContentPresenter RecognizesAccessKey="True"></ContentPresenter>
+            </Border>
+        </ControlTemplate>
+        
         <Style TargetType="Border" x:Key="Table">
             <Setter Property="Margin" Value="10"></Setter>
             <Setter Property="BorderBrush" Value="Gray"></Setter>
