@@ -29,6 +29,7 @@ namespace WSChina2020AppComp02
         {
             
             InitializeComponent();
+            
             MainFrame.Navigate(new Pages.MainScreen());
 
 
@@ -52,9 +53,9 @@ namespace WSChina2020AppComp02
 
             TimeSpan TimeRemaining = WS2021 - DateTime.Now;
             if (TimeRemaining.Seconds > 0 || TimeRemaining.Minutes > 0 || TimeRemaining.Hours > 0 || TimeRemaining.Days > 0) {
-            CountDown.Text = TimeRemaining.Days + " days, " + TimeRemaining.Hours + " hours, " + TimeRemaining.Minutes + " minutes and " + TimeRemaining.Seconds + " seconds until the WorldSkills Shanghai 2021 starts.";
+            CountDownBlock.Text = TimeRemaining.Days + " days, " + TimeRemaining.Hours + " hours, " + TimeRemaining.Minutes + " minutes and " + TimeRemaining.Seconds + " seconds until the WorldSkills Shanghai 2021 starts.";
             } else { 
-            CountDown.Text = "The WorldSkills Shanghai 2021 has started.";
+            CountDownBlock.Text = "The WorldSkills Shanghai 2021 has started.";
             }
         }
     }

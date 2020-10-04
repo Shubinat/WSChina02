@@ -36,7 +36,7 @@
             </TreeViewItem>
         </TreeView>
 
-        <TextBlock Style="{StaticResource BodyText}" x:Name="CompetitionName" FontSize="20" Grid.Column="1" Grid.Row="2" VerticalAlignment="Bottom" HorizontalAlignment="Center"></TextBlock>
+        <TextBlock Style="{StaticResource BodyText}" x:Name="CompetitionNameBlock" FontSize="20" Grid.Column="1" Grid.Row="2" VerticalAlignment="Bottom" HorizontalAlignment="Center"></TextBlock>
         <ScrollViewer Grid.Row="3" Grid.Column="1" Margin="12" CanContentScroll="True">
             <TextBlock Style="{StaticResource BodyText}"  TextAlignment="Left" x:Name="InformationBlock" TextWrapping="Wrap" Margin="5" Text="Click on the competition to find out more information."></TextBlock>
         </ScrollViewer>

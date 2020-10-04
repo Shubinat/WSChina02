@@ -27,8 +27,8 @@ namespace WSChina2020AppComp02.Pages
             InitializeComponent();
             List<Entities.Block> blocks = AppData.Context.Blocks.ToList();
             foreach (var block in blocks)
-            {                
-                TreeViewItem item = new TreeViewItem() { Name = "Block_" + block.BlockID.ToString(), Header = block.Name };
+            {
+                TreeViewItem item = new TreeViewItem() { Name = "Block_" + block.BlockID.ToString(), Header = block.Name};
                 Tree.Items.Add(item);
 
                 foreach (var competition in block.Competitions.ToList())
@@ -36,7 +36,7 @@ namespace WSChina2020AppComp02.Pages
                     TreeViewItem child = new TreeViewItem()
                     {
                         Name = "Competition_" + competition.CompetitionId.ToString(),
-                        Header = competition.Name
+                        Header = competition.CompetitionId + ". " + competition.Name
                     };
                     child.Selected += Competition_Selected;
                     item.Items.Add(child);
@@ -44,12 +44,11 @@ namespace WSChina2020AppComp02.Pages
                     void Competition_Selected(object sender, RoutedEventArgs e)
                     {
                         TreeViewItem element = (TreeViewItem)sender;
-                        CompetitionName.Text = competition.CompetitionId + " - " + competition.Name;
+                        CompetitionNameBlock.Text = competition.CompetitionId + " - " + competition.Name;
                         InformationBlock.Text = competition.Description;
                     }
-
-
                 }
+
             }
 
         }
