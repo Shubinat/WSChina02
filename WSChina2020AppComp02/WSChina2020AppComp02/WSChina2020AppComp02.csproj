@@ -72,6 +72,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="AppData.cs" />
     <Compile Include="Entities\BaseModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -104,6 +105,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\CompetitionSkillsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\HistoryWSPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -116,6 +121,9 @@
   <ItemGroup>
     <Compile Include="Pages\AboutWorldskillsPage.xaml.cs">
       <DependentUpon>AboutWorldskillsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CompetitionSkillsPage.xaml.cs">
+      <DependentUpon>CompetitionSkillsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\HistoryWSPage.xaml.cs">
       <DependentUpon>HistoryWSPage.xaml</DependentUpon>

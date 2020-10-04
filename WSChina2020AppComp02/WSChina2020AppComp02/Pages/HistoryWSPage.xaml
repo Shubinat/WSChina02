@@ -44,7 +44,7 @@
         
         <ScrollViewer Grid.Row="2" Grid.Column="2" CanContentScroll="True"
                    Margin="13" Grid.RowSpan="3">
-            <TextBlock x:Name="InformationBlock" TextWrapping="Wrap" Margin="5" Text="Click on the image to find out more information."></TextBlock>
+            <TextBlock Style="{StaticResource BodyText}" TextAlignment="Left" x:Name="InformationBlock" TextWrapping="Wrap" Margin="5" Text="Click on the image to find out more information."></TextBlock>
         </ScrollViewer>
         <Border Grid.Row="2" Grid.Column="2" Style="{StaticResource Table}" Grid.RowSpan="3"></Border>
         </Grid>
