@@ -8,7 +8,7 @@
         Title="Skills Competetion Management System" Height="450" Width="800" MinHeight="450" MinWidth="800">
     <Grid>
         <Grid.RowDefinitions>
-
+            <!-- Skills Competetion Management System -->
             <RowDefinition Height="1*"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
@@ -16,7 +16,7 @@
         <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"></Frame>
 
         <Grid Background="Gray" Grid.Row="1"></Grid>
-        <TextBlock Grid.Row="1" Foreground="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" Style="{StaticResource BodyText}" Text="? days, ? hours, ? minutes and ? seconds until the WorldSkills
+        <TextBlock x:Name="CountDown" Grid.Row="1" Foreground="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" Style="{StaticResource BodyText}" Text="? days, ? hours, ? minutes and ? seconds until the WorldSkills
 Shanghai 2021 starts."></TextBlock>
     </Grid>
 </Window>
