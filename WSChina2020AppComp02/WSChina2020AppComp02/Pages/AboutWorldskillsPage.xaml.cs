@@ -40,5 +40,10 @@ namespace WSChina2020AppComp02.Pages
         {
             NavigationService.Navigate(new CompetitionSkillsPage());
         }
+
+        private void BtnPrevios_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new PreviosCompetitionsPage());
+        }
     }
 }

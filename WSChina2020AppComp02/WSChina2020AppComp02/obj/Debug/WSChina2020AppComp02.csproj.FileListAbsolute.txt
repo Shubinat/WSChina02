@@ -29,3 +29,5 @@ C:\Users\Shubinat\source\repos\WSChina02\WSChina2020AppComp02\WSChina2020AppComp
 C:\Users\Shubinat\source\repos\WSChina02\WSChina2020AppComp02\WSChina2020AppComp02\bin\Debug\ru\EntityFramework.resources.dll
 C:\Users\Shubinat\source\repos\WSChina02\WSChina2020AppComp02\WSChina2020AppComp02\obj\Debug\Pages\CompetitionSkillsPage.baml
 C:\Users\Shubinat\source\repos\WSChina02\WSChina2020AppComp02\WSChina2020AppComp02\obj\Debug\WSChina2020AppComp02.csproj.CopyComplete
+C:\Users\Shubinat\Source\Repos\WSChina02\WSChina2020AppComp02\WSChina2020AppComp02\obj\Debug\Pages\PreviousCompetitionsPage.g.cs
+C:\Users\Shubinat\Source\Repos\WSChina02\WSChina2020AppComp02\WSChina2020AppComp02\obj\Debug\Pages\PreviousCompetitionsPage.baml

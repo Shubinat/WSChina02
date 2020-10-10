@@ -25,7 +25,7 @@
             <TextBlock Style="{StaticResource BodyText}" Text="About Worldskils" Margin="20" FontSize="20px"></TextBlock>
             <Button Template="{StaticResource Btn}" x:Name="BtnHistory" Click="BtnHistory_Click"  Content="History of Worldskills"></Button>
             <Button Template="{StaticResource Btn}" x:Name="BtnCompetention" Click="BtnCompetention_Click" Content="Competention Skills"></Button>
-            <Button Template="{StaticResource Btn}" x:Name="BtnPrevios" Content="Previous Competention"></Button>
+            <Button Template="{StaticResource Btn}" x:Name="BtnPrevios" Click="BtnPrevios_Click" Content="Previous Competitions"></Button>
         </StackPanel>
 
     </Grid>
