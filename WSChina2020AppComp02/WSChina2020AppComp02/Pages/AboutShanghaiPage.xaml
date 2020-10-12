@@ -1,0 +1,76 @@
+﻿<Page x:Class="WSChina2020AppComp02.Pages.AboutShanghaiPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WSChina2020AppComp02.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="About Shanghai">
+
+    <Grid>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+
+        <Grid Background="Gray"></Grid>
+        <StackPanel Orientation="Horizontal">
+            <Image Source="/WSChina2020AppComp02;component/Assets/logo.png" HorizontalAlignment="Left"/>
+            <Button x:Name="BtnBack"  Template="{StaticResource NavigationBtn}"  Content="Back" Click="BtnBack_Click"></Button>
+        </StackPanel>
+        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20px" Style="{StaticResource TitleText}">WorldSkills China Competetion 2016</TextBlock>
+
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <TextBlock Style="{StaticResource BodyText}" Text="Previous Competitions" Margin="20" FontSize="20"></TextBlock>
+        </StackPanel>
+
+        <TabControl x:Name="AboutSHTabControl" Grid.Row="2" Margin="10 0 10 20">
+            <TabItem x:Name="HistoryTab">
+                <TabItem.Header>
+                    <TextBlock Margin="3">History</TextBlock>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <ScrollViewer CanContentScroll="True">
+                        <TextBlock TextWrapping="Wrap">
+                        Shanghai is the most populous city in the world, located at the mouth of the Yangtze river. Originally a small seaside fishing village, it is now a huge city, a major port that combines the culture of modern and traditional China.
+                        <LineBreak></LineBreak>
+                        <LineBreak></LineBreak>
+                        Shanghai's fame was reinforced by films and novels, primarily about the 1920s and 1930s (before the arrival of the Japanese). Shanghai was China's luxury retail showcase and the center of its sins, a haven for outcasts and adventurers from all over the world, as well as revolutionaries and fugitives from the villages who never found their happiness here, but sweated at the machines, dragged loads and often ended their lives under the fence.
+                        </TextBlock>
+                    </ScrollViewer>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem x:Name="EventTab">
+                <TabItem.Header>
+                    <TextBlock Margin="3">Event</TextBlock>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <ScrollViewer CanContentScroll="True">
+                        <TextBlock TextWrapping="Wrap">
+                            2019-12-03 | Automechanika Shanghai | Display directions: spare parts and systems, accessories and tuning, repair and maintenance, information technology and management, atoseris and car washes. It is Asia's largest trade fair for auto parts, accessories, equipment and services. Last year's event attracted 6,269 exhibitors, 150,568 visitors; the exhibition area was 350,000 sq. m.
+                            <LineBreak></LineBreak>
+                            <LineBreak></LineBreak> 
+                            2019-04-18 | ABACE | International Asian Commercial Aviation Exhibition and Conference
+                            <LineBreak></LineBreak>
+                            <LineBreak></LineBreak> 
+                            2015-03-19 | Laser World of Photonics China | China Photoelectronics Exhibition
+                        </TextBlock>
+                    </ScrollViewer>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem x:Name="TourismTab">
+                <TabItem.Header>
+                    <TextBlock Margin="3">Tourism</TextBlock>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <Image Source="{Binding travel}"></Image>
+                </TabItem.Content>
+            </TabItem>
+
+        </TabControl>
+    </Grid>
+</Page>
