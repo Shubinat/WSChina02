@@ -29,5 +29,10 @@ namespace WSChina2020AppComp02.Pages
         {
             NavigationService.Navigate(new AboutWorldskillsPage());
         }
+
+        private void BtnAboutShangHai_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new AboutShanghaiPage());
+        }
     }
 }
