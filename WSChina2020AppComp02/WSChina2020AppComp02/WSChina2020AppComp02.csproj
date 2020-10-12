@@ -94,6 +94,9 @@
     <Compile Include="Entities\Competition.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entities\Previos_Competition.cs">
+      <DependentUpon>BaseModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entities\sysdiagram.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>

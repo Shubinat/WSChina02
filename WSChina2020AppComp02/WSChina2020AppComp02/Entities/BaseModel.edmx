@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище WSChina2020BaseComp02Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище WSChina2020BaseComp02Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Blocks">
           <Key>
             <PropertyRef Name="BlockID" />
@@ -20,6 +20,17 @@
           <Property Name="BlockID" Type="int" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="Description" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "WSChina2020BaseComp02.dbo.Previos Competitions" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="Previos Competitions">
+          <Key>
+            <PropertyRef Name="OrdinalNo" />
+          </Key>
+          <Property Name="OrdinalNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Year" Type="int" />
+          <Property Name="City_and_Country" Type="nvarchar" MaxLength="100" />
+          <Property Name="MemberNumber" Type="int" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -47,13 +58,20 @@
           <EntitySet Name="Blocks" EntityType="Self.Blocks" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Competitions" EntityType="Self.Competitions" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Previos Competitions" EntityType="Self.Previos Competitions" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Previos Competitions].[OrdinalNo] AS [OrdinalNo], 
+    [Previos Competitions].[Year] AS [Year], 
+    [Previos Competitions].[City_and_Country] AS [City_and_Country], 
+    [Previos Competitions].[MemberNumber] AS [MemberNumber]
+    FROM [dbo].[Previos Competitions] AS [Previos Competitions]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK_Competitions_Blocks" Association="Self.FK_Competitions_Blocks">
             <End Role="Blocks" EntitySet="Blocks" />
             <End Role="Competitions" EntitySet="Competitions" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="WSChina2020BaseComp02Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -105,7 +123,17 @@
             <End Role="Blocks" EntitySet="Blocks" />
             <End Role="Competitions" EntitySet="Competitions" />
           </AssociationSet>
+          <EntitySet Name="Previos_Competitions" EntityType="WSChina2020BaseComp02Model.Previos_Competition" />
         </EntityContainer>
+        <EntityType Name="Previos_Competition">
+          <Key>
+            <PropertyRef Name="OrdinalNo" />
+          </Key>
+          <Property Name="OrdinalNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Year" Type="Int32" />
+          <Property Name="City_and_Country" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MemberNumber" Type="Int32" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -138,6 +166,16 @@
                 <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
                 <ScalarProperty Name="version" ColumnName="version" />
                 <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Previos_Competitions">
+            <EntityTypeMapping TypeName="WSChina2020BaseComp02Model.Previos_Competition">
+              <MappingFragment StoreEntitySet="Previos Competitions">
+                <ScalarProperty Name="MemberNumber" ColumnName="MemberNumber" />
+                <ScalarProperty Name="City_and_Country" ColumnName="City_and_Country" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="OrdinalNo" ColumnName="OrdinalNo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

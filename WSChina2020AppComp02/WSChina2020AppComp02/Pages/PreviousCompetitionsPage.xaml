@@ -36,12 +36,19 @@
                 </StackPanel>
 
                 <Button Template="{StaticResource NavigationBtn}" x:Name="SearchBtn" Content="Search"></Button>
-                
-                
+
+
             </StackPanel>
             <TextBlock Style="{StaticResource BodyText}" Text="Total Records:XXX"></TextBlock>
         </StackPanel>
-        <Border Grid.Row="2" Style="{StaticResource ResourceKey=Table}"></Border>
+        <DataGrid Grid.Row="2" Name="CompetitionsGrid" IsReadOnly="True" AutoGenerateColumns="False" Margin="10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Ordinal No." Width="*" Binding="{Binding OrdinalNo}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Year" Width="*" Binding="{Binding Year}"></DataGridTextColumn>
+                <DataGridTextColumn Header="City, Country" Width="*" Binding="{Binding City_and_Country}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Member Number" Width="*"  Binding="{Binding MemberNumber}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
 
     </Grid>
 </Page>

@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:WSChina2020AppComp02"
         mc:Ignorable="d"
         Title="Skills Competetion Management System" Height="450" Width="800" MinHeight="450" MinWidth="800">
+
     <Grid>
         <Grid.RowDefinitions>
             <!-- Skills Competetion Management System -->

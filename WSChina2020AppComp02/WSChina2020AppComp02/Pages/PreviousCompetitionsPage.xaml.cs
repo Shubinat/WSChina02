@@ -23,6 +23,7 @@ namespace WSChina2020AppComp02.Pages
         public PreviosCompetitionsPage()
         {
             InitializeComponent();
+            CompetitionsGrid.ItemsSource = AppData.Context.Previos_Competitions.ToList();
         }
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)

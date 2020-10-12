@@ -48,5 +48,15 @@
       <End Role="Blocks" EntitySet="Blocks" />
       <End Role="Competitions" EntitySet="Competitions" />
     </AssociationSet>
+    <EntitySet Name="Previos_Competitions" EntityType="WSChina2020BaseComp02Model.Previos_Competition" />
   </EntityContainer>
+  <EntityType Name="Previos_Competition">
+    <Key>
+      <PropertyRef Name="OrdinalNo" />
+    </Key>
+    <Property Name="OrdinalNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Year" Type="Int32" />
+    <Property Name="City_and_Country" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MemberNumber" Type="Int32" />
+  </EntityType>
 </Schema>

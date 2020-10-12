@@ -16,6 +16,17 @@
     <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="Description" Type="nvarchar(max)" />
   </EntityType>
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "WSChina2020BaseComp02.dbo.Previos Competitions" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+  <EntityType Name="Previos Competitions">
+    <Key>
+      <PropertyRef Name="OrdinalNo" />
+    </Key>
+    <Property Name="OrdinalNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Year" Type="int" />
+    <Property Name="City_and_Country" Type="nvarchar" MaxLength="100" />
+    <Property Name="MemberNumber" Type="int" />
+  </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
       <PropertyRef Name="diagram_id" />
@@ -42,6 +53,14 @@
     <EntitySet Name="Blocks" EntityType="Self.Blocks" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Competitions" EntityType="Self.Competitions" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Previos Competitions" EntityType="Self.Previos Competitions" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Previos Competitions].[OrdinalNo] AS [OrdinalNo], 
+    [Previos Competitions].[Year] AS [Year], 
+    [Previos Competitions].[City_and_Country] AS [City_and_Country], 
+    [Previos Competitions].[MemberNumber] AS [MemberNumber]
+    FROM [dbo].[Previos Competitions] AS [Previos Competitions]</DefiningQuery>
+    </EntitySet>
     <AssociationSet Name="FK_Competitions_Blocks" Association="Self.FK_Competitions_Blocks">
       <End Role="Blocks" EntitySet="Blocks" />
       <End Role="Competitions" EntitySet="Competitions" />
