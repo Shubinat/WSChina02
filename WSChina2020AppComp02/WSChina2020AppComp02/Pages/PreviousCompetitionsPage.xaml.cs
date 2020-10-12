@@ -20,6 +20,7 @@ namespace WSChina2020AppComp02.Pages
     /// </summary>
     public partial class PreviosCompetitionsPage : Page
     {
+        
         public PreviosCompetitionsPage()
         {
             InitializeComponent();
@@ -30,6 +31,16 @@ namespace WSChina2020AppComp02.Pages
         {
             if (NavigationService.CanGoBack)
                 NavigationService.GoBack();
+        }
+
+        private void SearchBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (TxtBoxOrdinal.Text != null || TxtBoxCity.Text != null)
+            {      
+            }
+            else
+            {               
+            }
         }
     }
 }

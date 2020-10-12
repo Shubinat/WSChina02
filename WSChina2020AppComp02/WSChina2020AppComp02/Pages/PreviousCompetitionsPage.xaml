@@ -28,14 +28,14 @@
             <StackPanel Orientation="Horizontal">
                 <StackPanel Orientation="Horizontal" Margin="10 0" VerticalAlignment="Center">
                     <TextBlock Style="{StaticResource BodyText}" Text="Ordinal No.: " FontSize="14"></TextBlock>
-                    <TextBox MinWidth="115" Margin="5 0"></TextBox>
+                    <TextBox MinWidth="115" Margin="5 0" x:Name="TxtBoxOrdinal"></TextBox>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="10 0" VerticalAlignment="Center">
                     <TextBlock Style="{StaticResource BodyText}" Text="City or Country" FontSize="14"></TextBlock>
-                    <TextBox MinWidth="115" Margin="5 0"></TextBox>
+                    <TextBox MinWidth="115" Margin="5 0" x:Name="TxtBoxCity"></TextBox>
                 </StackPanel>
 
-                <Button Template="{StaticResource NavigationBtn}" x:Name="SearchBtn" Content="Search"></Button>
+                <Button Template="{StaticResource NavigationBtn}" x:Name="SearchBtn" Click="SearchBtn_Click" Content="Search"></Button>
 
 
             </StackPanel>

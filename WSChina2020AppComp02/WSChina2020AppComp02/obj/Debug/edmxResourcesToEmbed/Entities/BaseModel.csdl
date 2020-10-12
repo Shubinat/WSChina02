@@ -54,7 +54,7 @@
     <Key>
       <PropertyRef Name="OrdinalNo" />
     </Key>
-    <Property Name="OrdinalNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrdinalNo" Type="String" Nullable="false" annotation:StoreGeneratedPattern="Identity" MaxLength="10" Unicode="true" FixedLength="false" />
     <Property Name="Year" Type="Int32" />
     <Property Name="City_and_Country" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="MemberNumber" Type="Int32" />

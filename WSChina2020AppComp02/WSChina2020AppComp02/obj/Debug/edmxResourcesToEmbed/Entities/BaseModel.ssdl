@@ -22,7 +22,7 @@
     <Key>
       <PropertyRef Name="OrdinalNo" />
     </Key>
-    <Property Name="OrdinalNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrdinalNo" Type="nvarchar" MaxLength="10" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Year" Type="int" />
     <Property Name="City_and_Country" Type="nvarchar" MaxLength="100" />
     <Property Name="MemberNumber" Type="int" />

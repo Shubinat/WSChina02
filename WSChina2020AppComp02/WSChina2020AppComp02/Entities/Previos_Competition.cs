@@ -14,7 +14,7 @@ namespace WSChina2020AppComp02.Entities
     
     public partial class Previos_Competition
     {
-        public int OrdinalNo { get; set; }
+        public string OrdinalNo { get; set; }
         public Nullable<int> Year { get; set; }
         public string City_and_Country { get; set; }
         public Nullable<int> MemberNumber { get; set; }

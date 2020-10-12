@@ -33,10 +33,10 @@
     <EntitySetMapping Name="Previos_Competitions">
       <EntityTypeMapping TypeName="WSChina2020BaseComp02Model.Previos_Competition">
         <MappingFragment StoreEntitySet="Previos Competitions">
+          <ScalarProperty Name="OrdinalNo" ColumnName="OrdinalNo" />
           <ScalarProperty Name="MemberNumber" ColumnName="MemberNumber" />
           <ScalarProperty Name="City_and_Country" ColumnName="City_and_Country" />
           <ScalarProperty Name="Year" ColumnName="Year" />
-          <ScalarProperty Name="OrdinalNo" ColumnName="OrdinalNo" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
