@@ -52,20 +52,5 @@ namespace WSChina2020AppComp02.Pages
             }
 
         }
-
-        private void BtnBack_Click(object sender, RoutedEventArgs e)
-        {
-            if(NavigationService.CanGoBack)
-                NavigationService.GoBack();
-        }
-
-        private void Page_Loaded(object sender, RoutedEventArgs e)
-        {
-            
-
-        }
-
-
-
     }
 }

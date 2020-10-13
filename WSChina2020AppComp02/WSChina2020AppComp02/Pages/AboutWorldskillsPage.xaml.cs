@@ -25,12 +25,6 @@ namespace WSChina2020AppComp02.Pages
             InitializeComponent();
         }
 
-        private void BtnBack_Click(object sender, RoutedEventArgs e)
-        {
-            if (NavigationService.CanGoBack) 
-                NavigationService.GoBack();
-;        }
-
         private void BtnHistory_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new HistoryWSPage());

@@ -16,6 +16,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Timers;
 using System.Windows.Threading;
+using WSChina2020AppComp02.Pages;
 
 namespace WSChina2020AppComp02
 {
@@ -41,6 +42,37 @@ namespace WSChina2020AppComp02
         }
         void timer_tick(object sender, EventArgs e)
         {
+            TimeSpan TimeRemaining = WS2021 - DateTime.Now;
+            if (TimeRemaining.Seconds > 0 || TimeRemaining.Minutes > 0 || TimeRemaining.Hours > 0 || TimeRemaining.Days > 0) {
+            CountDownBlock.Text = TimeRemaining.Days + " days, " + TimeRemaining.Hours + " hours, " + TimeRemaining.Minutes + " minutes and " + TimeRemaining.Seconds + " seconds until the WorldSkills Shanghai 2021 starts.";
+            } else { 
+            CountDownBlock.Text = "The WorldSkills Shanghai 2021 has started.";
+            }
+        }
+
+        private void BtnBack_Click(object sender, RoutedEventArgs e)
+        {
+            if (MainFrame.CanGoBack)
+                MainFrame.GoBack();
+        }
+
+        private void MainFrame_ContentRendered(object sender, EventArgs e)
+        {
+
+            if ((MainFrame.Content as Page) is MainScreen)
+            {
+                MainHeader.Visibility = Visibility.Visible;
+                SecondHeader.Visibility = Visibility.Hidden;
+                HeaderGrid.Height = new GridLength(100);
+            }
+            else
+            {
+                MainHeader.Visibility = Visibility.Hidden;
+                SecondHeader.Visibility = Visibility.Visible;
+                HeaderGrid.Height = new GridLength(50);
+            }
+
+
             if ((MainFrame.Content as Page).Title != null)
             {
                 Title = "Skills Competetion Management System - " + (MainFrame.Content as Page).Title;
@@ -48,14 +80,6 @@ namespace WSChina2020AppComp02
             else
             {
                 Title = "Skills Competetion Management System";
-            }
-
-
-            TimeSpan TimeRemaining = WS2021 - DateTime.Now;
-            if (TimeRemaining.Seconds > 0 || TimeRemaining.Minutes > 0 || TimeRemaining.Hours > 0 || TimeRemaining.Days > 0) {
-            CountDownBlock.Text = TimeRemaining.Days + " days, " + TimeRemaining.Hours + " hours, " + TimeRemaining.Minutes + " minutes and " + TimeRemaining.Seconds + " seconds until the WorldSkills Shanghai 2021 starts.";
-            } else { 
-            CountDownBlock.Text = "The WorldSkills Shanghai 2021 has started.";
             }
         }
     }

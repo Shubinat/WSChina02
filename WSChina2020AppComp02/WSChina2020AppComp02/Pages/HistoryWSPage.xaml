@@ -16,37 +16,31 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
-            <RowDefinition Height="50"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
-        <Grid Background="Gray" Grid.ColumnSpan="3"></Grid>
-        <StackPanel Orientation="Horizontal">
-            <Image Source="/WSChina2020AppComp02;component/Assets/logo.png" HorizontalAlignment="Left"/>
-            <Button x:Name="BtnBack" Click="BtnBack_Click"  Template="{StaticResource NavigationBtn}" Content="Back" ></Button>
-        </StackPanel>
-        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20px" Style="{StaticResource TitleText}" Grid.ColumnSpan="3" >WorldSkills China Competetion 2016</TextBlock>
+        
 
-        <TextBlock Style="{StaticResource BodyText}" Grid.Row="1" Text="History of Worldskills" FontSize="20px" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="3"/>
+        <TextBlock Style="{StaticResource BodyText}" Text="History of Worldskills" FontSize="20px" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="3"/>
         
-        <Image Source="/WSChina2020AppComp02;component/Assets/logo.png" Grid.Row="2" Margin="15" x:Name="WSLogo" MouseUp="WSLogo_MouseUp"></Image>
+        <Image Source="/WSChina2020AppComp02;component/Assets/logo.png" Grid.Row="1" Margin="15" x:Name="WSLogo" MouseUp="WSLogo_MouseUp"></Image>
         
-        <Image Source="/WSChina2020AppComp02;component/Assets/Albert_Vidal.jpg" Grid.Column="1" Grid.Row="2" Margin="15" x:Name="AlbertImg" MouseUp="AlbertImg_MouseUp"></Image>
+        <Image Source="/WSChina2020AppComp02;component/Assets/Albert_Vidal.jpg" Grid.Column="1" Grid.Row="1" Margin="15" x:Name="AlbertImg" MouseUp="AlbertImg_MouseUp"></Image>
 
-        <Image Source="/WSChina2020AppComp02;component/Assets/Directors.jpg" Grid.ColumnSpan="2" Grid.Row="4" Margin="15" x:Name="DirectorsImg" MouseUp="DirectorsImg_MouseUp"></Image>
+        <Image Source="/WSChina2020AppComp02;component/Assets/Directors.jpg" Grid.ColumnSpan="2" Grid.Row="3" Margin="15" x:Name="DirectorsImg" MouseUp="DirectorsImg_MouseUp"></Image>
 
-        <Image Source="/WSChina2020AppComp02;component/Assets/no_picture.png" Grid.ColumnSpan="2" Grid.Row="3" Margin="15" x:Name="FirstCompImg" MouseUp="FirstCompImg_MouseUp"></Image>
+        <Image Source="/WSChina2020AppComp02;component/Assets/no_picture.png" Grid.ColumnSpan="2" Grid.Row="2" Margin="15" x:Name="FirstCompImg" MouseUp="FirstCompImg_MouseUp"></Image>
         
-        <Border Grid.Row="2" Grid.ColumnSpan="2" Style="{StaticResource Table}" Grid.RowSpan="3"></Border>
+        <Border Grid.Row="1" Grid.ColumnSpan="2" Style="{StaticResource Table}" Grid.RowSpan="3"></Border>
         
         
-        <ScrollViewer Grid.Row="2" Grid.Column="2" CanContentScroll="True"
+        <ScrollViewer Grid.Row="1" Grid.Column="2" CanContentScroll="True"
                    Margin="13" Grid.RowSpan="3">
             <TextBlock Style="{StaticResource BodyText}" TextAlignment="Left" x:Name="InformationBlock" TextWrapping="Wrap" Margin="5" Text="Click on the image to find out more information."></TextBlock>
         </ScrollViewer>
-        <Border Grid.Row="2" Grid.Column="2" Style="{StaticResource Table}" Grid.RowSpan="3"></Border>
+        <Border Grid.Row="1" Grid.Column="2" Style="{StaticResource Table}" Grid.RowSpan="3"></Border>
         </Grid>
 </Page>
 

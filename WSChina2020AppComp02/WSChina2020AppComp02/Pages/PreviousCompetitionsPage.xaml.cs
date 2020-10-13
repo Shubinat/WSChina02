@@ -27,11 +27,7 @@ namespace WSChina2020AppComp02.Pages
             CompetitionsGrid.ItemsSource = AppData.Context.Previos_Competitions.ToList();
         }
 
-        private void BtnBack_Click(object sender, RoutedEventArgs e)
-        {
-            if (NavigationService.CanGoBack)
-                NavigationService.GoBack();
-        }
+
 
         private void SearchBtn_Click(object sender, RoutedEventArgs e)
         {

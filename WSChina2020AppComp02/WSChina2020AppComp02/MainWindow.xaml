@@ -10,14 +10,31 @@
     <Grid>
         <Grid.RowDefinitions>
             <!-- Skills Competetion Management System -->
+            <RowDefinition x:Name="HeaderGrid" Height="100"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
+        
+        <Grid Background="Gray" x:Name="MainHeader">
+        <Image Source="/WSChina2020AppComp02;component/Assets/logo.png" HorizontalAlignment="Left"></Image>
+        <StackPanel HorizontalAlignment="Center">
+            <TextBlock FontSize="24px" Style="{StaticResource TitleText}">Skills Competition<LineBreak></LineBreak>Management System 2016</TextBlock>
+            <TextBlock Style="{StaticResource TitleText}" FontStyle="Italic" Foreground="LightGray">Shang Hai, China<LineBreak></LineBreak>Saturday August 13 2016</TextBlock>
+        </StackPanel>
+        </Grid>
 
-        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"></Frame>
+        <Grid Background="Gray" x:Name="SecondHeader" Visibility="Hidden">
+        <StackPanel Orientation="Horizontal">
+            <Image Source="/WSChina2020AppComp02;component/Assets/logo.png" HorizontalAlignment="Left"/>
+            <Button x:Name="BtnBack"  Template="{StaticResource NavigationBtn}"  Content="Back" Click="BtnBack_Click"></Button>
+        </StackPanel>
+        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20px" Style="{StaticResource TitleText}">WorldSkills China Competition 2016</TextBlock>
+        </Grid>
 
-        <Grid Background="Gray" Grid.Row="1"></Grid>
-        <TextBlock x:Name="CountDownBlock" Grid.Row="1" Foreground="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" Style="{StaticResource BodyText}" Text="? days, ? hours, ? minutes and ? seconds until the WorldSkills
+        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Grid.Row="1" ContentRendered="MainFrame_ContentRendered"></Frame>
+
+        <Grid Background="Gray" Grid.Row="2"></Grid>
+        <TextBlock x:Name="CountDownBlock" Grid.Row="2" Foreground="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" Style="{StaticResource BodyText}" Text="? days, ? hours, ? minutes and ? seconds until the WorldSkills
 Shanghai 2021 starts."></TextBlock>
     </Grid>
 </Window>

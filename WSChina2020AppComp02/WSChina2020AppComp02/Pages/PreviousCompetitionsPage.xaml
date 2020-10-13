@@ -11,19 +11,13 @@
     <Grid>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
             <RowDefinition Height="125"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Grid Background="Gray"></Grid>
-        <StackPanel Orientation="Horizontal">
-            <Image Source="/WSChina2020AppComp02;component/Assets/logo.png" HorizontalAlignment="Left"/>
-            <Button x:Name="BtnBack"  Template="{StaticResource NavigationBtn}"  Content="Back" Click="BtnBack_Click"></Button>
-        </StackPanel>
-        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20px" Style="{StaticResource TitleText}">WorldSkills China Competetion 2016</TextBlock>
 
-        <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top">
+
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top">
             <TextBlock Style="{StaticResource BodyText}" Text="Previous Competitions" Margin="20" FontSize="20"></TextBlock>
             <StackPanel Orientation="Horizontal">
                 <StackPanel Orientation="Horizontal" Margin="10 0" VerticalAlignment="Center">
@@ -41,7 +35,7 @@
             </StackPanel>
             <TextBlock Style="{StaticResource BodyText}" Text="Total Records:XXX"></TextBlock>
         </StackPanel>
-        <DataGrid Grid.Row="2" Name="CompetitionsGrid" IsReadOnly="True" AutoGenerateColumns="False" Margin="10">
+        <DataGrid Grid.Row="1" Name="CompetitionsGrid" IsReadOnly="True" AutoGenerateColumns="False" Margin="10">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Ordinal No." Width="*" Binding="{Binding OrdinalNo}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Year" Width="*" Binding="{Binding Year}"></DataGridTextColumn>
