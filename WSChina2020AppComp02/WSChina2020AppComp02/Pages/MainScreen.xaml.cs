@@ -20,6 +20,7 @@ namespace WSChina2020AppComp02.Pages
     /// </summary>
     public partial class MainScreen : Page
     {
+
         public MainScreen()
         {
             InitializeComponent();
@@ -33,6 +34,11 @@ namespace WSChina2020AppComp02.Pages
         private void BtnAboutShangHai_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new AboutShanghaiPage());
+        }
+
+        private void BtnAboutWSChina_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new AboutWSChina());
         }
     }
 }

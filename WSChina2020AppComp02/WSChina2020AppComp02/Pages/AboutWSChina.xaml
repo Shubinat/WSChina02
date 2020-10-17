@@ -1,0 +1,49 @@
+﻿<Page x:Class="WSChina2020AppComp02.Pages.AboutWSChina"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WSChina2020AppComp02.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="About Worldskills China">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.ColumnSpan="2">
+            <TextBlock Style="{StaticResource BodyText}" Text="About Worldskills China" FontSize="20px"  Margin="10"/>
+            <TextBlock  Text="On October 7, 2010, China is approved by the 2010 world skills organization, officially became the world skills 53rd members of the organization." TextWrapping="Wrap" Style="{StaticResource BodyText}" FontSize="18px" Margin="15 0"></TextBlock>
+        </StackPanel>
+
+        
+        <Grid Grid.Row="1" Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Button Margin="5" Content="China's Accession to the Worldskills" x:Name="AccessionWSBtn" Click="AccessionWSBtn_Click"></Button>
+            <Button Margin="5" Grid.Row="1" Content="Committee of Worldskills China" x:Name="CommitteeWSBtn" Click="CommitteeWSBtn_Click"></Button>
+            <Button Margin="5" Grid.Row="2" Content="Participation and Results" x:Name="ResultsBtn" Click="ResultsBtn_Click"></Button>
+
+        </Grid>
+        
+        <Border Style="{StaticResource Table}" Grid.Row="1"></Border>
+
+
+        <StackPanel Orientation="Horizontal"  Grid.Row="1" Grid.Column="1"  Margin="15" VerticalAlignment="Top" HorizontalAlignment="Center">
+            <TextBlock x:Name="NameOfSavingFile"  Style="{StaticResource BodyText}" Text="NameFile.txt" FontSize="16" VerticalAlignment="Center"></TextBlock>
+            <Button VerticalAlignment="Center" Margin="10 0" Content="Save" x:Name="BtnSave" Click="BtnSave_Click"></Button>
+        </StackPanel>
+        <Border Style="{StaticResource Table}" Grid.Row="1" Grid.Column="1"></Border>
+        
+    </Grid>
+</Page>

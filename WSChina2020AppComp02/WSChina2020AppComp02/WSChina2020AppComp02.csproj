@@ -112,6 +112,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\AboutWSChina.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\CompetitionSkillsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -135,6 +139,9 @@
     </Compile>
     <Compile Include="Pages\AboutWorldskillsPage.xaml.cs">
       <DependentUpon>AboutWorldskillsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AboutWSChina.xaml.cs">
+      <DependentUpon>AboutWSChina.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\CompetitionSkillsPage.xaml.cs">
       <DependentUpon>CompetitionSkillsPage.xaml</DependentUpon>
@@ -194,6 +201,9 @@
     <Resource Include="Assets\no_picture.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Participation and Results.txt" />
+    <None Include="Resources\Host city Shanghai.txt" />
+    <None Include="Resources\Committee of Worldskills China.txt" />
     <Resource Include="Assets\TravelSpotIMG0.jpg" />
     <Resource Include="Assets\TravelSpotIMG1.jpg" />
     <Resource Include="Assets\TravelSpotIMG2.jpg" />
