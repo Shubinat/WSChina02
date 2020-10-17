@@ -59,6 +59,21 @@ namespace WSChina2020AppComp02
         private void MainFrame_ContentRendered(object sender, EventArgs e)
         {
 
+
+
+            if ((MainFrame.Content as Page).Title != null)
+            {
+                Title = "Skills Competetion Management System - " + (MainFrame.Content as Page).Title;
+            }
+            else
+            {
+                Title = "Skills Competetion Management System";
+            }
+        }
+
+        private void MainFrame_Navigated(object sender, NavigationEventArgs e)
+        {
+
             if ((MainFrame.Content as Page) is MainScreen)
             {
                 MainHeader.Visibility = Visibility.Visible;
@@ -70,16 +85,6 @@ namespace WSChina2020AppComp02
                 MainHeader.Visibility = Visibility.Hidden;
                 SecondHeader.Visibility = Visibility.Visible;
                 HeaderGrid.Height = new GridLength(50);
-            }
-
-
-            if ((MainFrame.Content as Page).Title != null)
-            {
-                Title = "Skills Competetion Management System - " + (MainFrame.Content as Page).Title;
-            }
-            else
-            {
-                Title = "Skills Competetion Management System";
             }
         }
     }

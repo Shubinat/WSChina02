@@ -194,6 +194,15 @@
     <Resource Include="Assets\no_picture.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Assets\TravelSpotIMG0.jpg" />
+    <Resource Include="Assets\TravelSpotIMG1.jpg" />
+    <Resource Include="Assets\TravelSpotIMG2.jpg" />
+    <Resource Include="Assets\HotelIMG0.jpg" />
+    <Resource Include="Assets\HotelIMG1.jpeg" />
+    <Resource Include="Assets\HotelIMG2.jpg" />
+    <Resource Include="Assets\FoodIMG0.jpg" />
+    <Resource Include="Assets\FoodIMG1.jpg" />
+    <Resource Include="Assets\FoodIMG2.jpg" />
     <Content Include="Entities\BaseModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>BaseModel.edmx</DependentUpon>

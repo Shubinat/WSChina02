@@ -25,5 +25,21 @@ namespace WSChina2020AppComp02.Pages
             InitializeComponent();
         }
 
+        private void Image_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if(TableGrid.Visibility == Visibility.Visible) { 
+                selectedIMG.Source = (sender as Image).Source;
+                selectedIMG.Visibility = Visibility.Visible;
+                TableGrid.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void selectedIMG_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if(selectedIMG.Visibility == Visibility.Visible) { 
+                selectedIMG.Visibility = Visibility.Hidden;
+                TableGrid.Visibility = Visibility.Visible;
+            }
+        }
     }
 }
