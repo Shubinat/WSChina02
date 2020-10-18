@@ -40,8 +40,8 @@
 
 
         <StackPanel Orientation="Horizontal"  Grid.Row="1" Grid.Column="1"  Margin="15" VerticalAlignment="Top" HorizontalAlignment="Center">
-            <TextBlock x:Name="NameOfSavingFile"  Style="{StaticResource BodyText}" Text="NameFile.txt" FontSize="16" VerticalAlignment="Center"></TextBlock>
-            <Button VerticalAlignment="Center" Margin="10 0" Content="Save" x:Name="BtnSave" Click="BtnSave_Click"></Button>
+            <TextBlock x:Name="NameOfSavingFile"  Style="{StaticResource BodyText}" Text="NameFile.txt" FontSize="16" VerticalAlignment="Center" Visibility="Hidden"></TextBlock>
+            <Button VerticalAlignment="Center" Margin="10 0" Content="Save" x:Name="BtnSave" Click="BtnSave_Click" Visibility="Hidden"></Button>
         </StackPanel>
         <Border Style="{StaticResource Table}" Grid.Row="1" Grid.Column="1"></Border>
         

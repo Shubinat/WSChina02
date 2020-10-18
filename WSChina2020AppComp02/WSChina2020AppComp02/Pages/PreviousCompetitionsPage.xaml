@@ -21,11 +21,11 @@
             <TextBlock Style="{StaticResource BodyText}" Text="Previous Competitions" Margin="20" FontSize="20"></TextBlock>
             <StackPanel Orientation="Horizontal">
                 <StackPanel Orientation="Horizontal" Margin="10 0" VerticalAlignment="Center">
-                    <TextBlock Style="{StaticResource BodyText}" Text="Ordinal No.: " FontSize="14"></TextBlock>
+                    <TextBlock Style="{StaticResource BodyText}" Text="Ordinal No.: " FontSize="14" VerticalAlignment="Center"></TextBlock>
                     <TextBox MinWidth="115" Margin="5 0" x:Name="TxtBoxOrdinal"></TextBox>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="10 0" VerticalAlignment="Center">
-                    <TextBlock Style="{StaticResource BodyText}" Text="City or Country" FontSize="14"></TextBlock>
+                    <TextBlock Style="{StaticResource BodyText}" Text="City or Country: " FontSize="14" VerticalAlignment="Center"></TextBlock>
                     <TextBox MinWidth="115" Margin="5 0" x:Name="TxtBoxCity"></TextBox>
                 </StackPanel>
 

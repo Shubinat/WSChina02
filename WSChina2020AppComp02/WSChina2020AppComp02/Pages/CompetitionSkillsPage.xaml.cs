@@ -24,32 +24,44 @@ namespace WSChina2020AppComp02.Pages
 
         public CompetitionSkillsPage()
         {
+
+
             InitializeComponent();
-            List<Entities.Block> blocks = AppData.Context.Blocks.ToList();
-            foreach (var block in blocks)
+            try
             {
-                TreeViewItem item = new TreeViewItem() { Name = "Block_" + block.BlockID.ToString(), Header = block.Name};
-                Tree.Items.Add(item);
-
-                foreach (var competition in block.Competitions.ToList())
+                List<Entities.Block> blocks = AppData.Context.Blocks.ToList();
+                foreach (var block in blocks)
                 {
-                    TreeViewItem child = new TreeViewItem()
-                    {
-                        Name = "Competition_" + competition.CompetitionId.ToString(),
-                        Header = competition.CompetitionId + ". " + competition.Name
-                    };
-                    child.Selected += Competition_Selected;
-                    item.Items.Add(child);
+                    TreeViewItem item = new TreeViewItem() { Name = "Block_" + block.BlockID.ToString(), Header = block.Name };
+                    Tree.Items.Add(item);
 
-                    void Competition_Selected(object sender, RoutedEventArgs e)
+                    foreach (var competition in block.Competitions.ToList())
                     {
-                        TreeViewItem element = (TreeViewItem)sender;
-                        CompetitionNameBlock.Text = competition.CompetitionId + " - " + competition.Name;
-                        InformationBlock.Text = competition.Description;
+                        TreeViewItem child = new TreeViewItem()
+                        {
+                            Name = "Competition_" + competition.CompetitionId.ToString(),
+                            Header = competition.CompetitionId + ". " + competition.Name
+                        };
+                        child.Selected += Competition_Selected;
+                        item.Items.Add(child);
+
+                        void Competition_Selected(object sender, RoutedEventArgs e)
+                        {
+                            TreeViewItem element = (TreeViewItem)sender;
+                            CompetitionNameBlock.Text = competition.CompetitionId + " - " + competition.Name;
+                            InformationBlock.Text = competition.Description;
+                        }
                     }
-                }
 
+                }
             }
+            catch (Exception)
+            {
+
+                MessageBox.Show("The database cannot be found.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            
+            
 
         }
     }

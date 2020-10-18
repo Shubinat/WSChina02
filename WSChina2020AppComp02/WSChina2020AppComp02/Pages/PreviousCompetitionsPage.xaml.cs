@@ -8,6 +8,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Interop;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
@@ -24,18 +25,26 @@ namespace WSChina2020AppComp02.Pages
         public PreviosCompetitionsPage()
         {
             InitializeComponent();
-            CompetitionsGrid.ItemsSource = AppData.Context.Previos_Competitions.ToList();
+            try
+            {
+                CompetitionsGrid.ItemsSource = AppData.Context.Previos_Competitions.ToList();
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("The database cannot be found.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            
         }
 
 
 
         private void SearchBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (TxtBoxOrdinal.Text != null || TxtBoxCity.Text != null)
-            {      
-            }
-            else
-            {               
+            if (TxtBoxOrdinal.Text != null && TxtBoxCity.Text != null)
+            {
+                CompetitionsGrid.ItemsSource = AppData.Context.Previos_Competitions.ToList().Where(p => p.City_and_Country.ToLower().Trim().Contains(TxtBoxCity.Text.ToLower().Trim()) &&
+                    p.OrdinalNo.ToLower().Trim().Contains(TxtBoxOrdinal.Text.ToLower().Trim())).ToList();
             }
         }
     }
