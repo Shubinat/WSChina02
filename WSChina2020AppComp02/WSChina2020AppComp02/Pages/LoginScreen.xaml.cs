@@ -21,6 +21,7 @@ namespace WSChina2020AppComp02.Pages
     /// </summary>
     public partial class LoginScreen : Page
     {
+
         public LoginScreen()
         {
             InitializeComponent();
@@ -29,6 +30,20 @@ namespace WSChina2020AppComp02.Pages
         private void BtnLogin_Click(object sender, RoutedEventArgs e)
         {
 
+            if (!string.IsNullOrWhiteSpace(TxtBoxLogin.Text) && !string.IsNullOrWhiteSpace(TxtBoxPassword.Text))
+            {
+                try
+                {
+                    var Users = AppData.Context.Users.ToList();
+                    
+
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
         }
 
         private void BtnRefresh_Click(object sender, RoutedEventArgs e)

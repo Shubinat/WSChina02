@@ -10,6 +10,9 @@
         <EntityTypeShape EntityType="WSChina2020BaseComp02Model.sysdiagram" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
         <AssociationConnector Association="WSChina2020BaseComp02Model.FK_Competitions_Blocks" ManuallyRouted="false" />
         <EntityTypeShape EntityType="WSChina2020BaseComp02Model.Previos_Competition" Width="1.5" PointX="3.375" PointY="3.75" />
+        <EntityTypeShape EntityType="WSChina2020BaseComp02Model.Role" Width="1.5" PointX="5.375" PointY="1.125" />
+        <EntityTypeShape EntityType="WSChina2020BaseComp02Model.User" Width="1.5" PointX="8.625" PointY="1" />
+        <AssociationConnector Association="WSChina2020BaseComp02Model.UserRole" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
