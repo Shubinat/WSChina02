@@ -20,7 +20,7 @@
             <Button x:Name="BtnAboutWSChina" Content="About Worldskills China" Template="{StaticResource Btn}" Click="BtnAboutWSChina_Click"></Button>
             <Button x:Name="BtnAboutShangHai" Content="About Shang Hai" Template="{StaticResource Btn}" Click="BtnAboutShangHai_Click"></Button>
         </StackPanel>
-        <Button x:Name="BtnLogin" Template="{StaticResource NavigationBtn}" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Content="Login"></Button>
+        <Button x:Name="BtnLogin" Template="{StaticResource NavigationBtn}" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Content="Login" Click="BtnLogin_Click"></Button>
         
     </Grid>
 </Page>
