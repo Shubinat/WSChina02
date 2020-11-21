@@ -97,6 +97,9 @@
     <Compile Include="Entities\Gender.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entities\Photo.cs">
+      <DependentUpon>BaseModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entities\Previos_Competition.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>

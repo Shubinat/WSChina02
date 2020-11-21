@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WSChina2020AppComp02.Entities;
 
 namespace WSChina2020AppComp02.Pages
 {
@@ -39,19 +40,28 @@ namespace WSChina2020AppComp02.Pages
                         switch (currUser.RoleID)
                             {
                                 case 0:
-                                    NavigationService.Navigate(new CompetitorMenu(currUser));
-                                    break;
+                                RememberMe(currUser);
+                                NavigationService.Navigate(new CompetitorMenu(currUser));
+                                
+                                break;
                                 case 1:
-                                    NavigationService.Navigate(new CoordinatorMenu(currUser));
-                                    break;
+                                RememberMe(currUser);
+                                NavigationService.Navigate(new CoordinatorMenu(currUser));
+                                
+                                break;
 
                                 case 2:
-                                    NavigationService.Navigate(new AdminMenu(currUser));
-                                    break;
+                                RememberMe(currUser);
+                                NavigationService.Navigate(new AdminMenu(currUser));
+                               
+                                break;
                                     
                                 case 3:
+                                RememberMe(currUser);
                                 NavigationService.Navigate(new JudgerMenu(currUser));
-                                    break;
+                                
+                                break;
+
                                 default:
                                     MessageBox.Show("Undefined error.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                                     break;
@@ -121,6 +131,16 @@ namespace WSChina2020AppComp02.Pages
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             ImgCapcha.Source = CreateImage(1500, 500);
+        }
+
+        private void RememberMe(User currUser)
+        {
+            if (CBRembererMe.IsChecked == true)
+            {
+                Properties.Settings.Default.UserID = currUser.UserID;
+                Properties.Settings.Default.Save();
+
+            }
         }
     }
 }

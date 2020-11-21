@@ -43,7 +43,29 @@ namespace WSChina2020AppComp02.Pages
 
         private void BtnLogin_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new LoginScreen());
+            if(Properties.Settings.Default.UserID == -1) { 
+                NavigationService.Navigate(new LoginScreen());
+            }
+            else
+            {
+                var currUser = AppData.Context.Users.ToList().First(p => p.UserID == Properties.Settings.Default.UserID);
+
+                switch (currUser.RoleID)
+                {
+                    case 0:
+                        NavigationService.Navigate(new CompetitorMenu(currUser));
+                        break;
+                    case 1:
+                        NavigationService.Navigate(new CoordinatorMenu(currUser));
+                        break;
+                    case 2:
+                        NavigationService.Navigate(new AdminMenu(currUser));
+                        break;
+                    case 3:
+                        NavigationService.Navigate(new JudgerMenu(currUser));
+                        break;  
+                }    
+            }
         }
     }
 }

@@ -72,6 +72,12 @@ namespace WSChina2020AppComp02.Pages
             HelloString += currUser.Username;
 
             TBHello.Text = HelloString;
+
+
+            if (Properties.Settings.Default.UserID != -1)
+            {
+                NavigationService.RemoveBackEntry();
+            }
         }
     }
 }

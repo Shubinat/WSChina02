@@ -17,6 +17,8 @@ using System.Windows.Shapes;
 using System.Timers;
 using System.Windows.Threading;
 using WSChina2020AppComp02.Pages;
+using Microsoft.Win32;
+using System.IO;
 
 namespace WSChina2020AppComp02
 {
@@ -52,8 +54,8 @@ namespace WSChina2020AppComp02
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
-            if (MainFrame.CanGoBack)
-                MainFrame.GoBack();
+                if (MainFrame.CanGoBack)
+                    MainFrame.GoBack();
         }
 
         private void MainFrame_ContentRendered(object sender, EventArgs e)
@@ -68,6 +70,15 @@ namespace WSChina2020AppComp02
             else
             {
                 Title = "Skills Competetion Management System";
+            }
+
+            if (Properties.Settings.Default.UserID != -1)
+            {
+                BtnLogout.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                BtnLogout.Visibility = Visibility.Hidden;
             }
         }
 
@@ -85,6 +96,20 @@ namespace WSChina2020AppComp02
                 MainHeader.Visibility = Visibility.Hidden;
                 SecondHeader.Visibility = Visibility.Visible;
                 HeaderGrid.Height = new GridLength(50);
+            }
+
+
+
+        }
+
+        private void BtnLogout_Click(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.UserID = -1;
+            Properties.Settings.Default.Save();
+            BtnLogout.Visibility = Visibility.Hidden;
+            if(MainFrame.Content as Page is CompetitorMenu || MainFrame.Content as Page is AdminMenu || MainFrame.Content as Page is CoordinatorMenu || MainFrame.Content as Page is JudgerMenu)
+            {
+                MainFrame.Navigate(new MainScreen());
             }
         }
     }

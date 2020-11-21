@@ -14,6 +14,12 @@ namespace WSChina2020AppComp02.Entities
     
     public partial class User
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public User()
+        {
+            this.Photos = new HashSet<Photo>();
+        }
+    
         public string Username { get; set; }
         public int UserID { get; set; }
         public string Login { get; set; }
@@ -22,6 +28,8 @@ namespace WSChina2020AppComp02.Entities
         public Nullable<int> GenderID { get; set; }
     
         public virtual Gender Gender { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Photo> Photos { get; set; }
         public virtual Role Role { get; set; }
     }
 }

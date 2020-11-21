@@ -30,7 +30,7 @@
 
                 <TextBlock Style="{StaticResource BodyText}" FontSize="16" VerticalAlignment="Center" Name="TBHello"></TextBlock>
 
-                <Image Source="/WSChina2020AppComp02;component/Assets/no_picture.png" Grid.Row="1" Margin="10"></Image>
+                <Image Source="/WSChina2020AppComp02;component/Assets/no_picture.png" Grid.Row="1" Margin="10" Name="MainPhoto"></Image>
                 <StackPanel Grid.Column="1" Grid.RowSpan="2" VerticalAlignment="Center">
                     <Button Template="{StaticResource Btn}" Content="My Profile" Click="Button_Click"></Button>
                     <Button Template="{StaticResource Btn}" Content="My Skills" Click="Button_Click"></Button>

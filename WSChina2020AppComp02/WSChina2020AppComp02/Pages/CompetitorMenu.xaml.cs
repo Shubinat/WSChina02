@@ -67,6 +67,18 @@ namespace WSChina2020AppComp02.Pages
             HelloString += currUser.Username;
 
             TBHello.Text = HelloString;
+
+
+            if (currUser.Photos.ToList().First(p => p.UserID == currUser.UserID).Photo1 != null)
+            {
+                MainPhoto.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(currUser.Photos.ToList().First(p => p.UserID == currUser.UserID).Photo1);
+            }
+            
+            if(Properties.Settings.Default.UserID != -1)
+            {
+                NavigationService.RemoveBackEntry();
+            }
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

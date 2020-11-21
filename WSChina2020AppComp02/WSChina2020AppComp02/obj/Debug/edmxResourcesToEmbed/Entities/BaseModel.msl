@@ -27,6 +27,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Photos">
+      <EntityTypeMapping TypeName="WSChina2020BaseComp02Model.Photo">
+        <MappingFragment StoreEntitySet="Photo">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Photo1" ColumnName="Photo" />
+          <ScalarProperty Name="PhotoID" ColumnName="PhotoID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Roles">
       <EntityTypeMapping TypeName="WSChina2020BaseComp02Model.Role">
         <MappingFragment StoreEntitySet="Role">

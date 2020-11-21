@@ -21,6 +21,8 @@
             <TextBlock FontSize="24px" Style="{StaticResource TitleText}">Skills Competition<LineBreak></LineBreak>Management System 2016</TextBlock>
             <TextBlock Style="{StaticResource TitleText}" FontStyle="Italic" Foreground="LightGray">Shang Hai, China<LineBreak></LineBreak>Saturday August 13 2016</TextBlock>
         </StackPanel>
+            
+            
         </Grid>
 
         <Grid Background="Gray" x:Name="SecondHeader" Visibility="Hidden">
@@ -28,8 +30,10 @@
             <Image Source="/WSChina2020AppComp02;component/Assets/logo.png" HorizontalAlignment="Left"/>
             <Button x:Name="BtnBack"  Template="{StaticResource NavigationBtn}"  Content="Back" Click="BtnBack_Click"></Button>
         </StackPanel>
-        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20px" Style="{StaticResource TitleText}">WorldSkills China Competition 2016</TextBlock>
+            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20px" Style="{StaticResource TitleText}">WorldSkills China Competition 2016</TextBlock>
         </Grid>
+
+        <Button x:Name="BtnLogout" VerticalAlignment="Center" HorizontalAlignment="Right" Template="{StaticResource NavigationBtn}" Click="BtnLogout_Click">Logout</Button>
 
         <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Grid.Row="1" ContentRendered="MainFrame_ContentRendered" Navigated="MainFrame_Navigated"></Frame>
 

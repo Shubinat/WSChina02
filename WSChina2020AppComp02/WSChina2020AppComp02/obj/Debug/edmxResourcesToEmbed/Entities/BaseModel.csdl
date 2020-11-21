@@ -4,6 +4,7 @@
     <EntitySet Name="Blocks" EntityType="WSChina2020BaseComp02Model.Block" />
     <EntitySet Name="Competitions" EntityType="WSChina2020BaseComp02Model.Competition" />
     <EntitySet Name="Genders" EntityType="WSChina2020BaseComp02Model.Gender" />
+    <EntitySet Name="Photos" EntityType="WSChina2020BaseComp02Model.Photo" />
     <EntitySet Name="Roles" EntityType="WSChina2020BaseComp02Model.Role" />
     <EntitySet Name="sysdiagrams" EntityType="WSChina2020BaseComp02Model.sysdiagram" />
     <EntitySet Name="Users" EntityType="WSChina2020BaseComp02Model.User" />
@@ -15,6 +16,10 @@
     <AssociationSet Name="FK_Users_Gender" Association="WSChina2020BaseComp02Model.FK_Users_Gender">
       <End Role="Gender" EntitySet="Genders" />
       <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Photo_Users" Association="WSChina2020BaseComp02Model.FK_Photo_Users">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Photo" EntitySet="Photos" />
     </AssociationSet>
     <AssociationSet Name="FK_Users_Role" Association="WSChina2020BaseComp02Model.FK_Users_Role">
       <End Role="Role" EntitySet="Roles" />
@@ -47,6 +52,15 @@
     <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Users" Relationship="WSChina2020BaseComp02Model.FK_Users_Gender" FromRole="Gender" ToRole="User" />
   </EntityType>
+  <EntityType Name="Photo">
+    <Key>
+      <PropertyRef Name="PhotoID" />
+    </Key>
+    <Property Name="PhotoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Photo1" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="UserID" Type="Int32" />
+    <NavigationProperty Name="User" Relationship="WSChina2020BaseComp02Model.FK_Photo_Users" FromRole="Photo" ToRole="User" />
+  </EntityType>
   <EntityType Name="Role">
     <Key>
       <PropertyRef Name="RoleID" />
@@ -76,6 +90,7 @@
     <Property Name="RoleID" Type="Int32" Nullable="false" />
     <Property Name="GenderID" Type="Int32" />
     <NavigationProperty Name="Gender" Relationship="WSChina2020BaseComp02Model.FK_Users_Gender" FromRole="User" ToRole="Gender" />
+    <NavigationProperty Name="Photos" Relationship="WSChina2020BaseComp02Model.FK_Photo_Users" FromRole="User" ToRole="Photo" />
     <NavigationProperty Name="Role" Relationship="WSChina2020BaseComp02Model.FK_Users_Role" FromRole="User" ToRole="Role" />
   </EntityType>
   <EntityType Name="Previos_Competition">
@@ -108,6 +123,18 @@
       </Principal>
       <Dependent Role="User">
         <PropertyRef Name="GenderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Photo_Users">
+    <End Type="WSChina2020BaseComp02Model.User" Role="User" Multiplicity="0..1" />
+    <End Type="WSChina2020BaseComp02Model.Photo" Role="Photo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Photo">
+        <PropertyRef Name="UserID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
