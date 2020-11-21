@@ -37,3 +37,11 @@ C:\Users\Shubinat\Source\Repos\WSChina02\WSChina2020AppComp02\WSChina2020AppComp
 C:\Users\Shubinat\Source\Repos\WSChina02\WSChina2020AppComp02\WSChina2020AppComp02\obj\Debug\Pages\AboutWSChina.baml
 C:\Users\Shubinat\Source\Repos\WSChina02\WSChina2020AppComp02\WSChina2020AppComp02\obj\Debug\Pages\LoginScreen.g.cs
 C:\Users\Shubinat\Source\Repos\WSChina02\WSChina2020AppComp02\WSChina2020AppComp02\obj\Debug\Pages\LoginScreen.baml
+C:\Users\Shubinat\source\repos\WSChina02\WSChina2020AppComp02\WSChina2020AppComp02\obj\Debug\Pages\CompetitorMenu.g.cs
+C:\Users\Shubinat\source\repos\WSChina02\WSChina2020AppComp02\WSChina2020AppComp02\obj\Debug\Pages\CompetitorMenu.baml
+C:\Users\Shubinat\source\repos\WSChina02\WSChina2020AppComp02\WSChina2020AppComp02\obj\Debug\Pages\CoordinatorMenu.g.cs
+C:\Users\Shubinat\source\repos\WSChina02\WSChina2020AppComp02\WSChina2020AppComp02\obj\Debug\Pages\CoordinatorMenu.baml
+C:\Users\Shubinat\source\repos\WSChina02\WSChina2020AppComp02\WSChina2020AppComp02\obj\Debug\Pages\AdminMenu.g.cs
+C:\Users\Shubinat\source\repos\WSChina02\WSChina2020AppComp02\WSChina2020AppComp02\obj\Debug\Pages\AdminMenu.baml
+C:\Users\Shubinat\source\repos\WSChina02\WSChina2020AppComp02\WSChina2020AppComp02\obj\Debug\Pages\JudgerMenu.g.cs
+C:\Users\Shubinat\source\repos\WSChina02\WSChina2020AppComp02\WSChina2020AppComp02\obj\Debug\Pages\JudgerMenu.baml

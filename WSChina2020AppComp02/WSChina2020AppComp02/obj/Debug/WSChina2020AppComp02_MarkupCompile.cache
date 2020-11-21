@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Shubinat\Source\Repos\WSChina02\WSChina2020AppComp02\WSChina2020AppComp02\obj\Debug\
+C:\Users\Shubinat\source\repos\WSChina02\WSChina2020AppComp02\WSChina2020AppComp02\obj\Debug\
 WSChina2020AppComp02
 none
 false
 DEBUG;TRACE
-C:\Users\Shubinat\Source\Repos\WSChina02\WSChina2020AppComp02\WSChina2020AppComp02\App.xaml
-9639282684
+C:\Users\Shubinat\source\repos\WSChina02\WSChina2020AppComp02\WSChina2020AppComp02\App.xaml
+13687738171
 2-1229262296
-211236385903
-18-1843652658
-MainWindow.xaml;Pages\AboutShanghaiPage.xaml;Pages\AboutWorldskillsPage.xaml;Pages\AboutWSChina.xaml;Pages\CompetitionSkillsPage.xaml;Pages\HistoryWSPage.xaml;Pages\LoginScreen.xaml;Pages\MainScreen.xaml;Pages\PreviousCompetitionsPage.xaml;
+28-1467901977
+18-1583263755
+MainWindow.xaml;Pages\AboutShanghaiPage.xaml;Pages\AboutWorldskillsPage.xaml;Pages\AboutWSChina.xaml;Pages\AdminMenu.xaml;Pages\CompetitionSkillsPage.xaml;Pages\CompetitorMenu.xaml;Pages\CoordinatorMenu.xaml;Pages\HistoryWSPage.xaml;Pages\JudgerMenu.xaml;Pages\LoginScreen.xaml;Pages\MainScreen.xaml;Pages\PreviousCompetitionsPage.xaml;
 
 False
 

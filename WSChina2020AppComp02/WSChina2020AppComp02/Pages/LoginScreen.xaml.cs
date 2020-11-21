@@ -30,19 +30,47 @@ namespace WSChina2020AppComp02.Pages
         private void BtnLogin_Click(object sender, RoutedEventArgs e)
         {
 
-            if (!string.IsNullOrWhiteSpace(TxtBoxLogin.Text) && !string.IsNullOrWhiteSpace(TxtBoxPassword.Text))
+            if (!string.IsNullOrWhiteSpace(TxtBoxLogin.Text) && !string.IsNullOrWhiteSpace(TxtBoxPassword.Password) && !string.IsNullOrWhiteSpace(TBCapcha.Text))
             {
                 try
                 {
-                    var Users = AppData.Context.Users.ToList();
-                    
+                    var currUser = AppData.Context.Users.ToList().FirstOrDefault(p=> p.Login == TxtBoxLogin.Text && p.Password == TxtBoxPassword.Password);
+                    if(TBCapcha.Text == capchaText && currUser != null) { 
+                        switch (currUser.RoleID)
+                            {
+                                case 0:
+                                    NavigationService.Navigate(new CompetitorMenu(currUser));
+                                    break;
+                                case 1:
+                                    NavigationService.Navigate(new CoordinatorMenu(currUser));
+                                    break;
 
+                                case 2:
+                                    NavigationService.Navigate(new AdminMenu(currUser));
+                                    break;
+                                    
+                                case 3:
+                                NavigationService.Navigate(new JudgerMenu(currUser));
+                                    break;
+                                default:
+                                    MessageBox.Show("Undefined error.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                                    break;
+                            }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Login failed. Check if the fields are filled in correctly.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
                 }
                 catch (Exception)
                 {
 
-                    throw;
+                    MessageBox.Show("The database cannot be found!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
+            }
+            else
+            {
+                MessageBox.Show("All fields must be filled!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -88,6 +116,11 @@ namespace WSChina2020AppComp02.Pages
             }
             capchaText = rndCapcha;
             return new DrawingImage(drawingVisual.Drawing);
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            ImgCapcha.Source = CreateImage(1500, 500);
         }
     }
 }

@@ -94,6 +94,9 @@
     <Compile Include="Entities\Competition.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entities\Gender.cs">
+      <DependentUpon>BaseModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entities\Previos_Competition.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
@@ -122,11 +125,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\AdminMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\CompetitionSkillsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\CompetitorMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\CoordinatorMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\HistoryWSPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\JudgerMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -153,11 +172,23 @@
     <Compile Include="Pages\AboutWSChina.xaml.cs">
       <DependentUpon>AboutWSChina.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\AdminMenu.xaml.cs">
+      <DependentUpon>AdminMenu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\CompetitionSkillsPage.xaml.cs">
       <DependentUpon>CompetitionSkillsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\CompetitorMenu.xaml.cs">
+      <DependentUpon>CompetitorMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CoordinatorMenu.xaml.cs">
+      <DependentUpon>CoordinatorMenu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\HistoryWSPage.xaml.cs">
       <DependentUpon>HistoryWSPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\JudgerMenu.xaml.cs">
+      <DependentUpon>JudgerMenu.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\LoginScreen.xaml.cs">
       <DependentUpon>LoginScreen.xaml</DependentUpon>

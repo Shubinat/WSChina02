@@ -24,7 +24,7 @@
 
         <TabControl x:Name="AboutSHTabControl" Grid.Row="1" Margin="10 0 10 20">
             <TabItem x:Name="HistoryTab" Header="History">
-                <TabItem.Content>
+
                     <ScrollViewer CanContentScroll="True">
                         <TextBlock TextWrapping="Wrap">
                         Shanghai is the most populous city in the world, located at the mouth of the Yangtze river. Originally a small seaside fishing village, it is now a huge city, a major port that combines the culture of modern and traditional China.
@@ -33,7 +33,7 @@
                         Shanghai's fame was reinforced by films and novels, primarily about the 1920s and 1930s (before the arrival of the Japanese). Shanghai was China's luxury retail showcase and the center of its sins, a haven for outcasts and adventurers from all over the world, as well as revolutionaries and fugitives from the villages who never found their happiness here, but sweated at the machines, dragged loads and often ended their lives under the fence.
                         </TextBlock>
                     </ScrollViewer>
-                </TabItem.Content>
+
             </TabItem>
             <TabItem x:Name="EventTab" Header="Event">
                 <TabItem.Content>
@@ -90,7 +90,7 @@
                     </Grid>
                 </TabItem.Content>
             </TabItem>
-
+            
         </TabControl>
     </Grid>
 </Page>

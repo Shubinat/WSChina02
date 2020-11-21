@@ -1,12 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="WSChina2020BaseComp02Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="WSChina2020BaseComp02Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Blocks" EntityType="WSChina2020BaseComp02Model.Block" />
+    <EntitySet Name="Competitions" EntityType="WSChina2020BaseComp02Model.Competition" />
+    <EntitySet Name="Genders" EntityType="WSChina2020BaseComp02Model.Gender" />
+    <EntitySet Name="Roles" EntityType="WSChina2020BaseComp02Model.Role" />
+    <EntitySet Name="sysdiagrams" EntityType="WSChina2020BaseComp02Model.sysdiagram" />
+    <EntitySet Name="Users" EntityType="WSChina2020BaseComp02Model.User" />
+    <EntitySet Name="Previos_Competitions" EntityType="WSChina2020BaseComp02Model.Previos_Competition" />
+    <AssociationSet Name="FK_Competitions_Blocks" Association="WSChina2020BaseComp02Model.FK_Competitions_Blocks">
+      <End Role="Block" EntitySet="Blocks" />
+      <End Role="Competition" EntitySet="Competitions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_Gender" Association="WSChina2020BaseComp02Model.FK_Users_Gender">
+      <End Role="Gender" EntitySet="Genders" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_Role" Association="WSChina2020BaseComp02Model.FK_Users_Role">
+      <End Role="Role" EntitySet="Roles" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+  </EntityContainer>
   <EntityType Name="Block">
     <Key>
       <PropertyRef Name="BlockID" />
     </Key>
     <Property Name="BlockID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="Competitions" Relationship="Self.FK_Competitions_Blocks" FromRole="Blocks" ToRole="Competitions" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Competitions" Relationship="WSChina2020BaseComp02Model.FK_Competitions_Blocks" FromRole="Block" ToRole="Competition" />
   </EntityType>
   <EntityType Name="Competition">
     <Key>
@@ -14,49 +35,92 @@
     </Key>
     <Property Name="CompetitionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="BlockID" Type="Int32" Nullable="false" />
-    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Block" Relationship="Self.FK_Competitions_Blocks" FromRole="Competitions" ToRole="Blocks" />
+    <NavigationProperty Name="Block" Relationship="WSChina2020BaseComp02Model.FK_Competitions_Blocks" FromRole="Competition" ToRole="Block" />
+  </EntityType>
+  <EntityType Name="Gender">
+    <Key>
+      <PropertyRef Name="GenderID" />
+    </Key>
+    <Property Name="GenderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Users" Relationship="WSChina2020BaseComp02Model.FK_Users_Gender" FromRole="Gender" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RoleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Users" Relationship="WSChina2020BaseComp02Model.FK_Users_Role" FromRole="Role" ToRole="User" />
   </EntityType>
   <EntityType Name="sysdiagram">
     <Key>
       <PropertyRef Name="diagram_id" />
     </Key>
-    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
     <Property Name="principal_id" Type="Int32" Nullable="false" />
     <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="version" Type="Int32" />
     <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
-  <Association Name="FK_Competitions_Blocks">
-    <End Role="Blocks" Type="Self.Block" Multiplicity="1" />
-    <End Role="Competitions" Type="Self.Competition" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Blocks">
-        <PropertyRef Name="BlockID" />
-      </Principal>
-      <Dependent Role="Competitions">
-        <PropertyRef Name="BlockID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityContainer Name="WSChina2020BaseComp02Entities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Blocks" EntityType="Self.Block" />
-    <EntitySet Name="Competitions" EntityType="Self.Competition" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
-    <AssociationSet Name="FK_Competitions_Blocks" Association="Self.FK_Competitions_Blocks">
-      <End Role="Blocks" EntitySet="Blocks" />
-      <End Role="Competitions" EntitySet="Competitions" />
-    </AssociationSet>
-    <EntitySet Name="Previos_Competitions" EntityType="WSChina2020BaseComp02Model.Previos_Competition" />
-  </EntityContainer>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="Username" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Login" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RoleID" Type="Int32" Nullable="false" />
+    <Property Name="GenderID" Type="Int32" />
+    <NavigationProperty Name="Gender" Relationship="WSChina2020BaseComp02Model.FK_Users_Gender" FromRole="User" ToRole="Gender" />
+    <NavigationProperty Name="Role" Relationship="WSChina2020BaseComp02Model.FK_Users_Role" FromRole="User" ToRole="Role" />
+  </EntityType>
   <EntityType Name="Previos_Competition">
     <Key>
       <PropertyRef Name="OrdinalNo" />
     </Key>
-    <Property Name="OrdinalNo" Type="String" Nullable="false" annotation:StoreGeneratedPattern="Identity" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="OrdinalNo" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
     <Property Name="Year" Type="Int32" />
     <Property Name="City_and_Country" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="MemberNumber" Type="Int32" />
   </EntityType>
+  <Association Name="FK_Competitions_Blocks">
+    <End Type="WSChina2020BaseComp02Model.Block" Role="Block" Multiplicity="1" />
+    <End Type="WSChina2020BaseComp02Model.Competition" Role="Competition" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Block">
+        <PropertyRef Name="BlockID" />
+      </Principal>
+      <Dependent Role="Competition">
+        <PropertyRef Name="BlockID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_Gender">
+    <End Type="WSChina2020BaseComp02Model.Gender" Role="Gender" Multiplicity="0..1" />
+    <End Type="WSChina2020BaseComp02Model.User" Role="User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="GenderID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="GenderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_Role">
+    <End Type="WSChina2020BaseComp02Model.Role" Role="Role" Multiplicity="1" />
+    <End Type="WSChina2020BaseComp02Model.User" Role="User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="RoleID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>
