@@ -12,11 +12,21 @@ namespace WSChina2020AppComp02.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class Previos_Competition
+    public partial class Competence
     {
-        public string OrdinalNo { get; set; }
-        public Nullable<int> Year { get; set; }
-        public string City_and_Country { get; set; }
-        public Nullable<int> MemberNumber { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Competence()
+        {
+            this.UserCompetitions = new HashSet<UserCompetition>();
+        }
+    
+        public int CompenceID { get; set; }
+        public int BlockID { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+    
+        public virtual Block Block { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<UserCompetition> UserCompetitions { get; set; }
     }
 }

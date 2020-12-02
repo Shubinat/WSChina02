@@ -12,12 +12,13 @@ namespace WSChina2020AppComp02.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class Photo
+    public partial class UserCompetition
     {
-        public int PhotoID { get; set; }
-        public byte[] Photo1 { get; set; }
+        public int ID { get; set; }
         public Nullable<int> UserID { get; set; }
+        public Nullable<int> CompetenceID { get; set; }
     
+        public virtual Competence Competence { get; set; }
         public virtual User User { get; set; }
     }
 }

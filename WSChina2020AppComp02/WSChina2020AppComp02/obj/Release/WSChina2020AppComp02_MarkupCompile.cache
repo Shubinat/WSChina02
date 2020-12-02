@@ -10,11 +10,11 @@ none
 false
 TRACE
 C:\Users\Shubinat\Source\Repos\WSChina02\WSChina2020AppComp02\WSChina2020AppComp02\App.xaml
-82103917633
+141038037031
 2-1229262296
-20-1968155015
+341889550324
 18-1843652658
-MainWindow.xaml;Pages\AboutShanghaiPage.xaml;Pages\AboutWorldskillsPage.xaml;Pages\AboutWSChina.xaml;Pages\CompetitionSkillsPage.xaml;Pages\HistoryWSPage.xaml;Pages\MainScreen.xaml;Pages\PreviousCompetitionsPage.xaml;
+MainWindow.xaml;Pages\AboutShanghaiPage.xaml;Pages\AboutWorldskillsPage.xaml;Pages\AboutWSChina.xaml;Pages\AdminMenu.xaml;Pages\CompetitionSkillsPage.xaml;Pages\CompetitorMenu.xaml;Pages\CoordinatorMenu.xaml;Pages\HistoryWSPage.xaml;Pages\JudgerMenu.xaml;Pages\LoginScreen.xaml;Pages\MainScreen.xaml;Pages\MySkillsPage.xaml;Pages\PreviousCompetitionsPage.xaml;
 
 True
 

@@ -9,13 +9,41 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Competitions">
-      <EntityTypeMapping TypeName="WSChina2020BaseComp02Model.Competition">
-        <MappingFragment StoreEntitySet="Competitions">
+    <EntitySetMapping Name="Cities">
+      <EntityTypeMapping TypeName="WSChina2020BaseComp02Model.City">
+        <MappingFragment StoreEntitySet="City">
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Competences">
+      <EntityTypeMapping TypeName="WSChina2020BaseComp02Model.Competence">
+        <MappingFragment StoreEntitySet="Competence">
           <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="BlockID" ColumnName="BlockID" />
-          <ScalarProperty Name="CompetitionId" ColumnName="CompetitionId" />
+          <ScalarProperty Name="CompenceID" ColumnName="CompenceID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Competitions">
+      <EntityTypeMapping TypeName="WSChina2020BaseComp02Model.Competition">
+        <MappingFragment StoreEntitySet="Competition">
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="CompetitionID" ColumnName="CompetitionID" />
+          <ScalarProperty Name="MemberNumber" ColumnName="MemberNumber" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="OrdinalNo" ColumnName="OrdinalNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Countries">
+      <EntityTypeMapping TypeName="WSChina2020BaseComp02Model.Country">
+        <MappingFragment StoreEntitySet="Country">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -24,15 +52,6 @@
         <MappingFragment StoreEntitySet="Gender">
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="GenderID" ColumnName="GenderID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Photos">
-      <EntityTypeMapping TypeName="WSChina2020BaseComp02Model.Photo">
-        <MappingFragment StoreEntitySet="Photo">
-          <ScalarProperty Name="UserID" ColumnName="UserID" />
-          <ScalarProperty Name="Photo1" ColumnName="Photo" />
-          <ScalarProperty Name="PhotoID" ColumnName="PhotoID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -55,25 +74,27 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="UserCompetitions">
+      <EntityTypeMapping TypeName="WSChina2020BaseComp02Model.UserCompetition">
+        <MappingFragment StoreEntitySet="UserCompetition">
+          <ScalarProperty Name="CompetenceID" ColumnName="CompetenceID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Users">
       <EntityTypeMapping TypeName="WSChina2020BaseComp02Model.User">
         <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
           <ScalarProperty Name="GenderID" ColumnName="GenderID" />
           <ScalarProperty Name="RoleID" ColumnName="RoleID" />
           <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="Login" ColumnName="Login" />
           <ScalarProperty Name="UserID" ColumnName="UserID" />
-          <ScalarProperty Name="Username" ColumnName="Username" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Previos_Competitions">
-      <EntityTypeMapping TypeName="WSChina2020BaseComp02Model.Previos_Competition">
-        <MappingFragment StoreEntitySet="Previos Competitions">
-          <ScalarProperty Name="MemberNumber" ColumnName="MemberNumber" />
-          <ScalarProperty Name="City_and_Country" ColumnName="City_and_Country" />
-          <ScalarProperty Name="Year" ColumnName="Year" />
-          <ScalarProperty Name="OrdinalNo" ColumnName="OrdinalNo" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

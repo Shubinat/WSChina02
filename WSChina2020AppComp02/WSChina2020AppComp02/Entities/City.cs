@@ -12,14 +12,20 @@ namespace WSChina2020AppComp02.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class Competition
+    public partial class City
     {
-        public string OrdinalNo { get; set; }
-        public Nullable<int> Year { get; set; }
-        public Nullable<int> MemberNumber { get; set; }
-        public int CompetitionID { get; set; }
-        public Nullable<int> CityID { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public City()
+        {
+            this.Competitions = new HashSet<Competition>();
+        }
     
-        public virtual City City { get; set; }
+        public int CityID { get; set; }
+        public string Name { get; set; }
+        public Nullable<int> CountryID { get; set; }
+    
+        public virtual Country Country { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Competition> Competitions { get; set; }
     }
 }

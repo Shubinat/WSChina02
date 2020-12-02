@@ -7,14 +7,39 @@
     <Property Name="BlockID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
   </EntityType>
-  <EntityType Name="Competitions">
+  <EntityType Name="City">
     <Key>
-      <PropertyRef Name="CompetitionId" />
+      <PropertyRef Name="CityID" />
     </Key>
-    <Property Name="CompetitionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CityID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="CountryID" Type="int" />
+  </EntityType>
+  <EntityType Name="Competence">
+    <Key>
+      <PropertyRef Name="CompenceID" />
+    </Key>
+    <Property Name="CompenceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="BlockID" Type="int" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="Description" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Competition">
+    <Key>
+      <PropertyRef Name="CompetitionID" />
+    </Key>
+    <Property Name="OrdinalNo" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Year" Type="int" />
+    <Property Name="MemberNumber" Type="int" />
+    <Property Name="CompetitionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CityID" Type="int" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="CountryID" />
+    </Key>
+    <Property Name="CountryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="Gender">
     <Key>
@@ -22,25 +47,6 @@
     </Key>
     <Property Name="GenderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="Photo">
-    <Key>
-      <PropertyRef Name="PhotoID" />
-    </Key>
-    <Property Name="PhotoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Photo" Type="image" />
-    <Property Name="UserID" Type="int" />
-  </EntityType>
-  <!--Ошибки, обнаруженные при создании:
-предупреждение 6002: В таблице или представлении "WSChina2020BaseComp02.dbo.Previos Competitions" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
-  <EntityType Name="Previos Competitions">
-    <Key>
-      <PropertyRef Name="OrdinalNo" />
-    </Key>
-    <Property Name="OrdinalNo" Type="nvarchar" MaxLength="10" Nullable="false" />
-    <Property Name="Year" Type="int" />
-    <Property Name="City_and_Country" Type="nvarchar" MaxLength="100" />
-    <Property Name="MemberNumber" Type="int" />
   </EntityType>
   <EntityType Name="Role">
     <Key>
@@ -59,38 +65,97 @@
     <Property Name="version" Type="int" />
     <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
+  <EntityType Name="UserCompetition">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="CompetenceID" Type="int" />
+  </EntityType>
   <EntityType Name="Users">
     <Key>
       <PropertyRef Name="UserID" />
     </Key>
-    <Property Name="Username" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="RoleID" Type="int" Nullable="false" />
     <Property Name="GenderID" Type="int" />
+    <Property Name="Photo" Type="image" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="100" />
+    <Property Name="CountryID" Type="int" />
   </EntityType>
+  <Association Name="FK_City_Country">
+    <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+    <End Role="City" Type="Self.City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryID" />
+      </Principal>
+      <Dependent Role="City">
+        <PropertyRef Name="CountryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Competitions_Blocks">
     <End Role="Blocks" Type="Self.Blocks" Multiplicity="1" />
-    <End Role="Competitions" Type="Self.Competitions" Multiplicity="*" />
+    <End Role="Competence" Type="Self.Competence" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Blocks">
         <PropertyRef Name="BlockID" />
       </Principal>
-      <Dependent Role="Competitions">
+      <Dependent Role="Competence">
         <PropertyRef Name="BlockID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Photo_Users">
+  <Association Name="FK_Previos Competitions_City">
+    <End Role="City" Type="Self.City" Multiplicity="0..1" />
+    <End Role="Competition" Type="Self.Competition" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="CityID" />
+      </Principal>
+      <Dependent Role="Competition">
+        <PropertyRef Name="CityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserCompetition_Competitions">
+    <End Role="Competence" Type="Self.Competence" Multiplicity="0..1" />
+    <End Role="UserCompetition" Type="Self.UserCompetition" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Competence">
+        <PropertyRef Name="CompenceID" />
+      </Principal>
+      <Dependent Role="UserCompetition">
+        <PropertyRef Name="CompetenceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserCompetition_Users">
     <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
-    <End Role="Photo" Type="Self.Photo" Multiplicity="*" />
+    <End Role="UserCompetition" Type="Self.UserCompetition" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Users">
         <PropertyRef Name="UserID" />
       </Principal>
-      <Dependent Role="Photo">
+      <Dependent Role="UserCompetition">
         <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_Country">
+    <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryID" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="CountryID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -120,27 +185,38 @@
   </Association>
   <EntityContainer Name="Хранилище WSChina2020BaseComp02ModelContainer">
     <EntitySet Name="Blocks" EntityType="Self.Blocks" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Competitions" EntityType="Self.Competitions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Competence" EntityType="Self.Competence" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Competition" EntityType="Self.Competition" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Gender" EntityType="Self.Gender" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Photo" EntityType="Self.Photo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserCompetition" EntityType="Self.UserCompetition" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Previos Competitions" EntityType="Self.Previos Competitions" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [Previos Competitions].[OrdinalNo] AS [OrdinalNo], 
-    [Previos Competitions].[Year] AS [Year], 
-    [Previos Competitions].[City_and_Country] AS [City_and_Country], 
-    [Previos Competitions].[MemberNumber] AS [MemberNumber]
-    FROM [dbo].[Previos Competitions] AS [Previos Competitions]</DefiningQuery>
-    </EntitySet>
+    <AssociationSet Name="FK_City_Country" Association="Self.FK_City_Country">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="City" EntitySet="City" />
+    </AssociationSet>
     <AssociationSet Name="FK_Competitions_Blocks" Association="Self.FK_Competitions_Blocks">
       <End Role="Blocks" EntitySet="Blocks" />
-      <End Role="Competitions" EntitySet="Competitions" />
+      <End Role="Competence" EntitySet="Competence" />
     </AssociationSet>
-    <AssociationSet Name="FK_Photo_Users" Association="Self.FK_Photo_Users">
+    <AssociationSet Name="FK_Previos Competitions_City" Association="Self.FK_Previos Competitions_City">
+      <End Role="City" EntitySet="City" />
+      <End Role="Competition" EntitySet="Competition" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserCompetition_Competitions" Association="Self.FK_UserCompetition_Competitions">
+      <End Role="Competence" EntitySet="Competence" />
+      <End Role="UserCompetition" EntitySet="UserCompetition" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserCompetition_Users" Association="Self.FK_UserCompetition_Users">
       <End Role="Users" EntitySet="Users" />
-      <End Role="Photo" EntitySet="Photo" />
+      <End Role="UserCompetition" EntitySet="UserCompetition" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_Country" Association="Self.FK_Users_Country">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Users" EntitySet="Users" />
     </AssociationSet>
     <AssociationSet Name="FK_Users_Gender" Association="Self.FK_Users_Gender">
       <End Role="Gender" EntitySet="Gender" />

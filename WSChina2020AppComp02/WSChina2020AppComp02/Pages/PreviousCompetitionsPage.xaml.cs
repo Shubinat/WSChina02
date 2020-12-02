@@ -27,7 +27,7 @@ namespace WSChina2020AppComp02.Pages
             InitializeComponent();
             try
             {
-                CompetitionsGrid.ItemsSource = AppData.Context.Previos_Competitions.ToList();
+                CompetitionsGrid.ItemsSource = AppData.Context.Competitions.ToList();
             }
             catch (Exception)
             {
@@ -43,7 +43,7 @@ namespace WSChina2020AppComp02.Pages
         {
             if (TxtBoxOrdinal.Text != null && TxtBoxCity.Text != null)
             {
-                CompetitionsGrid.ItemsSource = AppData.Context.Previos_Competitions.ToList().Where(p => p.City_and_Country.ToLower().Trim().Contains(TxtBoxCity.Text.ToLower().Trim()) &&
+                CompetitionsGrid.ItemsSource = AppData.Context.Competitions.ToList().Where(p => p.CityAndCountry.ToLower().Trim().Contains(TxtBoxCity.Text.ToLower().Trim()) &&
                     p.OrdinalNo.ToLower().Trim().Contains(TxtBoxOrdinal.Text.ToLower().Trim())).ToList();
             }
         }

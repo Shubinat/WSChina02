@@ -69,9 +69,9 @@ namespace WSChina2020AppComp02.Pages
             TBHello.Text = HelloString;
 
 
-            if (currUser.Photos.ToList().First(p => p.UserID == currUser.UserID).Photo1 != null)
+            if (currUser.Photo != null)
             {
-                MainPhoto.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(currUser.Photos.ToList().First(p => p.UserID == currUser.UserID).Photo1);
+                MainPhoto.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(currUser.Photo);
             }
             
             if(Properties.Settings.Default.UserID != -1)
@@ -84,6 +84,11 @@ namespace WSChina2020AppComp02.Pages
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Functionality in development.", "Message", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        private void BtnMySkills_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new MySkillsPage(currUser));
         }
     }
 }

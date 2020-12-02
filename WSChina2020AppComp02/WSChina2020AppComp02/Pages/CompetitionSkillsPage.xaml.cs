@@ -35,12 +35,12 @@ namespace WSChina2020AppComp02.Pages
                     TreeViewItem item = new TreeViewItem() { Name = "Block_" + block.BlockID.ToString(), Header = block.Name };
                     Tree.Items.Add(item);
 
-                    foreach (var competition in block.Competitions.ToList())
+                    foreach (var competence in block.Competences.ToList())
                     {
                         TreeViewItem child = new TreeViewItem()
                         {
-                            Name = "Competition_" + competition.CompetitionId.ToString(),
-                            Header = competition.CompetitionId + ". " + competition.Name
+                            Name = "Competition_" + competence.CompenceID.ToString(),
+                            Header = competence.CompenceID + ". " + competence.Name
                         };
                         child.Selected += Competition_Selected;
                         item.Items.Add(child);
@@ -48,8 +48,8 @@ namespace WSChina2020AppComp02.Pages
                         void Competition_Selected(object sender, RoutedEventArgs e)
                         {
                             TreeViewItem element = (TreeViewItem)sender;
-                            CompetitionNameBlock.Text = competition.CompetitionId + " - " + competition.Name;
-                            InformationBlock.Text = competition.Description;
+                            CompetitionNameBlock.Text = competence.CompenceID + " - " + competence.Name;
+                            InformationBlock.Text = competence.Description;
                         }
                     }
 

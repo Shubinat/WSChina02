@@ -17,13 +17,13 @@ namespace WSChina2020AppComp02.Entities
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Block()
         {
-            this.Competitions = new HashSet<Competition>();
+            this.Competences = new HashSet<Competence>();
         }
     
         public int BlockID { get; set; }
         public string Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Competition> Competitions { get; set; }
+        public virtual ICollection<Competence> Competences { get; set; }
     }
 }

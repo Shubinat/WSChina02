@@ -39,7 +39,7 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Ordinal No." Width="*" Binding="{Binding OrdinalNo}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Year" Width="*" Binding="{Binding Year}"></DataGridTextColumn>
-                <DataGridTextColumn Header="City, Country" Width="*" Binding="{Binding City_and_Country}"></DataGridTextColumn>
+                <DataGridTextColumn Header="City, Country" Width="*" Binding="{Binding CityAndCountry}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Member Number" Width="*"  Binding="{Binding MemberNumber}"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
