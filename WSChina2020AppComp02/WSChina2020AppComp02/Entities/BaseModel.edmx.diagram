@@ -13,8 +13,8 @@
         <EntityTypeShape EntityType="WSChina2020BaseComp02Model.Gender" Width="1.5" PointX="0.75" PointY="7.125" />
         <EntityTypeShape EntityType="WSChina2020BaseComp02Model.Role" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="WSChina2020BaseComp02Model.sysdiagram" Width="1.5" PointX="7.75" PointY="1.125" />
-        <EntityTypeShape EntityType="WSChina2020BaseComp02Model.UserCompetition" Width="1.5" PointX="5.25" PointY="3.75" />
         <EntityTypeShape EntityType="WSChina2020BaseComp02Model.User" Width="1.5" PointX="3" PointY="3" />
+        <EntityTypeShape EntityType="WSChina2020BaseComp02Model.UserCompetition" Width="1.5" PointX="5.25" PointY="3.75" />
         <AssociationConnector Association="WSChina2020BaseComp02Model.FK_Competitions_Blocks" />
         <AssociationConnector Association="WSChina2020BaseComp02Model.FK_City_Country" />
         <AssociationConnector Association="WSChina2020BaseComp02Model.FK_Previos_Competitions_City" />

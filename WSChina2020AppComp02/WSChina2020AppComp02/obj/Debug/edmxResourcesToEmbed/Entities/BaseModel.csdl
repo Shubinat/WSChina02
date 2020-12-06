@@ -9,8 +9,8 @@
     <EntitySet Name="Genders" EntityType="WSChina2020BaseComp02Model.Gender" />
     <EntitySet Name="Roles" EntityType="WSChina2020BaseComp02Model.Role" />
     <EntitySet Name="sysdiagrams" EntityType="WSChina2020BaseComp02Model.sysdiagram" />
-    <EntitySet Name="UserCompetitions" EntityType="WSChina2020BaseComp02Model.UserCompetition" />
     <EntitySet Name="Users" EntityType="WSChina2020BaseComp02Model.User" />
+    <EntitySet Name="UserCompetitions" EntityType="WSChina2020BaseComp02Model.UserCompetition" />
     <AssociationSet Name="FK_Competitions_Blocks" Association="WSChina2020BaseComp02Model.FK_Competitions_Blocks">
       <End Role="Block" EntitySet="Blocks" />
       <End Role="Competence" EntitySet="Competences" />
@@ -119,16 +119,6 @@
     <Property Name="version" Type="Int32" />
     <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
-  <EntityType Name="UserCompetition">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="UserID" Type="Int32" />
-    <Property Name="CompetenceID" Type="Int32" />
-    <NavigationProperty Name="Competence" Relationship="WSChina2020BaseComp02Model.FK_UserCompetition_Competitions" FromRole="UserCompetition" ToRole="Competence" />
-    <NavigationProperty Name="User" Relationship="WSChina2020BaseComp02Model.FK_UserCompetition_Users" FromRole="UserCompetition" ToRole="User" />
-  </EntityType>
   <EntityType Name="User">
     <Key>
       <PropertyRef Name="UserID" />
@@ -146,6 +136,16 @@
     <NavigationProperty Name="Gender" Relationship="WSChina2020BaseComp02Model.FK_Users_Gender" FromRole="User" ToRole="Gender" />
     <NavigationProperty Name="Role" Relationship="WSChina2020BaseComp02Model.FK_Users_Role" FromRole="User" ToRole="Role" />
     <NavigationProperty Name="UserCompetitions" Relationship="WSChina2020BaseComp02Model.FK_UserCompetition_Users" FromRole="User" ToRole="UserCompetition" />
+  </EntityType>
+  <EntityType Name="UserCompetition">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="CompetenceID" Type="Int32" />
+    <NavigationProperty Name="Competence" Relationship="WSChina2020BaseComp02Model.FK_UserCompetition_Competitions" FromRole="UserCompetition" ToRole="Competence" />
+    <NavigationProperty Name="User" Relationship="WSChina2020BaseComp02Model.FK_UserCompetition_Users" FromRole="UserCompetition" ToRole="User" />
   </EntityType>
   <Association Name="FK_Competitions_Blocks">
     <End Type="WSChina2020BaseComp02Model.Block" Role="Block" Multiplicity="1" />

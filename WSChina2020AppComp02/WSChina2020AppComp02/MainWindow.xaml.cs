@@ -78,7 +78,7 @@ namespace WSChina2020AppComp02
                 Title = "Skills Competetion Management System";
             }
 
-            if (Properties.Settings.Default.UserID != -1)
+            if (Properties.Settings.Default.UserID != -1 && MainFrame.Content as Page is Pages.MainScreen)
             {
                 BtnLogout.Visibility = Visibility.Visible;
             }
@@ -113,10 +113,6 @@ namespace WSChina2020AppComp02
             Properties.Settings.Default.UserID = -1;
             Properties.Settings.Default.Save();
             BtnLogout.Visibility = Visibility.Hidden;
-            if(MainFrame.Content as Page is CompetitorMenu || MainFrame.Content as Page is AdminMenu || MainFrame.Content as Page is CoordinatorMenu || MainFrame.Content as Page is JudgerMenu)
-            {
-                MainFrame.Navigate(new MainScreen());
-            }
         }
     }
 }

@@ -22,9 +22,18 @@
 
         <TabControl Grid.Row="1" Margin="5">
             <TabItem Header="Competitors">
-                <ListView x:Name="LVCompetitors" HorizontalContentAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Visible">
-                    <ListView.ItemsPanel>
-                        <ItemsPanelTemplate>
+                <Grid>
+                    
+                <Grid.ContextMenu>
+                        <ContextMenu>
+                            <MenuItem Header="Small icons" Name="ContextMenuSmall" Click="ContextMenuSmall_Click"></MenuItem>
+                            <MenuItem Header="Large icons" Name="ContextMenuLarge" Click="ContextMenuLarge_Click"></MenuItem>
+                        </ContextMenu>
+                </Grid.ContextMenu>
+                    
+                    <ListView x:Name="LVCompetitorsLarge" HorizontalContentAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Visible">
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
                             <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center"></WrapPanel>
                         </ItemsPanelTemplate>
                     </ListView.ItemsPanel>
@@ -35,7 +44,7 @@
                                     <RowDefinition Height="100"></RowDefinition>
                                     <RowDefinition Height="*"></RowDefinition>
                                 </Grid.RowDefinitions>
-                                <Image>
+                                    <Image Margin="5">
                                     <Image.Source>
                                         <Binding Path="User.Photo">
                                             <Binding.TargetNullValue>
@@ -51,6 +60,32 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
+
+                    <ListView x:Name="LVCompetitorsSmall">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Margin="5" Width="150" Height="50">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="50"></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>    
+                                    <Image Margin="5">
+                                        <Image.Source>
+                                            <Binding Path="User.Photo">
+                                                <Binding.TargetNullValue>
+                                                    <ImageSource>
+                                                        /WSChina2020AppComp02;component/Assets/no_picture.png
+                                                    </ImageSource>
+                                                </Binding.TargetNullValue>
+                                            </Binding>
+                                        </Image.Source>
+                                    </Image>
+                                    <TextBlock Text="{Binding User.UserText}" Grid.Column="1" Style="{StaticResource BodyText}" VerticalAlignment="Center"></TextBlock>
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
             </TabItem>
 
             <TabItem Header="Judgers">

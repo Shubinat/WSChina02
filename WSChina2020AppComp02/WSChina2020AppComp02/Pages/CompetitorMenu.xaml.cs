@@ -74,10 +74,7 @@ namespace WSChina2020AppComp02.Pages
                 MainPhoto.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(currUser.Photo);
             }
             
-            if(Properties.Settings.Default.UserID != -1)
-            {
-                NavigationService.RemoveBackEntry();
-            }
+
 
         }
 

@@ -28,6 +28,13 @@ namespace WSChina2020AppComp02.Pages
             try
             {
                 CompetitionsGrid.ItemsSource = AppData.Context.Competitions.ToList();
+                int? sum = 0;
+                foreach (var item in AppData.Context.Competitions.ToList())
+                {
+                    sum += item.MemberNumber;
+                }
+                TBTotalRec.Text = "Total Records: " + sum;
+                sum = 0;
             }
             catch (Exception)
             {
@@ -43,8 +50,16 @@ namespace WSChina2020AppComp02.Pages
         {
             if (TxtBoxOrdinal.Text != null && TxtBoxCity.Text != null)
             {
-                CompetitionsGrid.ItemsSource = AppData.Context.Competitions.ToList().Where(p => p.CityAndCountry.ToLower().Trim().Contains(TxtBoxCity.Text.ToLower().Trim()) &&
-                    p.OrdinalNo.ToLower().Trim().Contains(TxtBoxOrdinal.Text.ToLower().Trim())).ToList();
+                var list = AppData.Context.Competitions.ToList().Where(p => p.CityAndCountry.ToLower().Trim().Contains(TxtBoxCity.Text.ToLower().Trim()) &&
+                     p.OrdinalNo.ToLower().Trim().Contains(TxtBoxOrdinal.Text.ToLower().Trim())).ToList();
+                CompetitionsGrid.ItemsSource = list;
+                int? sum = 0;
+                foreach (var item in list)
+                {
+                    sum += item.MemberNumber;
+                }
+                TBTotalRec.Text = "Total Records: " + sum;
+                sum = 0;
             }
         }
     }

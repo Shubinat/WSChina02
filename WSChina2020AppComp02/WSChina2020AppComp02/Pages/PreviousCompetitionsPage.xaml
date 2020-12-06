@@ -33,7 +33,7 @@
 
 
             </StackPanel>
-            <TextBlock Style="{StaticResource BodyText}" Text="Total Records:XXX"></TextBlock>
+            <TextBlock Style="{StaticResource BodyText}" Text="Total Records:XXX" Name="TBTotalRec"></TextBlock>
         </StackPanel>
         <DataGrid Grid.Row="1" Name="CompetitionsGrid" IsReadOnly="True" AutoGenerateColumns="False" Margin="10">
             <DataGrid.Columns>

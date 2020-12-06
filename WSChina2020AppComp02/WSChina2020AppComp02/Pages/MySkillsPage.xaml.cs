@@ -28,7 +28,9 @@ namespace WSChina2020AppComp02.Pages
             currUser = user;
             TxtMySkills.Text = AppData.Context.UserCompetitions.ToList().First(p => p.User == user).Competence.CompenceID + " - " + AppData.Context.UserCompetitions.ToList().First(p => p.User == user).Competence.Name;
           
-            LVCompetitors.ItemsSource = Filter(0,currUser);
+            LVCompetitorsLarge.ItemsSource = Filter(0,currUser);
+            LVCompetitorsSmall.ItemsSource = Filter(0, currUser);
+
             LVJudgers.ItemsSource = Filter(3,currUser);
                 
         }
@@ -56,5 +58,16 @@ namespace WSChina2020AppComp02.Pages
             return _list;
         }
 
+        private void ContextMenuSmall_Click(object sender, RoutedEventArgs e)
+        {
+            LVCompetitorsSmall.Visibility = Visibility.Visible;
+            LVCompetitorsLarge.Visibility = Visibility.Hidden;
+        }
+
+        private void ContextMenuLarge_Click(object sender, RoutedEventArgs e)
+        {
+            LVCompetitorsSmall.Visibility = Visibility.Hidden;
+            LVCompetitorsLarge.Visibility = Visibility.Visible;
+        }
     }
 }
