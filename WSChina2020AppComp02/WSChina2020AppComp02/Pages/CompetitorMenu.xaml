@@ -34,7 +34,7 @@
                 <StackPanel Grid.Column="1" Grid.RowSpan="2" VerticalAlignment="Center">
                     <Button Template="{StaticResource Btn}" Content="My Profile" Name="BtnMyProfile" Click="BtnMyProfile_Click"></Button>
                     <Button Template="{StaticResource Btn}" Content="My Skills" Name="BtnMySkills" Click="BtnMySkills_Click"></Button>
-                    <Button Template="{StaticResource Btn}" Content="My Results" Click="Button_Click"></Button>
+                    <Button Template="{StaticResource Btn}" Content="My Results" Name="BtnMyResults" Click="BtnMyResults_Click"></Button>
                 </StackPanel>
             </Grid>
         </Border>

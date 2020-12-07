@@ -29,8 +29,10 @@ namespace WSChina2020AppComp02.Entities
         public virtual DbSet<City> Cities { get; set; }
         public virtual DbSet<Competence> Competences { get; set; }
         public virtual DbSet<Competition> Competitions { get; set; }
+        public virtual DbSet<CompletedModule> CompletedModules { get; set; }
         public virtual DbSet<Country> Countries { get; set; }
         public virtual DbSet<Gender> Genders { get; set; }
+        public virtual DbSet<Organization> Organizations { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<User> Users { get; set; }

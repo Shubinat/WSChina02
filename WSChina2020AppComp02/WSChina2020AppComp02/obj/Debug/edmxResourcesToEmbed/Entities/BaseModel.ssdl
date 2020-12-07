@@ -34,6 +34,15 @@
     <Property Name="CompetitionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="CityID" Type="int" />
   </EntityType>
+  <EntityType Name="CompletedModule">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserCompetitionID" Type="int" />
+    <Property Name="ModuleNumber" Type="int" />
+    <Property Name="Note" Type="float" />
+  </EntityType>
   <EntityType Name="Country">
     <Key>
       <PropertyRef Name="CountryID" />
@@ -47,6 +56,13 @@
       <PropertyRef Name="GenderID" />
     </Key>
     <Property Name="GenderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Organization">
+    <Key>
+      <PropertyRef Name="OrganizationID" />
+    </Key>
+    <Property Name="OrganizationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Role">
@@ -82,6 +98,7 @@
     <Property Name="DateOfBirth" Type="date" />
     <Property Name="PhoneNumber" Type="bigint" />
     <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrganizationID" Type="int" />
   </EntityType>
   <EntityType Name="UserCompetition">
     <Key>
@@ -90,6 +107,7 @@
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="UserID" Type="int" />
     <Property Name="CompetenceID" Type="int" />
+    <Property Name="CompetitionID" Type="int" />
   </EntityType>
   <Association Name="FK_City_Country">
     <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
@@ -115,6 +133,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_CompletedModule_UserCompetition">
+    <End Role="UserCompetition" Type="Self.UserCompetition" Multiplicity="0..1" />
+    <End Role="CompletedModule" Type="Self.CompletedModule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserCompetition">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CompletedModule">
+        <PropertyRef Name="UserCompetitionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Previos Competitions_City">
     <End Role="City" Type="Self.City" Multiplicity="0..1" />
     <End Role="Competition" Type="Self.Competition" Multiplicity="*" />
@@ -124,6 +154,30 @@
       </Principal>
       <Dependent Role="Competition">
         <PropertyRef Name="CityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Organization">
+    <End Role="Organization" Type="Self.Organization" Multiplicity="0..1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Organization">
+        <PropertyRef Name="OrganizationID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="OrganizationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserCompetition_Competition">
+    <End Role="Competition" Type="Self.Competition" Multiplicity="0..1" />
+    <End Role="UserCompetition" Type="Self.UserCompetition" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Competition">
+        <PropertyRef Name="CompetitionID" />
+      </Principal>
+      <Dependent Role="UserCompetition">
+        <PropertyRef Name="CompetitionID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -192,8 +246,10 @@
     <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Competence" EntityType="Self.Competence" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Competition" EntityType="Self.Competition" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CompletedModule" EntityType="Self.CompletedModule" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Gender" EntityType="Self.Gender" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Organization" EntityType="Self.Organization" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
@@ -206,9 +262,21 @@
       <End Role="Blocks" EntitySet="Blocks" />
       <End Role="Competence" EntitySet="Competence" />
     </AssociationSet>
+    <AssociationSet Name="FK_CompletedModule_UserCompetition" Association="Self.FK_CompletedModule_UserCompetition">
+      <End Role="UserCompetition" EntitySet="UserCompetition" />
+      <End Role="CompletedModule" EntitySet="CompletedModule" />
+    </AssociationSet>
     <AssociationSet Name="FK_Previos Competitions_City" Association="Self.FK_Previos Competitions_City">
       <End Role="City" EntitySet="City" />
       <End Role="Competition" EntitySet="Competition" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Organization" Association="Self.FK_User_Organization">
+      <End Role="Organization" EntitySet="Organization" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserCompetition_Competition" Association="Self.FK_UserCompetition_Competition">
+      <End Role="Competition" EntitySet="Competition" />
+      <End Role="UserCompetition" EntitySet="UserCompetition" />
     </AssociationSet>
     <AssociationSet Name="FK_UserCompetition_Competitions" Association="Self.FK_UserCompetition_Competitions">
       <End Role="Competence" EntitySet="Competence" />

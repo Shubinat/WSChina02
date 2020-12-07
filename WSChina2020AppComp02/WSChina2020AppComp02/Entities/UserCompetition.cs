@@ -14,11 +14,21 @@ namespace WSChina2020AppComp02.Entities
     
     public partial class UserCompetition
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public UserCompetition()
+        {
+            this.CompletedModules = new HashSet<CompletedModule>();
+        }
+    
         public int ID { get; set; }
         public Nullable<int> UserID { get; set; }
         public Nullable<int> CompetenceID { get; set; }
+        public Nullable<int> CompetitionID { get; set; }
     
         public virtual Competence Competence { get; set; }
+        public virtual Competition Competition { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CompletedModule> CompletedModules { get; set; }
         public virtual User User { get; set; }
     }
 }

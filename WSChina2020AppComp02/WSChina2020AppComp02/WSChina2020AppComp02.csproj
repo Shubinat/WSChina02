@@ -101,11 +101,17 @@
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\CompetititonsPartial.cs" />
+    <Compile Include="Entities\CompletedModule.cs">
+      <DependentUpon>BaseModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entities\Country.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\CountryPartial.cs" />
     <Compile Include="Entities\Gender.cs">
+      <DependentUpon>BaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Organization.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\Role.cs">
@@ -173,6 +179,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\MyResultsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\MySkillsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -218,6 +228,9 @@
     </Compile>
     <Compile Include="Pages\MyProfilePage.xaml.cs">
       <DependentUpon>MyProfilePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MyResultsPage.xaml.cs">
+      <DependentUpon>MyResultsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\MySkillsPage.xaml.cs">
       <DependentUpon>MySkillsPage.xaml</DependentUpon>

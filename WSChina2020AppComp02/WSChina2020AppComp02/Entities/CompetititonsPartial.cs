@@ -16,6 +16,14 @@ namespace WSChina2020AppComp02.Entities
             }
         }
 
+        public string EventName {
+
+            get
+            {
+                return $"{Year} - {City.Country.Name} {City.Name}";
+            }
+        }
+
 
     }
 }

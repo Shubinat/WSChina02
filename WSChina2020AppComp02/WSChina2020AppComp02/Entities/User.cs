@@ -32,9 +32,11 @@ namespace WSChina2020AppComp02.Entities
         public Nullable<System.DateTime> DateOfBirth { get; set; }
         public Nullable<long> PhoneNumber { get; set; }
         public string Email { get; set; }
+        public Nullable<int> OrganizationID { get; set; }
     
         public virtual Country Country { get; set; }
         public virtual Gender Gender { get; set; }
+        public virtual Organization Organization { get; set; }
         public virtual Role Role { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UserCompetition> UserCompetitions { get; set; }
