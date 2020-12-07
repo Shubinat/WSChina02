@@ -44,7 +44,8 @@
             <PropertyRef Name="CountryID" />
           </Key>
           <Property Name="CountryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CountryCode" Type="nchar" MaxLength="2" Nullable="false" />
         </EntityType>
         <EntityType Name="Gender">
           <Key>
@@ -83,6 +84,9 @@
           <Property Name="Photo" Type="image" />
           <Property Name="LastName" Type="nvarchar" MaxLength="100" />
           <Property Name="CountryID" Type="int" />
+          <Property Name="DateOfBirth" Type="date" />
+          <Property Name="PhoneNumber" Type="bigint" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="UserCompetition">
           <Key>
@@ -325,7 +329,8 @@
             <PropertyRef Name="CountryID" />
           </Key>
           <Property Name="CountryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CountryCode" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="Cities" Relationship="WSChina2020BaseComp02Model.FK_City_Country" FromRole="Country" ToRole="City" />
           <NavigationProperty Name="Users" Relationship="WSChina2020BaseComp02Model.FK_Users_Country" FromRole="Country" ToRole="User" />
         </EntityType>
@@ -368,6 +373,9 @@
           <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="LastName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="CountryID" Type="Int32" />
+          <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
+          <Property Name="PhoneNumber" Type="Int64" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Country" Relationship="WSChina2020BaseComp02Model.FK_Users_Country" FromRole="User" ToRole="Country" />
           <NavigationProperty Name="Gender" Relationship="WSChina2020BaseComp02Model.FK_Users_Gender" FromRole="User" ToRole="Gender" />
           <NavigationProperty Name="Role" Relationship="WSChina2020BaseComp02Model.FK_Users_Role" FromRole="User" ToRole="Role" />
@@ -526,6 +534,7 @@
           <EntitySetMapping Name="Countries">
             <EntityTypeMapping TypeName="WSChina2020BaseComp02Model.Country">
               <MappingFragment StoreEntitySet="Country">
+                <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="CountryID" ColumnName="CountryID" />
               </MappingFragment>
@@ -561,6 +570,9 @@
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="WSChina2020BaseComp02Model.User">
               <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
                 <ScalarProperty Name="CountryID" ColumnName="CountryID" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
                 <ScalarProperty Name="Photo" ColumnName="Photo" />

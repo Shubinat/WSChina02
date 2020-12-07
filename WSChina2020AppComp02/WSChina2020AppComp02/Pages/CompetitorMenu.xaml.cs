@@ -87,5 +87,10 @@ namespace WSChina2020AppComp02.Pages
         {
             NavigationService.Navigate(new MySkillsPage(currUser));
         }
+
+        private void BtnMyProfile_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new MyProfilePage(currUser));
+        }
     }
 }

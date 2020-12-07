@@ -23,6 +23,7 @@ namespace WSChina2020AppComp02.Entities
     
         public int CountryID { get; set; }
         public string Name { get; set; }
+        public string CountryCode { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<City> Cities { get; set; }

@@ -89,7 +89,8 @@
       <PropertyRef Name="CountryID" />
     </Key>
     <Property Name="CountryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CountryCode" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="true" />
     <NavigationProperty Name="Cities" Relationship="WSChina2020BaseComp02Model.FK_City_Country" FromRole="Country" ToRole="City" />
     <NavigationProperty Name="Users" Relationship="WSChina2020BaseComp02Model.FK_Users_Country" FromRole="Country" ToRole="User" />
   </EntityType>
@@ -132,6 +133,9 @@
     <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
     <Property Name="LastName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="CountryID" Type="Int32" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
+    <Property Name="PhoneNumber" Type="Int64" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Country" Relationship="WSChina2020BaseComp02Model.FK_Users_Country" FromRole="User" ToRole="Country" />
     <NavigationProperty Name="Gender" Relationship="WSChina2020BaseComp02Model.FK_Users_Gender" FromRole="User" ToRole="Gender" />
     <NavigationProperty Name="Role" Relationship="WSChina2020BaseComp02Model.FK_Users_Role" FromRole="User" ToRole="Role" />

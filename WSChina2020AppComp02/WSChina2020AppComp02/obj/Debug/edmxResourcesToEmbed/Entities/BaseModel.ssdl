@@ -39,7 +39,8 @@
       <PropertyRef Name="CountryID" />
     </Key>
     <Property Name="CountryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CountryCode" Type="nchar" MaxLength="2" Nullable="false" />
   </EntityType>
   <EntityType Name="Gender">
     <Key>
@@ -78,6 +79,9 @@
     <Property Name="Photo" Type="image" />
     <Property Name="LastName" Type="nvarchar" MaxLength="100" />
     <Property Name="CountryID" Type="int" />
+    <Property Name="DateOfBirth" Type="date" />
+    <Property Name="PhoneNumber" Type="bigint" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="UserCompetition">
     <Key>

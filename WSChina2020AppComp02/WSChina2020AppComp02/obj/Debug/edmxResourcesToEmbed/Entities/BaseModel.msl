@@ -42,6 +42,7 @@
     <EntitySetMapping Name="Countries">
       <EntityTypeMapping TypeName="WSChina2020BaseComp02Model.Country">
         <MappingFragment StoreEntitySet="Country">
+          <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="CountryID" ColumnName="CountryID" />
         </MappingFragment>
@@ -77,6 +78,9 @@
     <EntitySetMapping Name="Users">
       <EntityTypeMapping TypeName="WSChina2020BaseComp02Model.User">
         <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
           <ScalarProperty Name="CountryID" ColumnName="CountryID" />
           <ScalarProperty Name="LastName" ColumnName="LastName" />
           <ScalarProperty Name="Photo" ColumnName="Photo" />

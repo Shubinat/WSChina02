@@ -29,6 +29,9 @@ namespace WSChina2020AppComp02.Entities
         public byte[] Photo { get; set; }
         public string LastName { get; set; }
         public Nullable<int> CountryID { get; set; }
+        public Nullable<System.DateTime> DateOfBirth { get; set; }
+        public Nullable<long> PhoneNumber { get; set; }
+        public string Email { get; set; }
     
         public virtual Country Country { get; set; }
         public virtual Gender Gender { get; set; }
