@@ -37,5 +37,6 @@ namespace WSChina2020AppComp02.Entities
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<UserCompetition> UserCompetitions { get; set; }
+        public virtual DbSet<Volunteer> Volunteers { get; set; }
     }
 }

@@ -109,6 +109,19 @@
     <Property Name="CompetenceID" Type="int" />
     <Property Name="CompetitionID" Type="int" />
   </EntityType>
+  <EntityType Name="Volunteer">
+    <Key>
+      <PropertyRef Name="VolunteerID" />
+    </Key>
+    <Property Name="VolunteerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Surname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="GenderID" Type="int" Nullable="false" />
+    <Property Name="OccupationCityID" Type="int" Nullable="false" />
+    <Property Name="ProvinceCityID" Type="int" Nullable="false" />
+    <Property Name="CompetenceID" Type="int" Nullable="false" />
+    <Property Name="DateOfBirth" Type="date" Nullable="false" />
+  </EntityType>
   <Association Name="FK_City_Country">
     <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
     <End Role="City" Type="Self.City" Multiplicity="*" />
@@ -241,6 +254,54 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Volunteer_City">
+    <End Role="City" Type="Self.City" Multiplicity="1" />
+    <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="CityID" />
+      </Principal>
+      <Dependent Role="Volunteer">
+        <PropertyRef Name="OccupationCityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Volunteer_City1">
+    <End Role="City" Type="Self.City" Multiplicity="1" />
+    <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="CityID" />
+      </Principal>
+      <Dependent Role="Volunteer">
+        <PropertyRef Name="ProvinceCityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Volunteer_Competence">
+    <End Role="Competence" Type="Self.Competence" Multiplicity="1" />
+    <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Competence">
+        <PropertyRef Name="CompenceID" />
+      </Principal>
+      <Dependent Role="Volunteer">
+        <PropertyRef Name="CompetenceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Volunteer_Gender">
+    <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+    <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="GenderID" />
+      </Principal>
+      <Dependent Role="Volunteer">
+        <PropertyRef Name="GenderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="Хранилище WSChina2020BaseComp02ModelContainer">
     <EntitySet Name="Blocks" EntityType="Self.Blocks" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
@@ -254,6 +315,7 @@
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserCompetition" EntityType="Self.UserCompetition" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Volunteer" EntityType="Self.Volunteer" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_City_Country" Association="Self.FK_City_Country">
       <End Role="Country" EntitySet="Country" />
       <End Role="City" EntitySet="City" />
@@ -297,6 +359,22 @@
     <AssociationSet Name="FK_Users_Role" Association="Self.FK_Users_Role">
       <End Role="Role" EntitySet="Role" />
       <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Volunteer_City" Association="Self.FK_Volunteer_City">
+      <End Role="City" EntitySet="City" />
+      <End Role="Volunteer" EntitySet="Volunteer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Volunteer_City1" Association="Self.FK_Volunteer_City1">
+      <End Role="City" EntitySet="City" />
+      <End Role="Volunteer" EntitySet="Volunteer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Volunteer_Competence" Association="Self.FK_Volunteer_Competence">
+      <End Role="Competence" EntitySet="Competence" />
+      <End Role="Volunteer" EntitySet="Volunteer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Volunteer_Gender" Association="Self.FK_Volunteer_Gender">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="Volunteer" EntitySet="Volunteer" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

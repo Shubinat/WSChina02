@@ -18,6 +18,7 @@ namespace WSChina2020AppComp02.Entities
         public Competence()
         {
             this.UserCompetitions = new HashSet<UserCompetition>();
+            this.Volunteers = new HashSet<Volunteer>();
         }
     
         public int CompenceID { get; set; }
@@ -28,5 +29,7 @@ namespace WSChina2020AppComp02.Entities
         public virtual Block Block { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UserCompetition> UserCompetitions { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Volunteer> Volunteers { get; set; }
     }
 }
