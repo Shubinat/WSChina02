@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
@@ -22,6 +20,8 @@ namespace WSChina2020AppComp02.Pages
     /// </summary>
     public partial class MyProfilePage : Page
     {
+        string PassString = "";
+        string RePassString = "";
         public MyProfilePage()
         {
             InitializeComponent();
@@ -32,16 +32,28 @@ namespace WSChina2020AppComp02.Pages
             InitializeComponent();
             this.DataContext = currUser;
             this.currUser = currUser;
+           
         }
 
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
-            if (currUser.Password == PassBox.Password)
+            if (CheckBoxShowPass.IsChecked.Value) {
+                PassString = TBPassBox.Text;
+                RePassString = TBRePassBox.Text;
+            }
+            else
             {
-                if((RePassBox.Password.Length <= 16 && RePassBox.Password.Length >= 6))
+                PassString = PassBox.Password;
+                RePassString = RePassBox.Password;
+            }
+                
+
+            if (PassString == RePassString)
+            {
+                if(PassString.Length <= 16 && PassString.Length >= 6)
                 {
                     bool ThereIsNumber = false;
-                    foreach (var element in RePassBox.Password)
+                    foreach (var element in PassString)
                     {
                         
                         char[] numbers = new char[] { '1', '2', '3', '4', '5', '6', '7', '8', '9', '0' };
@@ -59,14 +71,16 @@ namespace WSChina2020AppComp02.Pages
                     if (ThereIsNumber)
                     {
                         bool Three = false;
-                        LinkedList<LinkedListNode<char>> linked = new LinkedList<LinkedListNode<char>>();
-                        for (int i = 0; i < RePassBox.Password.Length; i++)
+                        
+                        char[] array = new char[PassString.Length];
+                        for (int i = 0; i < PassString.Length; i++)
                         {
-                            linked.AddLast(new LinkedListNode<char>(RePassBox.Password[i]));
+                            array[i] = PassString[i];
                         }
-                        foreach (var element in linked)
+
+                        for (int i = 0; i < array.Length; i++)
                         {
-                            if(element.Previous.Value == element.Value && element.Value == element.Next.Value)
+                            if ((i - 1 >= 0 && i+1< array.Length) && ((array[i-1] == array[i]) && (array[i] == array[i+1])))
                             {
                                 Three = true;
                                 break;
@@ -75,9 +89,9 @@ namespace WSChina2020AppComp02.Pages
                         if (!Three)
                         {
                             bool ThereIsSpace = false;
-                            for (int i = 0; i < RePassBox.Password.Length; i++)
+                            for (int i = 0; i < PassString.Length; i++)
                             {
-                                if(RePassBox.Password[i] == ' ')
+                                if(PassString[i] == ' ')
                                 {
                                     ThereIsSpace = true;
                                     break;
@@ -90,7 +104,7 @@ namespace WSChina2020AppComp02.Pages
                                 
                                 foreach(var chr in Upper)
                                 {
-                                    foreach (var element in RePassBox.Password)
+                                    foreach (var element in PassString)
                                     {
                                         if(chr == element)
                                         {
@@ -107,7 +121,7 @@ namespace WSChina2020AppComp02.Pages
                                     bool ThereIsLower = false;
                                     foreach (var chr in Lower)
                                     {
-                                        foreach (var element in RePassBox.Password)
+                                        foreach (var element in PassString)
                                         {
                                             if (chr == element)
                                             {
@@ -121,13 +135,15 @@ namespace WSChina2020AppComp02.Pages
                                     if (ThereIsLower)
                                     {
                                         if(CheckBoxShowPass.IsChecked.Value)
-                                            AppData.Context.Users.ToList().First(p => p.UserID == currUser.UserID).Password = TBRePassBox.Text;
+                                            AppData.Context.Users.ToList().First(p => p.UserID == currUser.UserID).Password = PassString;
                                         else
-                                            AppData.Context.Users.ToList().First(p => p.UserID == currUser.UserID).Password = RePassBox.Password;
+                                            AppData.Context.Users.ToList().First(p => p.UserID == currUser.UserID).Password = PassString;
 
                                         AppData.Context.SaveChanges();
                                         PassBox.Password = "";
                                         RePassBox.Password = "";
+                                        PassString = "";
+                                        RePassString = "";
 
                                         TBPassBox.Text = "";
                                         TBRePassBox.Text = "";
@@ -166,7 +182,7 @@ namespace WSChina2020AppComp02.Pages
             }
             else
             {
-                MessageBox.Show("The old password was entered incorrectly.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Passwords are not equals.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -180,10 +196,7 @@ namespace WSChina2020AppComp02.Pages
         }
 
 
-        private void CheckBoxShowPass_Checked(object sender, RoutedEventArgs e)
-        {
-            
-        }
+        
 
         private void CheckBoxModifyPassword_Click(object sender, RoutedEventArgs e)
         {
@@ -201,8 +214,11 @@ namespace WSChina2020AppComp02.Pages
             }
         }
 
+        
         private void CheckBoxShowPass_Click(object sender, RoutedEventArgs e)
         {
+            
+
             if (CheckBoxShowPass.IsChecked.Value)
             {
                 TBPassBox.Text = PassBox.Password;
@@ -224,5 +240,7 @@ namespace WSChina2020AppComp02.Pages
                 TBRePassBox.Visibility = Visibility.Hidden;
             }
         }
+
     }
 }
+

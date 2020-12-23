@@ -17,7 +17,7 @@
         <TextBlock Style="{StaticResource BodyText}" Text="Administrator Menu" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"></TextBlock>
 
         <Border Style="{StaticResource Table}" Grid.Row="1">
-            <StackPanel HorizontalAlignment="Center">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                 <TextBlock Style="{StaticResource BodyText}" FontSize="16" Name="TBHello"></TextBlock>
                 <Button Template="{StaticResource Btn}" Content="Event Management" Click="Button_Click"></Button>
                 <Button Template="{StaticResource Btn}" Content="Competitor Management" Click="Button_Click"></Button>

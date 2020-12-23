@@ -27,7 +27,7 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
-
+                
                 <StackPanel Grid.RowSpan="2" VerticalAlignment="Center">
                     <TextBlock Style="{StaticResource BodyText}" FontSize="16" Margin="5" HorizontalAlignment="Right">Name:</TextBlock>
                     <TextBlock Style="{StaticResource BodyText}" FontSize="16" Margin="5" HorizontalAlignment="Right">Gender:</TextBlock>
@@ -40,7 +40,7 @@
                 <StackPanel Grid.RowSpan="2" Grid.Column="1" VerticalAlignment="Center">
                     <TextBlock Style="{StaticResource BodyText}" Foreground="DarkGray" FontSize="16" Margin="5" HorizontalAlignment="Left" Text="{Binding Username}"></TextBlock>
                     <TextBlock Style="{StaticResource BodyText}" Foreground="DarkGray" FontSize="16" Margin="5" HorizontalAlignment="Left" Text="{Binding Gender.Name}"></TextBlock>
-                    <TextBlock Style="{StaticResource BodyText}" Foreground="DarkGray" FontSize="16" Margin="5" HorizontalAlignment="Left" Text="{Binding DateOfBirth}"></TextBlock>
+                    <TextBlock Style="{StaticResource BodyText}" Foreground="DarkGray" FontSize="16" Margin="5" HorizontalAlignment="Left" Text="{Binding DateOfBirth,StringFormat='dd.MM.yyyy'}"></TextBlock>
                     <TextBlock Style="{StaticResource BodyText}" Foreground="DarkGray" FontSize="16" Margin="5" HorizontalAlignment="Left" Text="{Binding UserID}"></TextBlock>
                     <TextBlock Style="{StaticResource BodyText}" Foreground="DarkGray" FontSize="16" Margin="5" HorizontalAlignment="Left" Text="{Binding Country.NameAndCode}"></TextBlock>
                     <TextBlock Style="{StaticResource BodyText}" Foreground="DarkGray" FontSize="16" Margin="5" HorizontalAlignment="Left" Text="{Binding PhoneNumber}"></TextBlock>
@@ -64,7 +64,7 @@
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                                 <TextBlock Text="Password:" Style="{StaticResource BodyText}" VerticalAlignment="Center"></TextBlock>
                                 <Grid Margin="5">
-                                <PasswordBox Width="200" Name="PassBox" Language="English"></PasswordBox>
+                                    <PasswordBox Width="200" Name="PassBox" Language="English"></PasswordBox>
                                     <TextBox Width="200" Name="TBPassBox" Visibility="Hidden" Language="English"></TextBox>
                                 </Grid>
                             </StackPanel>
