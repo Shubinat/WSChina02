@@ -13,9 +13,14 @@ namespace WSChina2020AppComp02.Entities
             {
                 return $"{Name} {Surname}";
             }
-        
         }
-
+        public int Age
+        {
+            get
+            {
+                return DateTime.Now.Year - DateOfBirth.Year;
+            }
+        }
 
     }
 }

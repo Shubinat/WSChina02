@@ -1,0 +1,101 @@
+﻿<Page x:Class="WSChina2020AppComp02.Pages.AdjustVolunteersBetweenSkillsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WSChina2020AppComp02.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Adjust Volunteers Between Skills">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <TextBlock Style="{StaticResource BodyText}" Text="Adjust Volunteers Between Skills" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Grid.ColumnSpan="3"></TextBlock>
+        <Border Style="{StaticResource ResourceKey=Table}" Grid.Row="1" Margin="15">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock Text="Skills:" Style="{StaticResource BodyText}" FontSize="16"></TextBlock>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <ComboBox Margin="15" Width="150" x:Name="CBFirstTable"></ComboBox>
+                        <Button Template="{StaticResource NavigationBtn}" x:Name="BtnFirstTableSearch" Content="Search" Click="BtnFirstTableSearch_Click"></Button>
+                    </StackPanel>
+                </StackPanel>
+                <DataGrid Grid.Row="1" Name="FirstTable" Margin="5" AutoGenerateColumns="False" CanUserAddRows="False" CanUserSortColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <CheckBox Checked="FirstTableChecked" Unchecked="FirstTableUnChecked">
+                                        <TextBlock Text="{Binding VolunteerID}" Visibility="Hidden"></TextBlock>
+                                    </CheckBox>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn Header="Name" Binding="{Binding FullName}" Width="*"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Gender" Binding="{Binding Gender.Name}" Width="*"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Age" Binding="{Binding Age}" Width="*"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Occupation" Binding="{Binding City.Name}" Width="*"></DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <TextBlock Grid.Row="2" Style="{StaticResource BodyText}" Name="TextBlockFirstTable" HorizontalAlignment="Left" Margin="5">Total volunteers: 10</TextBlock>
+            </Grid>
+        </Border>
+        <Border Style="{StaticResource ResourceKey=Table}" Grid.Row="1" Grid.Column="2" Margin="15">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock Text="Skills:" Style="{StaticResource BodyText}" FontSize="16"></TextBlock>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <ComboBox Margin="15" Width="150" x:Name="CBSecondTable"></ComboBox>
+                        <Button Template="{StaticResource NavigationBtn}" x:Name="BtnSecondTableSearch" Content="Search" Click="BtnSecondTableSearch_Click"></Button>
+                    </StackPanel>
+                </StackPanel>
+                <DataGrid Grid.Row="1" Name="SecondTable" Margin="5" AutoGenerateColumns="False" CanUserAddRows="False" CanUserSortColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <CheckBox Checked="SecondTableChecked" Unchecked="SecondTableUnChecked">
+                                        <TextBlock Text="{Binding VolunteerID}" Visibility="Hidden"></TextBlock>
+                                    </CheckBox>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn Header="Name" Binding="{Binding FullName}" Width="*"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Gender" Binding="{Binding Gender.Name}" Width="*"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Age" Binding="{Binding Age}" Width="*"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Occupation" Binding="{Binding City.Name}" Width="*"></DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <TextBlock Grid.Row="2" Style="{StaticResource BodyText}" Name="TextBlockSecondTable" HorizontalAlignment="Left" Margin="5">Total volunteers: 10</TextBlock>
+            </Grid>
+        </Border>
+        <Button x:Name="BtnSave" Grid.Row="2" Grid.Column="2" Template="{StaticResource NavigationBtn}" HorizontalAlignment="Right" Click="BtnSave_Click">Save Adjustment</Button>
+        <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Center">
+            <Button Template="{StaticResource NavigationBtn}" Content=">" Name="BtnRigth" Click="BtnRigth_Click"></Button>
+            <Button Template="{StaticResource NavigationBtn}" Content="&lt;" Name="BtnLeft" Click="BtnLeft_Click"></Button>
+        </StackPanel>
+
+
+    </Grid>
+</Page>

@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Shubinat\Source\Repos\WSChina02\WSChina2020AppComp02\WSChina2020AppComp02\App.xaml
-17-1584252920
+19972803575
 2-1229262296
-44-787633326
+46-1096713248
 18-1843652658
-MainWindow.xaml;Pages\AboutShanghaiPage.xaml;Pages\AboutWorldskillsPage.xaml;Pages\AboutWSChina.xaml;Pages\AdminMenu.xaml;Pages\CompetitionSkillsPage.xaml;Pages\CompetitorMenu.xaml;Pages\CoordinatorMenu.xaml;Pages\HistoryWSPage.xaml;Pages\JudgerMenu.xaml;Pages\LoginScreen.xaml;Pages\MainScreen.xaml;Pages\MyProfilePage.xaml;Pages\MyResultsPage.xaml;Pages\MySkillsPage.xaml;Pages\PreviousCompetitionsPage.xaml;Pages\VolunteerManagementPage.xaml;
+MainWindow.xaml;Pages\AboutShanghaiPage.xaml;Pages\AboutWorldskillsPage.xaml;Pages\AboutWSChina.xaml;Pages\AdjustVolunteersBetweenSkillsPage.xaml;Pages\AdminMenu.xaml;Pages\CompetitionSkillsPage.xaml;Pages\CompetitorMenu.xaml;Pages\CoordinatorMenu.xaml;Pages\HistoryWSPage.xaml;Pages\ImportVolunteers.xaml;Pages\JudgerMenu.xaml;Pages\LoginScreen.xaml;Pages\MainScreen.xaml;Pages\MyProfilePage.xaml;Pages\MyResultsPage.xaml;Pages\MySkillsPage.xaml;Pages\PreviousCompetitionsPage.xaml;Pages\VolunteerManagementPage.xaml;
 
 True
 

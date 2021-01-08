@@ -175,13 +175,14 @@ namespace WSChina2020AppComp02.Pages
 
         private void BtnImportVolunteers_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new ImportVolunteers());
         }
 
-        private void BtnAjustVolunteers_Click(object sender, RoutedEventArgs e)
+        private void BtnAdjustVolunteers_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new AdjustVolunteersBetweenSkillsPage());
         }
+
     }
     /// <summary>
     /// Сортировщик волонтеров
