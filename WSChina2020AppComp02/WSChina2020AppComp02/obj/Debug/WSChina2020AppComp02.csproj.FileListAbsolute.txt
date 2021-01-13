@@ -64,3 +64,7 @@ C:\Users\Shubinat\Source\Repos\WSChina02\WSChina2020AppComp02\WSChina2020AppComp
 C:\Users\Shubinat\Source\Repos\WSChina02\WSChina2020AppComp02\WSChina2020AppComp02\bin\Debug\ExcelDataReader.DataSet.dll
 C:\Users\Shubinat\Source\Repos\WSChina02\WSChina2020AppComp02\WSChina2020AppComp02\bin\Debug\ExcelDataReader.DataSet.pdb
 C:\Users\Shubinat\Source\Repos\WSChina02\WSChina2020AppComp02\WSChina2020AppComp02\bin\Debug\ExcelDataReader.DataSet.xml
+C:\Users\Shubinat\Source\Repos\WSChina02\WSChina2020AppComp02\WSChina2020AppComp02\obj\Debug\Pages\SponsorshipManagementPage.g.cs
+C:\Users\Shubinat\Source\Repos\WSChina02\WSChina2020AppComp02\WSChina2020AppComp02\obj\Debug\Pages\SponsorStatPage.g.cs
+C:\Users\Shubinat\Source\Repos\WSChina02\WSChina2020AppComp02\WSChina2020AppComp02\obj\Debug\Pages\SponsorshipManagementPage.baml
+C:\Users\Shubinat\Source\Repos\WSChina02\WSChina2020AppComp02\WSChina2020AppComp02\obj\Debug\Pages\SponsorStatPage.baml

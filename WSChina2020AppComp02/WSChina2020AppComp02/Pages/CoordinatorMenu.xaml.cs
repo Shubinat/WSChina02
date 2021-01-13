@@ -80,5 +80,10 @@ namespace WSChina2020AppComp02.Pages
         {
             NavigationService.Navigate(new VolunteerManagementPage());
         }
+
+        private void BtnSponsorManage_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new SponsorshipManagementPage());
+        }
     }
 }

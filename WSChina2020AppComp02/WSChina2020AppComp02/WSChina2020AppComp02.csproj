@@ -98,6 +98,10 @@
     <Compile Include="Entities\Block.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entities\Category.cs">
+      <DependentUpon>BaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\CategoryPartial.cs" />
     <Compile Include="Entities\City.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
@@ -125,6 +129,13 @@
     <Compile Include="Entities\Role.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entities\Sponsor.cs">
+      <DependentUpon>BaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\SponsorClassName.cs">
+      <DependentUpon>BaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\SponsorPartial.cs" />
     <Compile Include="Entities\sysdiagram.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
@@ -211,6 +222,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\SponsorshipManagementPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\SponsorStatPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\VolunteerManagementPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -267,6 +286,12 @@
     </Compile>
     <Compile Include="Pages\PreviousCompetitionsPage.xaml.cs">
       <DependentUpon>PreviousCompetitionsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SponsorshipManagementPage.xaml.cs">
+      <DependentUpon>SponsorshipManagementPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SponsorStatPage.xaml.cs">
+      <DependentUpon>SponsorStatPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\VolunteerManagementPage.xaml.cs">
       <DependentUpon>VolunteerManagementPage.xaml</DependentUpon>

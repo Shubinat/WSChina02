@@ -17,6 +17,7 @@ namespace WSChina2020AppComp02.Entities
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Competition()
         {
+            this.SponsorClassNames = new HashSet<SponsorClassName>();
             this.UserCompetitions = new HashSet<UserCompetition>();
         }
     
@@ -27,6 +28,8 @@ namespace WSChina2020AppComp02.Entities
         public Nullable<int> CityID { get; set; }
     
         public virtual City City { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SponsorClassName> SponsorClassNames { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UserCompetition> UserCompetitions { get; set; }
     }

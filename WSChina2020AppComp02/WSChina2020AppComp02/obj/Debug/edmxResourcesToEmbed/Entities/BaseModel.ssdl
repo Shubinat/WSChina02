@@ -7,6 +7,14 @@
     <Property Name="BlockID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
   </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Photo" Type="image" />
+  </EntityType>
   <EntityType Name="City">
     <Key>
       <PropertyRef Name="CityID" />
@@ -71,6 +79,24 @@
     </Key>
     <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="RoleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sponsor">
+    <Key>
+      <PropertyRef Name="SponsorID" />
+    </Key>
+    <Property Name="SponsorID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Photo" Type="image" />
+  </EntityType>
+  <EntityType Name="SponsorClassName">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SponsorID" Type="int" Nullable="false" />
+    <Property Name="CategoryID" Type="int" Nullable="false" />
+    <Property Name="CompetitionID" Type="int" Nullable="false" />
+    <Property Name="Amount" Type="float" Nullable="false" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -167,6 +193,42 @@
       </Principal>
       <Dependent Role="Competition">
         <PropertyRef Name="CityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SponsorClassName_Category">
+    <End Role="Category" Type="Self.Category" Multiplicity="1" />
+    <End Role="SponsorClassName" Type="Self.SponsorClassName" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="SponsorClassName">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SponsorClassName_Competition">
+    <End Role="Competition" Type="Self.Competition" Multiplicity="1" />
+    <End Role="SponsorClassName" Type="Self.SponsorClassName" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Competition">
+        <PropertyRef Name="CompetitionID" />
+      </Principal>
+      <Dependent Role="SponsorClassName">
+        <PropertyRef Name="CompetitionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SponsorClassName_Sponsor">
+    <End Role="Sponsor" Type="Self.Sponsor" Multiplicity="1" />
+    <End Role="SponsorClassName" Type="Self.SponsorClassName" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sponsor">
+        <PropertyRef Name="SponsorID" />
+      </Principal>
+      <Dependent Role="SponsorClassName">
+        <PropertyRef Name="SponsorID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -304,6 +366,7 @@
   </Association>
   <EntityContainer Name="Хранилище WSChina2020BaseComp02ModelContainer">
     <EntitySet Name="Blocks" EntityType="Self.Blocks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Competence" EntityType="Self.Competence" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Competition" EntityType="Self.Competition" Schema="dbo" store:Type="Tables" />
@@ -312,6 +375,8 @@
     <EntitySet Name="Gender" EntityType="Self.Gender" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Organization" EntityType="Self.Organization" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sponsor" EntityType="Self.Sponsor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SponsorClassName" EntityType="Self.SponsorClassName" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserCompetition" EntityType="Self.UserCompetition" Schema="dbo" store:Type="Tables" />
@@ -331,6 +396,18 @@
     <AssociationSet Name="FK_Previos Competitions_City" Association="Self.FK_Previos Competitions_City">
       <End Role="City" EntitySet="City" />
       <End Role="Competition" EntitySet="Competition" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SponsorClassName_Category" Association="Self.FK_SponsorClassName_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="SponsorClassName" EntitySet="SponsorClassName" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SponsorClassName_Competition" Association="Self.FK_SponsorClassName_Competition">
+      <End Role="Competition" EntitySet="Competition" />
+      <End Role="SponsorClassName" EntitySet="SponsorClassName" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SponsorClassName_Sponsor" Association="Self.FK_SponsorClassName_Sponsor">
+      <End Role="Sponsor" EntitySet="Sponsor" />
+      <End Role="SponsorClassName" EntitySet="SponsorClassName" />
     </AssociationSet>
     <AssociationSet Name="FK_User_Organization" Association="Self.FK_User_Organization">
       <End Role="Organization" EntitySet="Organization" />

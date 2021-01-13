@@ -26,6 +26,7 @@ namespace WSChina2020AppComp02.Entities
         }
     
         public virtual DbSet<Block> Blocks { get; set; }
+        public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<City> Cities { get; set; }
         public virtual DbSet<Competence> Competences { get; set; }
         public virtual DbSet<Competition> Competitions { get; set; }
@@ -34,6 +35,8 @@ namespace WSChina2020AppComp02.Entities
         public virtual DbSet<Gender> Genders { get; set; }
         public virtual DbSet<Organization> Organizations { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
+        public virtual DbSet<Sponsor> Sponsors { get; set; }
+        public virtual DbSet<SponsorClassName> SponsorClassNames { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<UserCompetition> UserCompetitions { get; set; }

@@ -20,7 +20,7 @@
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Style="{StaticResource BodyText}" FontSize="16" Name="TBHello"></TextBlock>
                 <Button Template="{StaticResource Btn}" Content="Volunteer Management" Name="BtnVolunteerManage" Click="BtnVolunteerManage_Click"></Button>
-                <Button Template="{StaticResource Btn}" Content="Sponsorship Management" Click="Button_Click"></Button>
+                <Button Template="{StaticResource Btn}" Content="Sponsorship Management" Name="BtnSponsorManage" Click="BtnSponsorManage_Click"></Button>
                 <Button Template="{StaticResource Btn}" Content="Competition Service" Click="Button_Click"></Button>
             </StackPanel>
         </Border>

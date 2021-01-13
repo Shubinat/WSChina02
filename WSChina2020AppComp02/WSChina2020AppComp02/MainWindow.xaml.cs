@@ -44,9 +44,10 @@ namespace WSChina2020AppComp02
             OpenFileDialog ofd = new OpenFileDialog();
             if(ofd.ShowDialog() == true)
             {
-                AppData.Context.Users.ToList().First(p => p.UserID == 16).Photo = File.ReadAllBytes(ofd.FileName);
+                AppData.Context.Sponsors.ToList().First(p => p.SponsorID == 8).Photo = File.ReadAllBytes(ofd.FileName);
                 AppData.Context.SaveChanges();
-            }*/
+            }
+            */
         }
         void timer_tick(object sender, EventArgs e)
         {
