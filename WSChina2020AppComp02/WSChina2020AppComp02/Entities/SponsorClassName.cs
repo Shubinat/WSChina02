@@ -19,8 +19,10 @@ namespace WSChina2020AppComp02.Entities
         public int CategoryID { get; set; }
         public int CompetitionID { get; set; }
         public double Amount { get; set; }
+        public int CompetenceID { get; set; }
     
         public virtual Category Category { get; set; }
+        public virtual Competence Competence { get; set; }
         public virtual Competition Competition { get; set; }
         public virtual Sponsor Sponsor { get; set; }
     }

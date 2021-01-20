@@ -230,6 +230,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\SponsorViewPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\VolunteerManagementPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -292,6 +296,9 @@
     </Compile>
     <Compile Include="Pages\SponsorStatPage.xaml.cs">
       <DependentUpon>SponsorStatPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SponsorViewPage.xaml.cs">
+      <DependentUpon>SponsorViewPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\VolunteerManagementPage.xaml.cs">
       <DependentUpon>VolunteerManagementPage.xaml</DependentUpon>

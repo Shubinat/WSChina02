@@ -102,6 +102,7 @@
           <Property Name="CategoryID" Type="int" Nullable="false" />
           <Property Name="CompetitionID" Type="int" Nullable="false" />
           <Property Name="Amount" Type="float" Nullable="false" />
+          <Property Name="CompetenceID" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -210,6 +211,18 @@
             </Principal>
             <Dependent Role="SponsorClassName">
               <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SponsorClassName_Competence">
+          <End Role="Competence" Type="Self.Competence" Multiplicity="1" />
+          <End Role="SponsorClassName" Type="Self.SponsorClassName" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Competence">
+              <PropertyRef Name="CompenceID" />
+            </Principal>
+            <Dependent Role="SponsorClassName">
+              <PropertyRef Name="CompetenceID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -406,6 +419,10 @@
             <End Role="Category" EntitySet="Category" />
             <End Role="SponsorClassName" EntitySet="SponsorClassName" />
           </AssociationSet>
+          <AssociationSet Name="FK_SponsorClassName_Competence" Association="Self.FK_SponsorClassName_Competence">
+            <End Role="Competence" EntitySet="Competence" />
+            <End Role="SponsorClassName" EntitySet="SponsorClassName" />
+          </AssociationSet>
           <AssociationSet Name="FK_SponsorClassName_Competition" Association="Self.FK_SponsorClassName_Competition">
             <End Role="Competition" EntitySet="Competition" />
             <End Role="SponsorClassName" EntitySet="SponsorClassName" />
@@ -504,6 +521,10 @@
             <End Role="City" EntitySet="Cities" />
             <End Role="Volunteer" EntitySet="Volunteers" />
           </AssociationSet>
+          <AssociationSet Name="FK_SponsorClassName_Competence" Association="WSChina2020BaseComp02Model.FK_SponsorClassName_Competence">
+            <End Role="Competence" EntitySet="Competences" />
+            <End Role="SponsorClassName" EntitySet="SponsorClassNames" />
+          </AssociationSet>
           <AssociationSet Name="FK_UserCompetition_Competitions" Association="WSChina2020BaseComp02Model.FK_UserCompetition_Competitions">
             <End Role="Competence" EntitySet="Competences" />
             <End Role="UserCompetition" EntitySet="UserCompetitions" />
@@ -591,6 +612,7 @@
           <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Block" Relationship="WSChina2020BaseComp02Model.FK_Competitions_Blocks" FromRole="Competence" ToRole="Block" />
+          <NavigationProperty Name="SponsorClassNames" Relationship="WSChina2020BaseComp02Model.FK_SponsorClassName_Competence" FromRole="Competence" ToRole="SponsorClassName" />
           <NavigationProperty Name="UserCompetitions" Relationship="WSChina2020BaseComp02Model.FK_UserCompetition_Competitions" FromRole="Competence" ToRole="UserCompetition" />
           <NavigationProperty Name="Volunteers" Relationship="WSChina2020BaseComp02Model.FK_Volunteer_Competence" FromRole="Competence" ToRole="Volunteer" />
         </EntityType>
@@ -670,7 +692,9 @@
           <Property Name="CategoryID" Type="Int32" Nullable="false" />
           <Property Name="CompetitionID" Type="Int32" Nullable="false" />
           <Property Name="Amount" Type="Double" Nullable="false" />
+          <Property Name="CompetenceID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Category" Relationship="WSChina2020BaseComp02Model.FK_SponsorClassName_Category" FromRole="SponsorClassName" ToRole="Category" />
+          <NavigationProperty Name="Competence" Relationship="WSChina2020BaseComp02Model.FK_SponsorClassName_Competence" FromRole="SponsorClassName" ToRole="Competence" />
           <NavigationProperty Name="Competition" Relationship="WSChina2020BaseComp02Model.FK_SponsorClassName_Competition" FromRole="SponsorClassName" ToRole="Competition" />
           <NavigationProperty Name="Sponsor" Relationship="WSChina2020BaseComp02Model.FK_SponsorClassName_Sponsor" FromRole="SponsorClassName" ToRole="Sponsor" />
         </EntityType>
@@ -806,6 +830,18 @@
             </Principal>
             <Dependent Role="Volunteer">
               <PropertyRef Name="ProvinceCityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SponsorClassName_Competence">
+          <End Type="WSChina2020BaseComp02Model.Competence" Role="Competence" Multiplicity="1" />
+          <End Type="WSChina2020BaseComp02Model.SponsorClassName" Role="SponsorClassName" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Competence">
+              <PropertyRef Name="CompenceID" />
+            </Principal>
+            <Dependent Role="SponsorClassName">
+              <PropertyRef Name="CompetenceID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1061,6 +1097,7 @@
           <EntitySetMapping Name="SponsorClassNames">
             <EntityTypeMapping TypeName="WSChina2020BaseComp02Model.SponsorClassName">
               <MappingFragment StoreEntitySet="SponsorClassName">
+                <ScalarProperty Name="CompetenceID" ColumnName="CompetenceID" />
                 <ScalarProperty Name="Amount" ColumnName="Amount" />
                 <ScalarProperty Name="CompetitionID" ColumnName="CompetitionID" />
                 <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />

@@ -34,5 +34,10 @@ namespace WSChina2020AppComp02.Pages
         {
             MessageBox.Show("Functionality in development.", "Message", MessageBoxButton.OK, MessageBoxImage.Information);
         }
+
+        private void BtnSponsorView_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new SponsorViewPage());
+        }
     }
 }

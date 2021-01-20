@@ -103,6 +103,7 @@
     <EntitySetMapping Name="SponsorClassNames">
       <EntityTypeMapping TypeName="WSChina2020BaseComp02Model.SponsorClassName">
         <MappingFragment StoreEntitySet="SponsorClassName">
+          <ScalarProperty Name="CompetenceID" ColumnName="CompetenceID" />
           <ScalarProperty Name="Amount" ColumnName="Amount" />
           <ScalarProperty Name="CompetitionID" ColumnName="CompetitionID" />
           <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />

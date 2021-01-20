@@ -1,0 +1,58 @@
+﻿<Page x:Class="WSChina2020AppComp02.Pages.SponsorViewPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WSChina2020AppComp02.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Sponsorship View">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Style="{StaticResource BodyText}" Text="Sponsorship View" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Grid.ColumnSpan="2"/>
+
+        <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="5">
+                <TextBlock Style="{StaticResource BodyText}" FontSize="16" Margin="5" VerticalAlignment="Center">Event:</TextBlock>
+                <ComboBox Name="CBEvents" Width="300" Margin="5" SelectedIndex="0"></ComboBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="5">
+                <TextBlock Style="{StaticResource BodyText}" FontSize="16" Margin="5" VerticalAlignment="Center">Sponsors:</TextBlock>
+                <ComboBox Name="CBSponsors" Width="300" Margin="5"  SelectedIndex="0"></ComboBox>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="5">
+                <TextBlock Style="{StaticResource BodyText}" FontSize="16" Margin="5" VerticalAlignment="Center">Skills:</TextBlock>
+                <ComboBox Name="CBSkills" Width="200" Margin="5"  SelectedIndex="0"></ComboBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Template="{StaticResource NavigationBtn}" Margin="15,0" Name="BtnSearch" Click="BtnSearch_Click">Search</Button>
+            <Button Template="{StaticResource NavigationBtn}" Margin="15,0">Export</Button>
+            </StackPanel>
+        </StackPanel>
+
+
+        <TextBlock Name="TBInfo" Grid.Row="2" Grid.ColumnSpan="2" Style="{StaticResource BodyText}" FontSize="14">Total Records: XXX. Total Amount ($): XXX</TextBlock>
+        <DataGrid Grid.Row="2" Grid.ColumnSpan="2" Margin="20" AutoGenerateColumns="False" IsReadOnly="True" Name="SponsorsTable">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Event" Width="*" Binding="{Binding Competition.EventName}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Skills" Width="*" Binding="{Binding Competence.SkillOfService}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Sponsor" Width="*" Binding="{Binding Sponsor.Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="SponsorItem" Width="*" Binding="{Binding Category.Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Amount ($)" Width="*" Binding="{Binding Amount}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>
