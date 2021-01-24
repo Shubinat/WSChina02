@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="499a059900864e0e86c187a88f5f14fd" Name="Diagram1" ZoomLevel="27">
+      <Diagram DiagramId="499a059900864e0e86c187a88f5f14fd" Name="Diagram1" ZoomLevel="81">
         <EntityTypeShape EntityType="WSChina2020BaseComp02Model.Block" Width="1.5" PointX="3.75" PointY="1.375" />
         <EntityTypeShape EntityType="WSChina2020BaseComp02Model.Category" Width="1.5" PointX="6" PointY="16.5" />
         <EntityTypeShape EntityType="WSChina2020BaseComp02Model.City" Width="1.5" PointX="3.75" PointY="10.125" />

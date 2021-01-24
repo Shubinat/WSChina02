@@ -70,3 +70,5 @@ C:\Users\Shubinat\Source\Repos\WSChina02\WSChina2020AppComp02\WSChina2020AppComp
 C:\Users\Shubinat\Source\Repos\WSChina02\WSChina2020AppComp02\WSChina2020AppComp02\obj\Debug\Pages\SponsorStatPage.baml
 C:\Users\Shubinat\Source\Repos\WSChina02\WSChina2020AppComp02\WSChina2020AppComp02\obj\Debug\Pages\SponsorViewPage.g.cs
 C:\Users\Shubinat\Source\Repos\WSChina02\WSChina2020AppComp02\WSChina2020AppComp02\obj\Debug\Pages\SponsorViewPage.baml
+C:\Users\Shubinat\Source\Repos\WSChina02\WSChina2020AppComp02\WSChina2020AppComp02\obj\Debug\Pages\ExportSponsorsListPage.g.cs
+C:\Users\Shubinat\Source\Repos\WSChina02\WSChina2020AppComp02\WSChina2020AppComp02\obj\Debug\Pages\ExportSponsorsListPage.baml

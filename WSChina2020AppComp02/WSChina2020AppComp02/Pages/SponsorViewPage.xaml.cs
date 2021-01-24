@@ -20,6 +20,7 @@ namespace WSChina2020AppComp02.Pages
     /// </summary>
     public partial class SponsorViewPage : Page
     {
+        private List<Entities.SponsorClassName> TableContent = AppData.Context.SponsorClassNames.ToList();
         public SponsorViewPage()
         {
             InitializeComponent();
@@ -46,12 +47,15 @@ namespace WSChina2020AppComp02.Pages
 
         private void Search()
         {
-            var TableContent = AppData.Context.SponsorClassNames.ToList();
+            TableContent = AppData.Context.SponsorClassNames.ToList();
             TableContent = CBEvents.SelectedIndex != 0 ? TableContent.Where(p => p.CompetitionID == CBEvents.SelectedIndex).ToList() : TableContent;
             TableContent = CBSkills.SelectedIndex != 0 ? TableContent.Where(p => p.CompetenceID == CBSkills.SelectedIndex).ToList() : TableContent;
             TableContent = CBSponsors.SelectedIndex != 0 ? TableContent.Where(p => p.SponsorID == CBSponsors.SelectedIndex).ToList() : TableContent;
             SponsorsTable.ItemsSource = TableContent;
             TBInfo.Text = $"Total Records: {TableContent.Count}. Total Amount ($): {TableContent.Sum(p => p.Amount)}";
         }
+
+        private void BtnExport_Click(object sender, RoutedEventArgs e) => NavigationService.Navigate(new ExportSponsorsListPage(TableContent));
+
     }
 }

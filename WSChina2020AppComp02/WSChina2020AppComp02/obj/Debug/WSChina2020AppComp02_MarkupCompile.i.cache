@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Shubinat\Source\Repos\WSChina02\WSChina2020AppComp02\WSChina2020AppComp02\App.xaml
-222068112620
+23-646590645
 2-1229262296
-54967208307
-2468738757
-MainWindow.xaml;Pages\AboutShanghaiPage.xaml;Pages\AboutWorldskillsPage.xaml;Pages\AboutWSChina.xaml;Pages\AdjustVolunteersBetweenSkillsPage.xaml;Pages\AdminMenu.xaml;Pages\CompetitionSkillsPage.xaml;Pages\CompetitorMenu.xaml;Pages\CoordinatorMenu.xaml;Pages\HistoryWSPage.xaml;Pages\ImportVolunteers.xaml;Pages\JudgerMenu.xaml;Pages\LoginScreen.xaml;Pages\MainScreen.xaml;Pages\MyProfilePage.xaml;Pages\MyResultsPage.xaml;Pages\MySkillsPage.xaml;Pages\PreviousCompetitionsPage.xaml;Pages\SponsorshipManagementPage.xaml;Pages\SponsorStatPage.xaml;Pages\SponsorViewPage.xaml;Pages\VolunteerManagementPage.xaml;
+55-1831417100
+25283125493
+MainWindow.xaml;Pages\AboutShanghaiPage.xaml;Pages\AboutWorldskillsPage.xaml;Pages\AboutWSChina.xaml;Pages\AdjustVolunteersBetweenSkillsPage.xaml;Pages\AdminMenu.xaml;Pages\CompetitionSkillsPage.xaml;Pages\CompetitorMenu.xaml;Pages\CoordinatorMenu.xaml;Pages\ExportSponsorsListPage.xaml;Pages\HistoryWSPage.xaml;Pages\ImportVolunteers.xaml;Pages\JudgerMenu.xaml;Pages\LoginScreen.xaml;Pages\MainScreen.xaml;Pages\MyProfilePage.xaml;Pages\MyResultsPage.xaml;Pages\MySkillsPage.xaml;Pages\PreviousCompetitionsPage.xaml;Pages\SponsorshipManagementPage.xaml;Pages\SponsorStatPage.xaml;Pages\SponsorViewPage.xaml;Pages\VolunteerManagementPage.xaml;
 
 True
 
