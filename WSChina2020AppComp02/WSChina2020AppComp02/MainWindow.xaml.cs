@@ -28,6 +28,20 @@ namespace WSChina2020AppComp02
     public partial class MainWindow : Window
     {
         DateTime WS2021 = new DateTime(2021, 09, 22, 0, 0, 0);
+
+        
+        Color currColor = Color.FromRgb(255, 102, 0);
+        Color updColor = Color.FromRgb(255, 102, 0);
+
+        double redStep = 0;
+        double greenStep = 0;
+        double blueStep = 0;
+
+        double red = 255;
+        double blue = 102;
+        double green = 0;
+
+        Random Randomizer = new Random();
         public MainWindow()
         {
             
@@ -48,7 +62,13 @@ namespace WSChina2020AppComp02
                 AppData.Context.SaveChanges();
             }
             */
+            SolidColorBrush brush = new SolidColorBrush(currColor);
+            MainHeader.Background = brush;
+            SecondHeader.Background = brush;
+            Footer.Background = brush;
+            
         }
+
         void timer_tick(object sender, EventArgs e)
         {
             TimeSpan TimeRemaining = WS2021 - DateTime.Now;
@@ -57,6 +77,7 @@ namespace WSChina2020AppComp02
             } else { 
             CountDownBlock.Text = "The WorldSkills Shanghai 2021 has started.";
             }
+            AquaDiscoteka(2500);
         }
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
@@ -114,6 +135,43 @@ namespace WSChina2020AppComp02
             Properties.Settings.Default.UserID = -1;
             Properties.Settings.Default.Save();
             BtnLogout.Visibility = Visibility.Hidden;
+        }
+
+        /// <summary>
+        /// Функция плавно меняющяя цвет хедера и футера
+        /// </summary>
+        /// <param name="Smoothness">Плавность</param>
+        private void AquaDiscoteka(double Smoothness)
+        {
+            
+            if (currColor != updColor)
+            {
+                if(currColor.R != updColor.R)
+                    red += redStep;
+                if(currColor.G != updColor.G)
+                    green += greenStep;
+                if (currColor.B != updColor.B)
+                    blue += blueStep;
+            }
+            else
+            {
+                updColor.R = (byte)Randomizer.Next(256);
+                updColor.G = (byte)Randomizer.Next(256);
+                updColor.B = (byte)Randomizer.Next(256);
+
+                redStep = (double)(updColor.R - currColor.R) / Smoothness;
+                greenStep = (double)(updColor.G - currColor.G) / Smoothness;
+                blueStep = (double)(updColor.B - currColor.B) / Smoothness;
+            }
+
+            currColor.R = (byte)Math.Round(red);
+            currColor.G = (byte)Math.Round(green);
+            currColor.B = (byte)Math.Round(blue);
+
+            SolidColorBrush brush = new SolidColorBrush(currColor);
+            MainHeader.Background = brush;
+            SecondHeader.Background = brush;
+            Footer.Background = brush;
         }
     }
 }

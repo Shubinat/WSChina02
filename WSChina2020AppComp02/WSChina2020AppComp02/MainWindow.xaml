@@ -37,8 +37,8 @@
 
         <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Grid.Row="1" ContentRendered="MainFrame_ContentRendered" Navigated="MainFrame_Navigated"></Frame>
 
-        <Grid Background="Gray" Grid.Row="2"></Grid>
+        <Grid Background="Gray" Grid.Row="2" Name="Footer"></Grid>
         <TextBlock x:Name="CountDownBlock" Grid.Row="2" Foreground="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" Style="{StaticResource BodyText}" Text="? days, ? hours, ? minutes and ? seconds until the WorldSkills
-Shanghai 2021 starts."></TextBlock>
+        Shanghai 2021 starts."></TextBlock>
     </Grid>
 </Window>
