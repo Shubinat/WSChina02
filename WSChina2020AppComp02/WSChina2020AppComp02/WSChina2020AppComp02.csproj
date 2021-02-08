@@ -50,10 +50,12 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -63,9 +65,11 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="UIAutomationProvider" />
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -183,6 +187,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\CompSerPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\CoordinatorMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -227,6 +235,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\SponsorChartPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\SponsorshipManagementPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -266,6 +278,9 @@
     <Compile Include="Pages\CompetitorMenu.xaml.cs">
       <DependentUpon>CompetitorMenu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\CompSerPage.xaml.cs">
+      <DependentUpon>CompSerPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\CoordinatorMenu.xaml.cs">
       <DependentUpon>CoordinatorMenu.xaml</DependentUpon>
     </Compile>
@@ -298,6 +313,9 @@
     </Compile>
     <Compile Include="Pages\PreviousCompetitionsPage.xaml.cs">
       <DependentUpon>PreviousCompetitionsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SponsorChartPage.xaml.cs">
+      <DependentUpon>SponsorChartPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\SponsorshipManagementPage.xaml.cs">
       <DependentUpon>SponsorshipManagementPage.xaml</DependentUpon>

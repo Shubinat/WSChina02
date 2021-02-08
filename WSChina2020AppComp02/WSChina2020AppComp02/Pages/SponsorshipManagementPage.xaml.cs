@@ -30,14 +30,13 @@ namespace WSChina2020AppComp02.Pages
             NavigationService.Navigate(new SponsorStatPage());
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Functionality in development.", "Message", MessageBoxButton.OK, MessageBoxImage.Information);
-        }
-
         private void BtnSponsorView_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new SponsorViewPage());
         }
+
+        private void BtnSponsorChart_Click(object sender, RoutedEventArgs e) => NavigationService.Navigate(new SponsorChartPage());
+
+
     }
 }

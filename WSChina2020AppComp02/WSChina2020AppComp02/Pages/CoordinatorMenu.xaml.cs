@@ -71,11 +71,6 @@ namespace WSChina2020AppComp02.Pages
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Functionality in development.", "Message", MessageBoxButton.OK, MessageBoxImage.Information);
-        }
-
         private void BtnVolunteerManage_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new VolunteerManagementPage());
@@ -85,5 +80,7 @@ namespace WSChina2020AppComp02.Pages
         {
             NavigationService.Navigate(new SponsorshipManagementPage());
         }
+
+        private void BtnCompSer_Click(object sender, RoutedEventArgs e) => NavigationService.Navigate(new CompSerPage());
     }
 }
