@@ -17,25 +17,37 @@
             <Setter Property="Foreground" Value="Gray"></Setter>
             <Setter Property="TextAlignment" Value="Center"></Setter>
         </Style>
-  
+
         <ControlTemplate TargetType="Button" x:Key="Btn">
-            <Border BorderBrush="Gray" BorderThickness="1" CornerRadius="3"
-                    TextBlock.Foreground="Black" TextBlock.FontSize="20" TextBlock.TextAlignment="Center" Padding="15" Margin="10">
-                <Border.Background>
-                    <SolidColorBrush Color="LightGray"></SolidColorBrush>
-                </Border.Background>
+            <Border BorderBrush="Gray" BorderThickness="1" CornerRadius="3" Background="LightGray"
+                    TextBlock.Foreground="Black" TextBlock.FontSize="20" TextBlock.TextAlignment="Center" Padding="15" Margin="10" Name="buttonBorder">
                 <ContentPresenter RecognizesAccessKey="True"></ContentPresenter>
             </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter TargetName="buttonBorder" Property="Background" Value="AliceBlue"></Setter>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="false">
+                    <Setter TargetName="buttonBorder" Property="Background" Value="DarkGray"></Setter>
+                    <Setter Property="Foreground" Value="Gray"></Setter>
+                </Trigger>
+            </ControlTemplate.Triggers>
         </ControlTemplate>
 
         <ControlTemplate TargetType="Button" x:Key="NavigationBtn">
-            <Border BorderBrush="Gray" BorderThickness="1" CornerRadius="3"
-                    TextBlock.Foreground="Black" TextBlock.FontSize="14" TextBlock.TextAlignment="Center" Padding="4" Margin="10">
-                <Border.Background>
-                    <SolidColorBrush Color="LightGray"></SolidColorBrush>
-                </Border.Background>
+            <Border BorderBrush="Gray" BorderThickness="1" CornerRadius="3" Background="LightGray"
+                    TextBlock.Foreground="Black" TextBlock.FontSize="14" TextBlock.TextAlignment="Center" Padding="4" Margin="10" Name="buttonBorder">
                 <ContentPresenter RecognizesAccessKey="True"></ContentPresenter>
             </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter TargetName="buttonBorder" Property="Background" Value="AliceBlue"></Setter>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="false">
+                    <Setter TargetName="buttonBorder" Property="Background" Value="DarkGray"></Setter>
+                    <Setter Property="Foreground" Value="Gray"></Setter>
+                </Trigger>
+            </ControlTemplate.Triggers>
         </ControlTemplate>
         
         <Style TargetType="Border" x:Key="Table">

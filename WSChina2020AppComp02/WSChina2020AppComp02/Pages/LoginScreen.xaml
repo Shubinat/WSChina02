@@ -20,7 +20,7 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right"  Margin="5">
                 <Image Width="125" Height="35" Margin="5" x:Name="ImgCapcha"/>
-                <Button Height="30" Width="30" x:Name="BtnRefresh" Click="BtnRefresh_Click">+</Button>
+                <Button Height="30" Width="30" x:Name="BtnRefresh" Click="BtnRefresh_Click">⟳</Button>
             </StackPanel>
             <TextBox Width="125" HorizontalAlignment="Right" Margin="5" Name="TBCapcha"></TextBox>
             <CheckBox x:Name="CBRembererMe" Content="Remberer Me" HorizontalAlignment="Right" Margin="5"></CheckBox>

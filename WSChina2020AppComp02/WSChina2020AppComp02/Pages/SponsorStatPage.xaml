@@ -30,7 +30,7 @@
         </StackPanel>
         <Button Template="{StaticResource NavigationBtn}" Content="Statistics" Name="BtnShowStat" Click="BtnShowStat_Click"></Button>
         </StackPanel>
-        <TextBlock Grid.Row="2" Style="{StaticResource BodyText}" Name="TBTotal">Total Amount($) : XXX</TextBlock>
+        <TextBlock Grid.Row="2" Style="{StaticResource BodyText}" Name="TBTotal">Total Amount(¥) : XXX</TextBlock>
         <DataGrid Grid.Row="2" Margin="20" Name="DataGrdCategories" IsReadOnly="True" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Width="*" Header="Photo">
@@ -50,7 +50,7 @@
                 </DataGridTemplateColumn>
                 <DataGridTextColumn Width="*" Header="SponsorClassNames" Binding="{Binding Category.Name}"></DataGridTextColumn>
                 <DataGridTextColumn Width="*" Header="Sponsors" Binding="{Binding Category.Sponsors}"></DataGridTextColumn>
-                <DataGridTextColumn Width="*" Header="Amount ($)" Binding="{Binding Category.SummaryAmount}"></DataGridTextColumn>
+                <DataGridTextColumn Width="*" Header="Amount (¥)" Binding="{Binding Category.SummaryAmount}"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
         
@@ -73,7 +73,7 @@
                 </DataGridTemplateColumn>
                 <DataGridTextColumn Width="*" Header="SponsorClassNames" Binding="{Binding Sponsor.Name}"></DataGridTextColumn>
                 <DataGridTextColumn Width="*" Header="Category" Binding="{Binding Sponsor.Categories}"></DataGridTextColumn>
-                <DataGridTextColumn Width="*" Header="Amount ($)" Binding="{Binding Sponsor.SummaryAmount}"></DataGridTextColumn>
+                <DataGridTextColumn Width="*" Header="Amount (¥)" Binding="{Binding Sponsor.SummaryAmount}"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

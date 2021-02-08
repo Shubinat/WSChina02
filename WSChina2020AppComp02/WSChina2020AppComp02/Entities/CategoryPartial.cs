@@ -30,11 +30,14 @@ namespace WSChina2020AppComp02.Entities
         /// <param name="CompetitionID">ID чемпионата</param>
         public void CalculateSponsors(int CompetitionID) {
                 var result = "";
-                foreach (var sponsor in SponsorList(CompetitionID))
+                for (int i = 0; i < SponsorList(CompetitionID).Count; i++)
                 {
-                    result += sponsor.Name + ", ";
+                    if (i != SponsorList(CompetitionID).Count - 1) result += SponsorList(CompetitionID)[i].Name + "; ";
+                    else result += SponsorList(CompetitionID)[i].Name;
                 }
-                Sponsors = result;
+            Sponsors = result;
+
+
         }
 
         /// <summary>
@@ -43,11 +46,11 @@ namespace WSChina2020AppComp02.Entities
         /// <param name="CompetitionID">ID чемпионата</param>
         public void CalculateAmount(int CompetitionID) {
 
-                double Sum = 0;
+                decimal Sum = 0.00m;
                 var classNamesList = AppData.Context.SponsorClassNames.ToList().Where(c=>c.CompetitionID == CompetitionID).Where(p => p.CategoryID == CategoryID).ToList();
                 foreach (var className in classNamesList)
                 {
-                    Sum += className.Amount;
+                    Sum += (decimal)className.Amount;
                 }
                 SummaryAmount = Sum;
         }
@@ -59,6 +62,6 @@ namespace WSChina2020AppComp02.Entities
         /// <summary>
         /// Суммарное количество денег вложеных в данную категорию всему спонсорами
         /// </summary>
-        public double SummaryAmount { get; private set; }
+        public decimal SummaryAmount { get; private set; }
     }
 }
