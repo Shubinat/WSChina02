@@ -35,6 +35,7 @@ namespace WSChina2020AppComp02.Entities
         public virtual DbSet<Gender> Genders { get; set; }
         public virtual DbSet<Organization> Organizations { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
+        public virtual DbSet<SavedMark> SavedMarks { get; set; }
         public virtual DbSet<Service> Services { get; set; }
         public virtual DbSet<Sponsor> Sponsors { get; set; }
         public virtual DbSet<SponsorClassName> SponsorClassNames { get; set; }

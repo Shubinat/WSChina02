@@ -80,6 +80,15 @@
     <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="RoleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
   </EntityType>
+  <EntityType Name="SavedMark">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ServiceID" Type="int" Nullable="false" />
+    <Property Name="PositionX" Type="float" Nullable="false" />
+    <Property Name="PositionY" Type="float" Nullable="false" />
+  </EntityType>
   <EntityType Name="Service">
     <Key>
       <PropertyRef Name="ID" />
@@ -203,6 +212,18 @@
       </Principal>
       <Dependent Role="Competition">
         <PropertyRef Name="CityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SavedMark_Service">
+    <End Role="Service" Type="Self.Service" Multiplicity="1" />
+    <End Role="SavedMark" Type="Self.SavedMark" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Service">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SavedMark">
+        <PropertyRef Name="ServiceID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -397,6 +418,7 @@
     <EntitySet Name="Gender" EntityType="Self.Gender" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Organization" EntityType="Self.Organization" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SavedMark" EntityType="Self.SavedMark" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Service" EntityType="Self.Service" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Sponsor" EntityType="Self.Sponsor" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SponsorClassName" EntityType="Self.SponsorClassName" Schema="dbo" store:Type="Tables" />
@@ -419,6 +441,10 @@
     <AssociationSet Name="FK_Previos Competitions_City" Association="Self.FK_Previos Competitions_City">
       <End Role="City" EntitySet="City" />
       <End Role="Competition" EntitySet="Competition" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SavedMark_Service" Association="Self.FK_SavedMark_Service">
+      <End Role="Service" EntitySet="Service" />
+      <End Role="SavedMark" EntitySet="SavedMark" />
     </AssociationSet>
     <AssociationSet Name="FK_SponsorClassName_Category" Association="Self.FK_SponsorClassName_Category">
       <End Role="Category" EntitySet="Category" />

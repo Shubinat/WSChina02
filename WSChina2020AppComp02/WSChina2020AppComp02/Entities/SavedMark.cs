@@ -12,20 +12,13 @@ namespace WSChina2020AppComp02.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class Service
+    public partial class SavedMark
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Service()
-        {
-            this.SavedMarks = new HashSet<SavedMark>();
-        }
-    
         public int ID { get; set; }
-        public string Name { get; set; }
-        public byte[] Image { get; set; }
-        public byte[] Icon { get; set; }
+        public int ServiceID { get; set; }
+        public double PositionX { get; set; }
+        public double PositionY { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SavedMark> SavedMarks { get; set; }
+        public virtual Service Service { get; set; }
     }
 }
