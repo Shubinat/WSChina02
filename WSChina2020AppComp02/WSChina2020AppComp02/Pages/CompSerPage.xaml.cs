@@ -37,9 +37,16 @@ namespace WSChina2020AppComp02.Pages
 
         }
 
-        private void Canvas_MouseDown(object sender, MouseButtonEventArgs e)
+
+
+        private void Location_Drop(object sender, DragEventArgs e)
         {
-            MessageBox.Show(e.GetPosition(sender as IInputElement).X + " " + e.GetPosition(sender as IInputElement).Y);
+
+        }
+
+        private void Element_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            DragDrop.DoDragDrop((sender as Grid), (sender as Grid).DataContext, DragDropEffects.Copy);
         }
     }
 }

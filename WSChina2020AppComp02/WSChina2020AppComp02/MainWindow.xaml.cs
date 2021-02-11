@@ -27,6 +27,9 @@ namespace WSChina2020AppComp02
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        bool isAquadisco = false;
+
         DateTime WS2021 = new DateTime(2021, 09, 22, 0, 0, 0);
 
         
@@ -58,7 +61,7 @@ namespace WSChina2020AppComp02
             OpenFileDialog ofd = new OpenFileDialog();
             if(ofd.ShowDialog() == true)
             {
-                AppData.Context.Sponsors.ToList().First(p => p.SponsorID == 8).Photo = File.ReadAllBytes(ofd.FileName);
+                AppData.Context.Services.ToList().First(p => p.ID == 5).Icon = File.ReadAllBytes(ofd.FileName);
                 AppData.Context.SaveChanges();
             }
             */
@@ -77,7 +80,14 @@ namespace WSChina2020AppComp02
             } else { 
             CountDownBlock.Text = "The WorldSkills Shanghai 2021 has started.";
             }
-            AquaDiscoteka(2500);
+            if(isAquadisco) AquaDiscoteka(2500);
+            else
+            {
+                var brush = new SolidColorBrush(Color.FromRgb(139,0,0));
+                MainHeader.Background = brush;
+                SecondHeader.Background = brush;
+                Footer.Background = brush;
+            }
         }
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
@@ -173,5 +183,7 @@ namespace WSChina2020AppComp02
             SecondHeader.Background = brush;
             Footer.Background = brush;
         }
+
+        private void BtnAquadisco_Click(object sender, RoutedEventArgs e) => isAquadisco = !isAquadisco;
     }
 }

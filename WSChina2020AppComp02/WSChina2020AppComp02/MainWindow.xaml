@@ -32,9 +32,10 @@
         </StackPanel>
             <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20px" Style="{StaticResource TitleText}">WorldSkills China Competition 2016</TextBlock>
         </Grid>
-
+        <StackPanel>
         <Button x:Name="BtnLogout" VerticalAlignment="Center" HorizontalAlignment="Right" Template="{StaticResource NavigationBtn}" Click="BtnLogout_Click">Logout</Button>
-
+            <Button x:Name="BtnAquadisco" VerticalAlignment="Center" HorizontalAlignment="Right" Template="{StaticResource NavigationBtn}" Click="BtnAquadisco_Click">Aquadisco mode</Button>
+        </StackPanel>
         <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Grid.Row="1" ContentRendered="MainFrame_ContentRendered" Navigated="MainFrame_Navigated"></Frame>
 
         <Grid Background="Gray" Grid.Row="2" Name="Footer"></Grid>

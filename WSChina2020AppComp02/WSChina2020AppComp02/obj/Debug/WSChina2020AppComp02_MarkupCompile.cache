@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\Shubinat\Source\Repos\WSChina02\WSChina2020AppComp02\WSChina2020AppComp02\obj\Debug\
+C:\Users\Shubinat\source\repos\WSChina02\WSChina2020AppComp02\WSChina2020AppComp02\obj\Debug\
 WSChina2020AppComp02
 none
 false
 DEBUG;TRACE
-C:\Users\Shubinat\Source\Repos\WSChina02\WSChina2020AppComp02\WSChina2020AppComp02\App.xaml
+C:\Users\Shubinat\source\repos\WSChina02\WSChina2020AppComp02\WSChina2020AppComp02\App.xaml
 2532373174
 2-1229262296
 57-2074155872
-29-845971244
+29-1566373563
 MainWindow.xaml;Pages\AboutShanghaiPage.xaml;Pages\AboutWorldskillsPage.xaml;Pages\AboutWSChina.xaml;Pages\AdjustVolunteersBetweenSkillsPage.xaml;Pages\AdminMenu.xaml;Pages\CompetitionSkillsPage.xaml;Pages\CompetitorMenu.xaml;Pages\CompSerPage.xaml;Pages\CoordinatorMenu.xaml;Pages\ExportSponsorsListPage.xaml;Pages\HistoryWSPage.xaml;Pages\ImportVolunteers.xaml;Pages\JudgerMenu.xaml;Pages\LoginScreen.xaml;Pages\MainScreen.xaml;Pages\MyProfilePage.xaml;Pages\MyResultsPage.xaml;Pages\MySkillsPage.xaml;Pages\PreviousCompetitionsPage.xaml;Pages\SponsorChartPage.xaml;Pages\SponsorshipManagementPage.xaml;Pages\SponsorStatPage.xaml;Pages\SponsorViewPage.xaml;Pages\VolunteerManagementPage.xaml;
 
 False

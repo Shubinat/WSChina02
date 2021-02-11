@@ -390,16 +390,6 @@
     <Resource Include="Assets\FoodIMG0.jpg" />
     <Resource Include="Assets\FoodIMG1.jpg" />
     <Resource Include="Assets\FoodIMG2.jpg" />
-    <Content Include="Entities\BaseModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>BaseModel.edmx</DependentUpon>
-      <LastGenOutput>BaseModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Entities\BaseModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>BaseModel.edmx</DependentUpon>
-      <LastGenOutput>BaseModel.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -432,6 +422,18 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Entities\BaseModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BaseModel.edmx</DependentUpon>
+      <LastGenOutput>BaseModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Entities\BaseModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BaseModel.edmx</DependentUpon>
+      <LastGenOutput>BaseModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -20,7 +20,7 @@
         </Grid.ColumnDefinitions>
         <TextBlock Style="{StaticResource BodyText}" Text="Competition service" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Grid.ColumnSpan="2"></TextBlock>
         <Border Grid.Row="1" Style="{StaticResource Table}">
-            <ListView Margin="5" Name="LVServicesList">
+            <ListView Margin="5" Name="LVServicesList" HorizontalContentAlignment="Center">
                 <ListView.ItemsPanel >
                     <ItemsPanelTemplate>
                         <VirtualizingStackPanel HorizontalAlignment="Center"></VirtualizingStackPanel>
@@ -28,12 +28,15 @@
                 </ListView.ItemsPanel>
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <Grid>
+                        <Grid HorizontalAlignment="Center" x:Name="Element" MouseDown="Element_MouseDown">
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="150"></RowDefinition>
+                                <RowDefinition Height="auto"></RowDefinition>
                                 <RowDefinition Height="auto"></RowDefinition>
                             </Grid.RowDefinitions>
-                            <Image HorizontalAlignment="Center">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="190"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Image HorizontalAlignment="Center" Stretch="Fill">
                                 <Image.Source>
                                     <Binding Path="Image">
                                         <Binding.TargetNullValue>
@@ -55,10 +58,16 @@
                     <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>
                 <TextBlock HorizontalAlignment="Center" FontSize="20" Margin="5">The Layout of Venue</TextBlock>
-                <Canvas Grid.Row="1" Margin="5">
-                    <Rectangle Width="250" Height="50" StrokeThickness="3" Stroke="LightGray" >
-                    </Rectangle>
-                </Canvas>
+                <Viewbox Grid.Row="1" Margin="5" >
+                    <Canvas Width="250" Height="150" x:Name="Location" Drop="Location_Drop" AllowDrop="True">
+                        <Rectangle Width="250" Height="150" Fill="White" StrokeThickness="1" Stroke="LightGray"></Rectangle>
+                        <Rectangle Width="50" Height="50" StrokeThickness="1" Stroke="LightGray" Canvas.Left="10" Canvas.Top="10" />
+                        <Rectangle Width="50" Height="50" StrokeThickness="1" Stroke="LightGray" Canvas.Left="190" Canvas.Top="10" />
+                        <Rectangle Width="50" Height="50" StrokeThickness="1" Stroke="LightGray" Canvas.Left="100" Canvas.Top="10" />
+                        <Rectangle Width="100" Height="50" StrokeThickness="1" Stroke="LightGray" Canvas.Left="10" Canvas.Top="90" />
+                        <Rectangle Width="100" Height="50" StrokeThickness="1" Stroke="LightGray" Canvas.Left="140" Canvas.Top="90" />
+                    </Canvas>
+                </Viewbox>
             </Grid>
         </Border>
         <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center">
