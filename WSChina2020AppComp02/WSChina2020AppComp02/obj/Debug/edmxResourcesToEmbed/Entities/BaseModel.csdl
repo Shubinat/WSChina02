@@ -11,6 +11,7 @@
     <EntitySet Name="Genders" EntityType="WSChina2020BaseComp02Model.Gender" />
     <EntitySet Name="Organizations" EntityType="WSChina2020BaseComp02Model.Organization" />
     <EntitySet Name="Roles" EntityType="WSChina2020BaseComp02Model.Role" />
+    <EntitySet Name="Services" EntityType="WSChina2020BaseComp02Model.Service" />
     <EntitySet Name="Sponsors" EntityType="WSChina2020BaseComp02Model.Sponsor" />
     <EntitySet Name="SponsorClassNames" EntityType="WSChina2020BaseComp02Model.SponsorClassName" />
     <EntitySet Name="sysdiagrams" EntityType="WSChina2020BaseComp02Model.sysdiagram" />
@@ -193,6 +194,15 @@
     <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="RoleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <NavigationProperty Name="Users" Relationship="WSChina2020BaseComp02Model.FK_Users_Role" FromRole="Role" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Service">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Icon" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <EntityType Name="Sponsor">
     <Key>

@@ -23,6 +23,8 @@ namespace WSChina2020AppComp02.Pages
         public CompSerPage()
         {
             InitializeComponent();
+            LVServicesList.ItemsSource = AppData.Context.Services.ToList();
+
         }
 
         private void BtnClear_Click(object sender, RoutedEventArgs e)
@@ -33,6 +35,11 @@ namespace WSChina2020AppComp02.Pages
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Canvas_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show(e.GetPosition(sender as IInputElement).X + " " + e.GetPosition(sender as IInputElement).Y);
         }
     }
 }

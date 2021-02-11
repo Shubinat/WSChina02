@@ -91,6 +91,16 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Services">
+      <EntityTypeMapping TypeName="WSChina2020BaseComp02Model.Service">
+        <MappingFragment StoreEntitySet="Service">
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Sponsors">
       <EntityTypeMapping TypeName="WSChina2020BaseComp02Model.Sponsor">
         <MappingFragment StoreEntitySet="Sponsor">
