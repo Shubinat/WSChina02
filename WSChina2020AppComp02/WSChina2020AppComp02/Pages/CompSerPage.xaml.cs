@@ -82,6 +82,7 @@ namespace WSChina2020AppComp02.Pages
         {
             DragDrop.DoDragDrop((sender as Mark), (sender as Mark).DataContext, DragDropEffects.Move);
             ((sender as Mark).Parent as Canvas).Children.Remove(sender as Mark);
+            
         }
     }
 }

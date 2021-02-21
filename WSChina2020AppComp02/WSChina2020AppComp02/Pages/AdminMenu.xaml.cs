@@ -75,5 +75,7 @@ namespace WSChina2020AppComp02.Pages
 
 
         }
+
+        private void EventManageBtn_Click(object sender, RoutedEventArgs e) => NavigationService.Navigate(new EventManagementPage());
     }
 }

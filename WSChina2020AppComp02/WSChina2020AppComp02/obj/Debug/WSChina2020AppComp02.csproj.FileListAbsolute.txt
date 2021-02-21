@@ -156,3 +156,5 @@ C:\Users\student20\Desktop\WSChina02-Design\WSChina2020AppComp02\WSChina2020AppC
 C:\Users\student20\Desktop\WSChina02-Design\WSChina2020AppComp02\WSChina2020AppComp02\obj\Debug\WSChina2020AppComp02.pdb
 C:\Users\Shubinat\source\repos\WSChina02\WSChina2020AppComp02\WSChina2020AppComp02\obj\Debug\UserControls\Mark.g.cs
 C:\Users\Shubinat\source\repos\WSChina02\WSChina2020AppComp02\WSChina2020AppComp02\obj\Debug\UserControls\Mark.baml
+C:\Users\Shubinat\Source\Repos\WSChina02\WSChina2020AppComp02\WSChina2020AppComp02\obj\Debug\Pages\EventManagementPage.g.cs
+C:\Users\Shubinat\Source\Repos\WSChina02\WSChina2020AppComp02\WSChina2020AppComp02\obj\Debug\Pages\EventManagementPage.baml

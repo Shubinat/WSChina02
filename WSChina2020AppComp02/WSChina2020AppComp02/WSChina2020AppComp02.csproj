@@ -79,6 +79,9 @@
     <Compile Include="Entities\SavedMark.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Pages\EventManagementPage.xaml.cs">
+      <DependentUpon>EventManagementPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Mark.xaml.cs">
       <DependentUpon>Mark.xaml</DependentUpon>
     </Compile>
@@ -201,6 +204,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\CoordinatorMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\EventManagementPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
