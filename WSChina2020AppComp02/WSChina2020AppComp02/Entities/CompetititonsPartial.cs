@@ -24,6 +24,12 @@ namespace WSChina2020AppComp02.Entities
             }
         }
 
+        public string  DurationText {
+            get
+            {
+                return $"{StartDate.Day:D2}.{StartDate.Month:D2}.{StartDate.Year:D4} - {EndDate.Day:D2}.{EndDate.Month:D2}.{EndDate.Year:D4}";
+            }
+        }
 
     }
 }

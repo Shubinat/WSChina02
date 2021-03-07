@@ -40,6 +40,8 @@
     <EntitySetMapping Name="Competitions">
       <EntityTypeMapping TypeName="WSChina2020BaseComp02Model.Competition">
         <MappingFragment StoreEntitySet="Competition">
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
           <ScalarProperty Name="CityID" ColumnName="CityID" />
           <ScalarProperty Name="CompetitionID" ColumnName="CompetitionID" />
           <ScalarProperty Name="MemberNumber" ColumnName="MemberNumber" />

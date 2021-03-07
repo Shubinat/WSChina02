@@ -26,6 +26,8 @@ namespace WSChina2020AppComp02.Entities
         public Nullable<int> MemberNumber { get; set; }
         public int CompetitionID { get; set; }
         public Nullable<int> CityID { get; set; }
+        public System.DateTime StartDate { get; set; }
+        public System.DateTime EndDate { get; set; }
     
         public virtual City City { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -46,6 +46,8 @@
           <Property Name="MemberNumber" Type="int" />
           <Property Name="CompetitionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CityID" Type="int" />
+          <Property Name="StartDate" Type="date" Nullable="false" />
+          <Property Name="EndDate" Type="date" Nullable="false" />
         </EntityType>
         <EntityType Name="CompletedModule">
           <Key>
@@ -667,6 +669,8 @@
           <Property Name="MemberNumber" Type="Int32" />
           <Property Name="CompetitionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="CityID" Type="Int32" />
+          <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="0" />
           <NavigationProperty Name="City" Relationship="WSChina2020BaseComp02Model.FK_Previos_Competitions_City" FromRole="Competition" ToRole="City" />
           <NavigationProperty Name="SponsorClassNames" Relationship="WSChina2020BaseComp02Model.FK_SponsorClassName_Competition" FromRole="Competition" ToRole="SponsorClassName" />
           <NavigationProperty Name="UserCompetitions" Relationship="WSChina2020BaseComp02Model.FK_UserCompetition_Competition" FromRole="Competition" ToRole="UserCompetition" />
@@ -1108,6 +1112,8 @@
           <EntitySetMapping Name="Competitions">
             <EntityTypeMapping TypeName="WSChina2020BaseComp02Model.Competition">
               <MappingFragment StoreEntitySet="Competition">
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
                 <ScalarProperty Name="CityID" ColumnName="CityID" />
                 <ScalarProperty Name="CompetitionID" ColumnName="CompetitionID" />
                 <ScalarProperty Name="MemberNumber" ColumnName="MemberNumber" />

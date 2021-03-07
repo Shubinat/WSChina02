@@ -79,8 +79,14 @@
     <Compile Include="Entities\SavedMark.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Pages\CompetitionEventPage.xaml.cs">
+      <DependentUpon>CompetitionEventPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\EventManagementPage.xaml.cs">
       <DependentUpon>EventManagementPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ViewRegistrationPage.xaml.cs">
+      <DependentUpon>ViewRegistrationPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Mark.xaml.cs">
       <DependentUpon>Mark.xaml</DependentUpon>
@@ -191,6 +197,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\CompetitionEventPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\CompetitionSkillsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -264,6 +274,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\SponsorViewPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ViewRegistrationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

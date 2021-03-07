@@ -41,6 +41,8 @@
     <Property Name="MemberNumber" Type="int" />
     <Property Name="CompetitionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="CityID" Type="int" />
+    <Property Name="StartDate" Type="date" Nullable="false" />
+    <Property Name="EndDate" Type="date" Nullable="false" />
   </EntityType>
   <EntityType Name="CompletedModule">
     <Key>

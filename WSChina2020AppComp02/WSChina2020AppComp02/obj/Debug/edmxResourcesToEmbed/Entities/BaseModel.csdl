@@ -151,6 +151,8 @@
     <Property Name="MemberNumber" Type="Int32" />
     <Property Name="CompetitionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="CityID" Type="Int32" />
+    <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="0" />
     <NavigationProperty Name="City" Relationship="WSChina2020BaseComp02Model.FK_Previos_Competitions_City" FromRole="Competition" ToRole="City" />
     <NavigationProperty Name="SponsorClassNames" Relationship="WSChina2020BaseComp02Model.FK_SponsorClassName_Competition" FromRole="Competition" ToRole="SponsorClassName" />
     <NavigationProperty Name="UserCompetitions" Relationship="WSChina2020BaseComp02Model.FK_UserCompetition_Competition" FromRole="Competition" ToRole="UserCompetition" />

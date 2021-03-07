@@ -16,15 +16,18 @@ using System.Windows.Shapes;
 namespace WSChina2020AppComp02.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для EventManagementPage.xaml
+    /// Логика взаимодействия для ViewRegistrationPage.xaml
     /// </summary>
-    public partial class EventManagementPage : Page
+    public partial class ViewRegistrationPage : Page
     {
-        public EventManagementPage()
+        public ViewRegistrationPage()
         {
             InitializeComponent();
         }
 
-        private void CompetitionEventBtn_Click(object sender, RoutedEventArgs e) => NavigationService.Navigate(new CompetitionEventPage());
+        public ViewRegistrationPage(Entities.Competition currCompetition)
+        {
+            InitializeComponent();
+        }
     }
 }
