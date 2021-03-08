@@ -18,7 +18,6 @@ namespace WSChina2020AppComp02.Entities
         public Country()
         {
             this.Cities = new HashSet<City>();
-            this.Users = new HashSet<User>();
         }
     
         public int CountryID { get; set; }
@@ -27,7 +26,5 @@ namespace WSChina2020AppComp02.Entities
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<City> Cities { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<User> Users { get; set; }
     }
 }

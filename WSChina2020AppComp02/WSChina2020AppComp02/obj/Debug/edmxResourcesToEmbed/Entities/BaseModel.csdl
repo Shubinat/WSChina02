@@ -35,6 +35,10 @@
       <End Role="City" EntitySet="Cities" />
       <End Role="Competition" EntitySet="Competitions" />
     </AssociationSet>
+    <AssociationSet Name="FK_User_City" Association="WSChina2020BaseComp02Model.FK_User_City">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
     <AssociationSet Name="FK_Volunteer_City" Association="WSChina2020BaseComp02Model.FK_Volunteer_City">
       <End Role="City" EntitySet="Cities" />
       <End Role="Volunteer" EntitySet="Volunteers" />
@@ -66,10 +70,6 @@
     <AssociationSet Name="FK_CompletedModule_UserCompetition" Association="WSChina2020BaseComp02Model.FK_CompletedModule_UserCompetition">
       <End Role="UserCompetition" EntitySet="UserCompetitions" />
       <End Role="CompletedModule" EntitySet="CompletedModules" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Users_Country" Association="WSChina2020BaseComp02Model.FK_Users_Country">
-      <End Role="Country" EntitySet="Countries" />
-      <End Role="User" EntitySet="Users" />
     </AssociationSet>
     <AssociationSet Name="FK_Users_Gender" Association="WSChina2020BaseComp02Model.FK_Users_Gender">
       <End Role="Gender" EntitySet="Genders" />
@@ -126,6 +126,7 @@
     <Property Name="CountryID" Type="Int32" />
     <NavigationProperty Name="Country" Relationship="WSChina2020BaseComp02Model.FK_City_Country" FromRole="City" ToRole="Country" />
     <NavigationProperty Name="Competitions" Relationship="WSChina2020BaseComp02Model.FK_Previos_Competitions_City" FromRole="City" ToRole="Competition" />
+    <NavigationProperty Name="Users" Relationship="WSChina2020BaseComp02Model.FK_User_City" FromRole="City" ToRole="User" />
     <NavigationProperty Name="Volunteers" Relationship="WSChina2020BaseComp02Model.FK_Volunteer_City" FromRole="City" ToRole="Volunteer" />
     <NavigationProperty Name="Volunteers1" Relationship="WSChina2020BaseComp02Model.FK_Volunteer_City1" FromRole="City" ToRole="Volunteer" />
   </EntityType>
@@ -175,7 +176,6 @@
     <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="CountryCode" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="true" />
     <NavigationProperty Name="Cities" Relationship="WSChina2020BaseComp02Model.FK_City_Country" FromRole="Country" ToRole="City" />
-    <NavigationProperty Name="Users" Relationship="WSChina2020BaseComp02Model.FK_Users_Country" FromRole="Country" ToRole="User" />
   </EntityType>
   <EntityType Name="Gender">
     <Key>
@@ -268,12 +268,12 @@
     <Property Name="GenderID" Type="Int32" />
     <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
     <Property Name="LastName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="CountryID" Type="Int32" />
+    <Property Name="CityID" Type="Int32" />
     <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
     <Property Name="PhoneNumber" Type="Int64" />
     <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="OrganizationID" Type="Int32" />
-    <NavigationProperty Name="Country" Relationship="WSChina2020BaseComp02Model.FK_Users_Country" FromRole="User" ToRole="Country" />
+    <NavigationProperty Name="City" Relationship="WSChina2020BaseComp02Model.FK_User_City" FromRole="User" ToRole="City" />
     <NavigationProperty Name="Gender" Relationship="WSChina2020BaseComp02Model.FK_Users_Gender" FromRole="User" ToRole="Gender" />
     <NavigationProperty Name="Organization" Relationship="WSChina2020BaseComp02Model.FK_User_Organization" FromRole="User" ToRole="Organization" />
     <NavigationProperty Name="Role" Relationship="WSChina2020BaseComp02Model.FK_Users_Role" FromRole="User" ToRole="Role" />
@@ -353,6 +353,18 @@
         <PropertyRef Name="CityID" />
       </Principal>
       <Dependent Role="Competition">
+        <PropertyRef Name="CityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_City">
+    <End Type="WSChina2020BaseComp02Model.City" Role="City" Multiplicity="0..1" />
+    <End Type="WSChina2020BaseComp02Model.User" Role="User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="CityID" />
+      </Principal>
+      <Dependent Role="User">
         <PropertyRef Name="CityID" />
       </Dependent>
     </ReferentialConstraint>
@@ -450,18 +462,6 @@
       </Principal>
       <Dependent Role="CompletedModule">
         <PropertyRef Name="UserCompetitionID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Users_Country">
-    <End Type="WSChina2020BaseComp02Model.Country" Role="Country" Multiplicity="0..1" />
-    <End Type="WSChina2020BaseComp02Model.User" Role="User" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Country">
-        <PropertyRef Name="CountryID" />
-      </Principal>
-      <Dependent Role="User">
-        <PropertyRef Name="CountryID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

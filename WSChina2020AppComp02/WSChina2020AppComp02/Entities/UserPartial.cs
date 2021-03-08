@@ -20,7 +20,7 @@ namespace WSChina2020AppComp02.Entities
         {
             get
             {
-                return $"{Username} ({Country.Name})";
+                return $"{Username} ({City.Country.Name})";
             }
         }
 

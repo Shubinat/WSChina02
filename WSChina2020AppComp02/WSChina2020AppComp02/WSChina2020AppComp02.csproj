@@ -76,9 +76,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Entities\CompetitionInfo.cs" />
     <Compile Include="Entities\SavedMark.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entities\UserCompetitionPartial.cs" />
     <Compile Include="Pages\CompetitionEventPage.xaml.cs">
       <DependentUpon>CompetitionEventPage.xaml</DependentUpon>
     </Compile>

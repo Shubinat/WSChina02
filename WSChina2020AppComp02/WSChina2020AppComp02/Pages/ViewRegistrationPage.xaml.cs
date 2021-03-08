@@ -20,14 +20,36 @@ namespace WSChina2020AppComp02.Pages
     /// </summary>
     public partial class ViewRegistrationPage : Page
     {
+        
         public ViewRegistrationPage()
         {
             InitializeComponent();
         }
 
+        private class SubTotalCompetence : Entities.Competence {
+
+            public SubTotalCompetence(List<Entities.UserCompetition> users)
+            {
+                this.uCompetitions = users;
+            }
+            public List<Entities.UserCompetition> uCompetitions { get; set; }
+            public override string SkillOfService { get => "Sub Total"; }
+            public override int CompetitorsCount { get => uCompetitions.Sum(p => p.Competence.CompetitorsCount); }
+            public override int JudgersCount { get => uCompetitions.Sum(p => p.Competence.JudgersCount); }
+        }
         public ViewRegistrationPage(Entities.Competition currCompetition)
         {
             InitializeComponent();
+            List<Entities.UserCompetition> userCompetitions = AppData.Context.UserCompetitions.ToList().GroupBy(uc => uc.Competence).Select(g => g.First()).ToList();
+            foreach (var uc in userCompetitions)
+            {
+                uc.Competence.GetInfoByEvent(currCompetition); 
+            }
+            var subTotal = new Entities.UserCompetition() { Competence = new SubTotalCompetence(userCompetitions) };
+            
+            userCompetitions.Add(subTotal);
+            DataGridBySkills.ItemsSource = userCompetitions;
+
         }
     }
 }

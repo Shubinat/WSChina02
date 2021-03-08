@@ -152,7 +152,7 @@
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
           <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
-          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
           <ScalarProperty Name="LastName" ColumnName="LastName" />
           <ScalarProperty Name="Photo" ColumnName="Photo" />
           <ScalarProperty Name="GenderID" ColumnName="GenderID" />

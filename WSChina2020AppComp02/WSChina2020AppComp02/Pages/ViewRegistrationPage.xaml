@@ -9,6 +9,30 @@
       Title="View Registration">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <TextBlock Style="{StaticResource BodyText}" Text="View Registration" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"/>
+
+        <TabControl Grid.Row="1" Margin="10">
+            <TabItem Header="By Skills">
+                <DataGrid Margin="5" Name="DataGridBySkills" IsReadOnly="True" AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Skills" Width="*" Binding="{Binding Competence.SkillOfService}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Competitors Provinces" Width="*" Binding="{Binding Competence.CompetitorsProvinces}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Number Of Competitors" Width="*" Binding="{Binding Competence.CompetitorsCount}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Judgers Provinces" Width="*" Binding="{Binding Competence.JudgersProvinces}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Number Of Judgers" Width="*" Binding="{Binding Competence.JudgersCount}"></DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+            <TabItem Header="By Province">
+                <DataGrid Margin="5">
+
+                </DataGrid>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Page>

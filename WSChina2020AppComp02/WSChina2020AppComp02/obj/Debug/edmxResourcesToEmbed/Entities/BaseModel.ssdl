@@ -141,7 +141,7 @@
     <Property Name="GenderID" Type="int" />
     <Property Name="Photo" Type="image" />
     <Property Name="LastName" Type="nvarchar" MaxLength="100" />
-    <Property Name="CountryID" Type="int" />
+    <Property Name="CityID" Type="int" />
     <Property Name="DateOfBirth" Type="date" />
     <Property Name="PhoneNumber" Type="bigint" />
     <Property Name="Email" Type="nvarchar" MaxLength="50" />
@@ -277,6 +277,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_User_City">
+    <End Role="City" Type="Self.City" Multiplicity="0..1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="CityID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="CityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_User_Organization">
     <End Role="Organization" Type="Self.Organization" Multiplicity="0..1" />
     <End Role="User" Type="Self.User" Multiplicity="*" />
@@ -322,18 +334,6 @@
       </Principal>
       <Dependent Role="UserCompetition">
         <PropertyRef Name="UserID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Users_Country">
-    <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
-    <End Role="User" Type="Self.User" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Country">
-        <PropertyRef Name="CountryID" />
-      </Principal>
-      <Dependent Role="User">
-        <PropertyRef Name="CountryID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -464,6 +464,10 @@
       <End Role="Sponsor" EntitySet="Sponsor" />
       <End Role="SponsorClassName" EntitySet="SponsorClassName" />
     </AssociationSet>
+    <AssociationSet Name="FK_User_City" Association="Self.FK_User_City">
+      <End Role="City" EntitySet="City" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
     <AssociationSet Name="FK_User_Organization" Association="Self.FK_User_Organization">
       <End Role="Organization" EntitySet="Organization" />
       <End Role="User" EntitySet="User" />
@@ -479,10 +483,6 @@
     <AssociationSet Name="FK_UserCompetition_Users" Association="Self.FK_UserCompetition_Users">
       <End Role="User" EntitySet="User" />
       <End Role="UserCompetition" EntitySet="UserCompetition" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Users_Country" Association="Self.FK_Users_Country">
-      <End Role="Country" EntitySet="Country" />
-      <End Role="User" EntitySet="User" />
     </AssociationSet>
     <AssociationSet Name="FK_Users_Gender" Association="Self.FK_Users_Gender">
       <End Role="Gender" EntitySet="Gender" />
