@@ -76,32 +76,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Entities\CompetitionInfo.cs" />
-    <Compile Include="Entities\SavedMark.cs">
-      <DependentUpon>BaseModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\UserCompetitionPartial.cs" />
-    <Compile Include="Pages\CompetitionEventPage.xaml.cs">
-      <DependentUpon>CompetitionEventPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\EventManagementPage.xaml.cs">
-      <DependentUpon>EventManagementPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\ViewRegistrationPage.xaml.cs">
-      <DependentUpon>ViewRegistrationPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\Mark.xaml.cs">
-      <DependentUpon>Mark.xaml</DependentUpon>
-    </Compile>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Compile Include="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="AppData.cs" />
     <Compile Include="Entities\BaseModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -123,25 +97,23 @@
     <Compile Include="Entities\Category.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entities\CategoryPartial.cs" />
     <Compile Include="Entities\City.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entities\CityPartial.cs" />
     <Compile Include="Entities\Competence.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entities\CompetencePartial.cs" />
     <Compile Include="Entities\Competition.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entities\CompetititonsPartial.cs" />
+    <Compile Include="Entities\CompetitionInfo.cs" />
     <Compile Include="Entities\CompletedModule.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\Country.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entities\CountryPartial.cs" />
     <Compile Include="Entities\Gender.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
@@ -149,6 +121,9 @@
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\Role.cs">
+      <DependentUpon>BaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\SavedMark.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\Service.cs">
@@ -160,7 +135,8 @@
     <Compile Include="Entities\SponsorClassName.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entities\SponsorPartial.cs" />
+    <Compile Include="Entities\SubTotalCity.cs" />
+    <Compile Include="Entities\SubTotalCompetence.cs" />
     <Compile Include="Entities\sysdiagram.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
@@ -170,10 +146,37 @@
     <Compile Include="Entities\UserCompetition.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entities\UserPartial.cs" />
+    <Compile Include="Entities\UserCompetitionPartial.cs" />
     <Compile Include="Entities\Volunteer.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Pages\CompetitionEventPage.xaml.cs">
+      <DependentUpon>CompetitionEventPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EventManagementPage.xaml.cs">
+      <DependentUpon>EventManagementPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ViewRegistrationPage.xaml.cs">
+      <DependentUpon>ViewRegistrationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Mark.xaml.cs">
+      <DependentUpon>Mark.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AppData.cs" />
+    <Compile Include="Entities\CategoryPartial.cs" />
+    <Compile Include="Entities\CompetencePartial.cs" />
+    <Compile Include="Entities\CompetititonsPartial.cs" />
+    <Compile Include="Entities\CountryPartial.cs" />
+    <Compile Include="Entities\SponsorPartial.cs" />
+    <Compile Include="Entities\UserPartial.cs" />
     <Compile Include="Entities\VolunteerPartial.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

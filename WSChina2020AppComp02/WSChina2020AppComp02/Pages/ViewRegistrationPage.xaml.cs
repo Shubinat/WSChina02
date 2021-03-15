@@ -20,36 +20,36 @@ namespace WSChina2020AppComp02.Pages
     /// </summary>
     public partial class ViewRegistrationPage : Page
     {
-        
+        private List<Entities.UserCompetition> userCompetitions =  AppData.Context.UserCompetitions.ToList();
         public ViewRegistrationPage()
         {
             InitializeComponent();
         }
 
-        private class SubTotalCompetence : Entities.Competence {
-
-            public SubTotalCompetence(List<Entities.UserCompetition> users)
-            {
-                this.uCompetitions = users;
-            }
-            public List<Entities.UserCompetition> uCompetitions { get; set; }
-            public override string SkillOfService { get => "Sub Total"; }
-            public override int CompetitorsCount { get => uCompetitions.Sum(p => p.Competence.CompetitorsCount); }
-            public override int JudgersCount { get => uCompetitions.Sum(p => p.Competence.JudgersCount); }
-        }
         public ViewRegistrationPage(Entities.Competition currCompetition)
         {
             InitializeComponent();
-            List<Entities.UserCompetition> userCompetitions = AppData.Context.UserCompetitions.ToList().GroupBy(uc => uc.Competence).Select(g => g.First()).ToList();
-            foreach (var uc in userCompetitions)
+            List<Entities.UserCompetition> UsersBySkill = userCompetitions.GroupBy(uc => uc.Competence).Select(g => g.First()).ToList();
+            foreach (var uc in UsersBySkill)
             {
                 uc.Competence.GetInfoByEvent(currCompetition); 
             }
-            var subTotal = new Entities.UserCompetition() { Competence = new SubTotalCompetence(userCompetitions) };
+            var subTotal = new Entities.UserCompetition() { Competence = new Entities.SubTotalCompetence(UsersBySkill) };
             
-            userCompetitions.Add(subTotal);
-            DataGridBySkills.ItemsSource = userCompetitions;
+            UsersBySkill.Add(subTotal);
+            DataGridBySkills.ItemsSource = UsersBySkill;
+
+            List<Entities.UserCompetition> UsersByProvince = userCompetitions.GroupBy(uc => uc.User.City.Name).Select(g => g.First()).ToList();
+            foreach (var uc in UsersByProvince)
+            {
+                uc.User.City.GetInfoByEvent(currCompetition);
+            }
+            var _subTotal = new Entities.UserCompetition() { User = new Entities.User() { City = new Entities.SubTotalCity(UsersByProvince) } };
+            UsersByProvince.Add(_subTotal);
+            DataGridByProvince.ItemsSource = UsersByProvince;
 
         }
     }
+
+
 }

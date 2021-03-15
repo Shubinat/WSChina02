@@ -35,32 +35,35 @@ namespace WSChina2020AppComp02.Entities
             CompetitorsBySkill = competitorsList;
             JudgersBySkill = judgersList;
         }
-        public string CompetitorsProvinces
+        public virtual string CompetitorsProvinces
         {
             get
             {
-                if (CompetitorsBySkill != null) { 
+                if (CompetitorsBySkill != null) {
+                    var cities = CompetitorsBySkill.GroupBy(p => p.City.Name).Select(g => g.First()).ToList();
                     string str = "";
-                    for (int i = 0; i < CompetitorsBySkill.Count; i++)
+                    for (int i = 0; i < cities.Count; i++)
                     {
-                        if(i < CompetitorsBySkill.Count - 1) str += CompetitorsBySkill[i].City.Name + ", ";
-                        else str += CompetitorsBySkill[i].City.Name;
+                        if(i < cities.Count - 1) str += cities[i].City.Name + ", ";
+                        else str += cities[i].City.Name;
                     }
                     return str;
                 }
                 return "";
             }
         }
-        public string JudgersProvinces
+        public virtual string JudgersProvinces
         {
             get
             {
-                if (JudgersBySkill != null) { 
+                if (JudgersBySkill != null)
+                {
+                    var cities = JudgersBySkill.GroupBy(p => p.City.Name).Select(g => g.First()).ToList();
                     string str = "";
-                    for (int i = 0; i < JudgersBySkill.Count; i++)
+                    for (int i = 0; i < cities.Count; i++)
                     {
-                        if (i < JudgersBySkill.Count - 1) str += JudgersBySkill[i].City.Name + ", ";
-                        else str += JudgersBySkill[i].City.Name;
+                        if (i < cities.Count - 1) str += cities[i].City.Name + ", ";
+                        else str += cities[i].City.Name;
                     }
                     return str;
                 }

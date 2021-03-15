@@ -29,8 +29,14 @@
                 </DataGrid>
             </TabItem>
             <TabItem Header="By Province">
-                <DataGrid Margin="5">
-
+                <DataGrid Margin="5" Name="DataGridByProvince" IsReadOnly="True" AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Province" Width="*" Binding="{Binding User.City.TableView}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Competitors Skills" Width="*" Binding="{Binding User.City.CompetitorsSkills}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Number Of Competitors" Width="*" Binding="{Binding User.City.CompetitorsCount}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Judgers Skills" Width="*" Binding="{Binding User.City.JudgersSkills}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Number Of Judgers" Width="*" Binding="{Binding User.City.JudgersCount}"></DataGridTextColumn>
+                    </DataGrid.Columns>
                 </DataGrid>
             </TabItem>
         </TabControl>
